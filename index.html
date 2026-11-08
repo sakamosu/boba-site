@@ -84,16 +84,18 @@
           <div class="col">
             <div class="tp focus">
               <div class="ttl">[1] ◆ Sessions 2/4</div>
-              <div class="row"><span class="st t-ok">●</span><span class="nm">feat/csv</span><span class="t-ok">run</span><span class="t-dim">+120 -8</span><span class="t-dim">:3003</span></div>
-              <div class="row sel"><span class="st t-warn">●</span><span class="nm">login-ui</span><span class="t-warn">wait 2m</span><span class="t-dim">+42 -3</span><span class="t-dim">:3004</span></div>
-              <div class="row"><span class="st t-dim">○</span><span class="nm">perf</span><span class="t-dim">idle</span><span class="t-dim">+0 -0</span><span class="t-dim">:3005</span></div>
-              <div class="row"><span class="st t-sec">✓</span><span class="nm">docs</span><span class="t-sec">done</span><span class="t-ok">✓test</span><span class="t-dim">:3006</span></div>
-              <div class="foot"><span class="t-warn">●</span> 1 waiting · oldest 2m &nbsp; <span class="t-sec">✓</span> 1 to review</div>
+              <div class="row repo"><span class="st t-sec"><i class="nf nf-cur"></i></span><span>app</span><i class="rule"></i></div>
+              <div class="row"><span class="st t-ok"><i class="nf nf-run"></i></span><span class="nm">feat/csv</span><span class="t-ok">run</span><span class="t-dim">+120 -8</span><span class="t-dim">:3003</span></div>
+              <div class="row sel"><span class="st t-warn"><i class="nf nf-wait"></i></span><span class="nm">login-ui</span><span class="t-warn">wait 2m</span><span class="t-dim">+42 -3</span><span class="t-dim">:3004</span></div>
+              <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span class="nm">perf</span><span class="t-dim">idle</span><span class="t-dim">+0 -0</span><span class="t-dim">:3005</span></div>
+              <div class="row repo dimmed"><span class="st"></span><span class="t-dim">site</span><i class="rule"></i></div>
+              <div class="row"><span class="st t-sec"><i class="nf nf-done"></i></span><span class="nm">docs</span><span class="t-sec">done</span><span class="t-ok">✓test</span><span class="t-dim">:3006</span></div>
+              <div class="foot"><span class="t-warn"><i class="nf nf-wait"></i></span> 1 waiting · oldest 2m &nbsp; <span class="t-sec"><i class="nf nf-done"></i></span> 1 to review</div>
             </div>
             <div class="tp">
               <div class="ttl">[2] ⎇ Worktrees</div>
               <div class="row"><span class="nm">main</span></div>
-              <div class="row"><span class="nm">feat/login</span><span class="t-sec">*</span></div>
+              <div class="row"><span class="nm">feat/login</span><span class="t-sec"><i class="nf nf-cur"></i></span></div>
               <div class="row"><span class="nm">feat/csv</span><span class="t-dim">~/worktrees/app/feat-csv</span></div>
             </div>
             <div class="tp">
@@ -130,13 +132,13 @@
         </div>
         <div class="tbar">
           <span class="tseg tapi" data-tapi-line="wait"><span class="t-warn">login-ui needs you</span></span>
-          <span class="tseg mode">SESSIONS</span>
+          <span class="tseg mode">◆ SESSIONS</span>
           <span class="tseg">⎇ feat/login</span>
           <span class="tseg"><span class="t-ok">2 run</span>&nbsp;·&nbsp;<span class="t-warn">1 wait</span></span>
           <span class="tkeys"><b>j/k</b>move<b>enter</b>open<b>n</b>new<b>]a</b>next<b>r</b>review<b>?</b>help</span>
         </div>
       </div>
-      <div class="legend"><span><b class="c-ok">●</b>run</span><span><b class="c-warn">●</b>wait</span><span><b class="c-dim">○</b>idle</span><span><b class="c-sec">✓</b>done</span><span><b class="c-err">✗</b>fail</span></div>
+      <div class="legend"><span><b class="c-ok"><i class="nf nf-run"></i></b>run</span><span><b class="c-warn"><i class="nf nf-wait"></i></b>wait</span><span><b class="c-dim"><i class="nf nf-idle"></i></b>idle</span><span><b class="c-sec"><i class="nf nf-done"></i></b>done</span><span><b class="c-err"><i class="nf nf-fail"></i></b>fail</span></div>
 
       <div class="step" id="st-new" style="margin-top:26px">
         <div><div class="num">01 <b>boba new</b><span class="st c-dim">◌ creating</span></div><h3 data-i18n="s2.st1.title"></h3><p data-i18n="s2.st1.body"></p></div>
