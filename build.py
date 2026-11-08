@@ -4,12 +4,17 @@
     python3 build.py            # → dist-single/pekoe-lp.html
 
 Inlines style.css, copy/*.js, app.js and assets/*.webp (as data URIs) into index.html.
+The demo video block (<!-- demo --> … <!-- /demo -->) is dropped, not embedded.
 Google Fonts stays external. The folder is the source of truth; dist-single/ is generated.
 """
 import base64, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent
 html = (HERE / 'index.html').read_text(encoding='utf-8')
+
+# demo video: 単一ファイル版には動画を埋め込まない。<!-- demo --> 〜 <!-- /demo --> をブロックごと除去する
+html, n = re.subn(r'[ \t]*<!-- demo -->.*?<!-- /demo -->[ \t]*\n?', '', html, flags=re.S)
+assert n, 'demo markers not found in index.html'
 
 # css
 css = (HERE / 'style.css').read_text(encoding='utf-8')
@@ -27,7 +32,7 @@ def inline_img(m):
     path = HERE / m.group(1)
     mime = {'.webp': 'image/webp', '.png': 'image/png', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg'}[path.suffix]
     return 'src="data:%s;base64,%s"' % (mime, base64.b64encode(path.read_bytes()).decode())
-html = re.sub(r'src="(assets/[^"]+)"', inline_img, html)
+html = re.sub(r'src="(assets/[^"]+\.(?:webp|png|svg|jpg))"', inline_img, html)
 
 out = HERE / 'dist-single' / 'pekoe-lp.html'
 out.parent.mkdir(exist_ok=True)
