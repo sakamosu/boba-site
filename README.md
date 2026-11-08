@@ -5,10 +5,10 @@ pekoe のランディングページ。ページ自体が pekoe の TUI の文�
 ```
 index.html     構造。文言は data-i18n="key" で参照するだけ
 style.css      見た目。カラートークンは docs/ui-guidelines.md の値
-app.js         tapi の描画、左パネルの追従、キー操作(1-5 / j k / [ ] / ? / l)、言語切り替え
+app.js         tapi の描画、左パネルの追従、キー操作(1-5 / j k / [ ] / ? / l / m)、言語切り替え、デモ動画の再生制御
 copy/ja.js     日本語コピー(key → 文)
 copy/en.js     英語コピー
-assets/        ステッカー(WebP、背景は切り抜き済み)
+assets/        ステッカー(WebP、背景は切り抜き済み)とデモ動画(pekoe-demo.webm / .mp4 / -poster.jpg)
 build.py       配布用の 1 枚 HTML を dist-single/ に生成
 vite.config.js ローカル開発サーバーと GitHub Pages 向けビルド(dist/)
 ```
@@ -18,6 +18,8 @@ vite.config.js ローカル開発サーバーと GitHub Pages 向けビルド(di
 - 文言を直す → `copy/ja.js` / `copy/en.js` の値を直す。キーは両ファイルで揃える
 - 文言を増やす → `index.html` に `data-i18n="新キー"` の要素を置き、両方の copy にキーを足す。属性は `data-i18n-attr="alt=key"`
 - 画像を差し替える → `assets/` の同名ファイルを置き換える
+- デモ動画を差し替える → `assets/pekoe-demo.webm`・`pekoe-demo.mp4`・`pekoe-demo-poster.jpg` を同名で置き換える(webm と mp4 は同じ中身で両方用意する)
+- 単一ファイル版(`build.py`)には動画を入れない。`index.html` の `<!-- demo -->` 〜 `<!-- /demo -->` はブロックごと除去される
 
 `index.html` をブラウザで開けばそのまま見られる(file:// でも動く)。
 
@@ -27,7 +29,7 @@ vite.config.js ローカル開発サーバーと GitHub Pages 向けビルド(di
 python3 build.py   # → dist-single/pekoe-lp.html
 ```
 
-CSS・JS・コピー・画像をすべて埋め込んだ単一ファイル。Google Fonts だけ外部参照。
+CSS・JS・コピー・画像をすべて埋め込んだ単一ファイル。Google Fonts だけ外部参照。デモ動画は含めない。
 
 ## ローカルで起動する(Vite)
 
