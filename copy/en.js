@@ -1,8 +1,8 @@
-// boba LP — English copy
+// pekoe LP — English copy
 // Keys match data-i18n / data-i18n-attr in index.html. Values may contain <strong> <code> <em> <br>.
-window.BOBA_COPY = window.BOBA_COPY || {};
-window.BOBA_COPY.en = {
-  "meta.title": "boba — as many agents as you like, without leaving the terminal",
+window.PEKOE_COPY = window.PEKOE_COPY || {};
+window.PEKOE_COPY.en = {
+  "meta.title": "pekoe — A cozy home for your coding agents.",
   "meta.description": "A terminal tool for Ghostty that takes over worktrees, waiting, the browser and review — without changing how you use Claude Code.",
 
   // left panels
@@ -15,11 +15,11 @@ window.BOBA_COPY.en = {
   "lp4.sum": "Claude Code, untouched",
   "lp4.r1": "principles",
 
-  // [1] boba
+  // [1] pekoe
   "s1.h1": "As many agents as you like.<br>You just stay in the terminal.",
-  "s1.lead": "Run Claude Code in parallel and the work stops being writing code: it becomes watching for waits, preparing worktrees, checking the browser, reading diffs. boba takes over <strong>only that surrounding work</strong>. How you use Claude Code doesn't change.",
+  "s1.lead": "Run Claude Code in parallel and the work stops being writing code: it becomes watching for waits, preparing worktrees, checking the browser, reading diffs. pekoe takes over <strong>only that surrounding work</strong>. How you use Claude Code doesn't change.",
   "s1.cta_flow": "see the flow",
-  "s1.kv_alt": "boba key visual: tapi, a smiling tapioca pearl, in front of a terminal",
+  "s1.kv_alt": "pekoe key visual: tapi, a smiling tapioca pearl, in front of a terminal",
   "s1.o1.title": "Never miss a wait",
   "s1.o1.body": "When an agent stops and waits, tapi tells you right away. Jump there, respond, come back to where you were.",
   "s1.o2.title": "A worktree in seconds",
@@ -37,31 +37,31 @@ window.BOBA_COPY.en = {
   "s2.st3.title": "Respond",
   "s2.st3.body": "Jump to whichever agent is waiting on a permission or a question, answer, come back. Spotted something in the browser? Send the element itself back from your everyday Chrome.",
   "s2.st4.title": "Read only the diff",
-  "s2.st4.body": "Review picks up where you last left it. Approve change by change — approvals survive shifting lines. Not sure why the agent did something? Ask it right there. Open it in Neovim and you also get a list of risky spots. Other people's PRs read inside boba too.",
+  "s2.st4.body": "Review picks up where you last left it. Approve change by change — approvals survive shifting lines. Not sure why the agent did something? Ask it right there. Open it in Neovim and you also get a list of risky spots. Other people's PRs read inside pekoe too.",
   "s2.st5.title": "Land",
   "s2.st5.body": "rebase → test → push → PR in one go. Once merged, it cleans up and removes the worktree. Changed your mind? Step back one prompt.",
   "s2.shot_prompt": "← prompt #3: add CSV export",
 
   // [3] tapi
   "s3.h2": "Which one is waiting? Just look at the face.",
-  "s3.lead": "The mascot is a tapioca pearl named tapi. tapi tells you everything about state: in the bottom bar it wears the state of all your sessions as a face, and says in a few words which session is doing what.",
+  "s3.lead": "The mascot is a tapioca pearl named tapi. If pekoe is the home for your agents, tapi is the little companion who lives there. tapi tells you everything about state: in the bottom bar it wears the state of all your sessions as a face, and says in a few words which session is doing what.",
 
   // [4] Principles
   "s4.h2": "Claude Code stays untouched. Your repo stays clean.",
   "s4.lead": "All the intelligence lives in the daemon; clients only display and type. Everything else follows from that one decision.",
-  "s4.pr1": "Agents run as-is inside a pty. Whatever boba sends is written to the pty indistinguishably from keystrokes. State comes from hooks, never from reading the screen.",
-  "s4.pr2": "Config, state and snapshots live outside the repo or under <code>refs/boba/</code> (never pushed, never in <code>git log</code>). The only trace left behind is a worktree — plain git.",
-  "s4.pr3": "No knowledge of package managers or frameworks at runtime. The config is the commands you already type for that repo; boba fills in variables and runs them in order.",
+  "s4.pr1": "Agents run as-is inside a pty. Whatever pekoe sends is written to the pty indistinguishably from keystrokes. State comes from hooks, never from reading the screen.",
+  "s4.pr2": "Config, state and snapshots live outside the repo or under <code>refs/pekoe/</code> (never pushed, never in <code>git log</code>). The only trace left behind is a worktree — plain git.",
+  "s4.pr3": "No knowledge of package managers or frameworks at runtime. The config is the commands you already type for that repo; pekoe fills in variables and runs them in order.",
   "s4.pr4": "The terminal layer starts as a tmux engine and moves to a libghostty-vt mux of its own. As long as the daemon/client boundary holds, any layer can be swapped without losing a feature.",
   "s4.daemon": "TUI, CLI, Neovim, the Chrome extension and MCP are thin display layers hitting the same API. A new feature lands in one place: the daemon.",
-  "s4.svg_pty": "tmux -L boba · one pty per worktree",
-  "s4.svg_aria": "bobad, its five clients, and one pty per worktree",
+  "s4.svg_pty": "tmux -L pekoe · one pty per worktree",
+  "s4.svg_aria": "pekoed, its five clients, and one pty per worktree",
 
   // [5] Install
   "s5.lead": "Runs on macOS (tested in Ghostty). Requires Go 1.25+, tmux 3.3+, git. Optional: gh (land, PR review), Neovim 0.10+ (review surface), Chrome (element picking).",
-  "s5.soon": "boba isn’t public yet. Once the repository is on GitHub, the link and install steps will be right here.",
+  "s5.soon": "pekoe isn’t public yet. Once the repository is on GitHub, the link and install steps will be right here.",
   "s5.c1": "# adds hooks to ~/.claude/settings.json",
-  "s5.c2": "# optional: start bobad at login",
+  "s5.c2": "# optional: start pekoed at login",
   "s5.c3": "# detect the repo, draft its config",
   "s5.c4": "\"add CSV export\""
 };

@@ -1,4 +1,4 @@
-/* boba LP — page theme = boba の役割トークンを LP の配色で解決したもの
+/* pekoe LP — page theme = pekoe の役割トークンを LP の配色で解決したもの
    bg は紫、text はクリーム。primary はフォーカスにだけ、secondary はキーとリンクにだけ。 */
 :root{
   --bg:#5b3fe9; --bg-deep:#4f35d2; --surface:#4a31c4; --select:#3d28a6;
@@ -43,6 +43,16 @@ legend{float:none;width:auto}
 .topbar .name .w{position:relative;padding-bottom:3px}
 .topbar .name .w::after{content:'';position:absolute;left:1px;right:-1px;bottom:-1px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--primary),var(--secondary))}
 .topbar .name .pearl{display:inline-block;width:11px;height:11px;border-radius:50%;background:radial-gradient(circle at 30% 28%,#f8ecd9 0 18%,#e4c49a 20% 70%,#c7a57c 72%);box-shadow:0 1px 2px rgba(0,0,0,.3);transform:translateY(-1px)}
+/* ヒーロー冒頭のブランド行: トップバーのワードマーク(粒 + 下線グラデーション)を大きくしたもの + キャッチコピー 2 行 */
+.brand{margin:0 0 18px}
+.brand-head{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:14px;row-gap:4px}
+.brand .name{display:inline-flex;align-items:center;gap:10px;font-family:var(--round);font-weight:700;font-size:clamp(40px,4.4vw,56px);letter-spacing:.01em;line-height:1}
+.brand .name .w{position:relative;padding-bottom:6px}
+.brand .name .w::after{content:'';position:absolute;left:2px;right:-2px;bottom:-1px;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--primary),var(--secondary))}
+.brand .name .pearl{display:inline-block;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle at 30% 28%,#f8ecd9 0 18%,#e4c49a 20% 70%,#c7a57c 72%);box-shadow:0 2px 4px rgba(0,0,0,.3);transform:translateY(-2px)}
+.brand .read{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+.brand-copy{font-family:var(--round);font-weight:600;font-size:clamp(19px,1.9vw,24px);line-height:1.35;margin:12px 0 0}
+.brand-sub{font-family:var(--mono);font-size:13.5px;color:var(--secondary-text);margin:4px 0 0}
 .topbar .path{color:var(--dim)}
 .topbar .r{margin-left:auto;display:flex;gap:16px;align-items:center}
 .kbtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-family:var(--mono);font-size:12.5px;color:var(--dim);cursor:pointer;background:transparent;text-decoration:none}
@@ -148,7 +158,7 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 .tp .row.sel{background:var(--t-select)}
 .tp .row .nm{min-width:8ch}.tp .row .st{min-width:3ch}
 .tp .foot{color:var(--t-dim);margin-top:auto;padding:4px 9px 0;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-/* 状態アイコン: boba の既定(icons = nerd)と同じ Font Awesome 4 系の形。run は点字スピナー */
+/* 状態アイコン: pekoe の既定(icons = nerd)と同じ Font Awesome 4 系の形。run は点字スピナー */
 .nf{display:inline-block;width:1em;height:1em;vertical-align:-.14em;font-style:normal;background:currentColor;-webkit-mask:var(--nf) center/contain no-repeat;mask:var(--nf) center/contain no-repeat}
 .nf-wait{--nf:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 1a7 7 0 1 0 0 14A7 7 0 1 0 8 1zM5.4 4.8h1.9v6.4H5.4zM8.7 4.8h1.9v6.4H8.7z'/%3E%3C/svg%3E")}
 .nf-idle{--nf:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 1a7 7 0 1 0 0 14A7 7 0 1 0 8 1zM8 3a5 5 0 1 0 0 10A5 5 0 1 0 8 3z'/%3E%3C/svg%3E")}
@@ -312,12 +322,13 @@ table.where td code{font-size:12.5px}
   /* 2. ヒーロー: 左に kicker・見出し・本文・CTA、右に大きなロゴ */
   #s1{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.55fr);column-gap:40px;align-items:start;padding-top:20px}
   #s1 .hero{display:contents}
+  #s1 .brand{grid-column:1}
   #s1 .kicker{grid-column:1;justify-self:start;margin-top:0}
   #s1 .tagline{grid-column:1;font-size:17px;margin-top:14px}
   #s1 h1{grid-column:1;font-size:clamp(38px,3.6vw,48px);line-height:1.25;letter-spacing:-.02em;word-break:auto-phrase}
   #s1 .hero>div:first-child{grid-column:1;margin-top:22px}
   #s1 .lead{font-size:18px;line-height:1.75;max-width:34em}
-  #s1 .kv{grid-column:2;grid-row:1 / span 4;align-self:center;transform:translateX(-28px)}
+  #s1 .kv{grid-column:2;grid-row:1 / span 5;align-self:center;transform:translateX(-28px)}
   #s1 .kv img{max-width:360px}
   #s1 .outcomes{grid-column:1 / -1;margin-top:56px}
 
@@ -342,7 +353,7 @@ table.where td code{font-size:12.5px}
   #st-run,#st-review{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
   #st-run>div:first-child,#st-review>div:first-child{order:2}
 
-  /* Principles は逆向き: 原則の一覧 左 / 説明 右。bobad の図は全幅 */
+  /* Principles は逆向き: 原則の一覧 左 / 説明 右。pekoed の図は全幅 */
   #s4{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56px;align-items:start}
   #s4>.kicker{grid-column:2;grid-row:1;justify-self:start}
   #s4>h2{grid-column:2;grid-row:2}
