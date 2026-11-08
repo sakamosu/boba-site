@@ -44,6 +44,7 @@ window.PEKOE_COPY.en = {
   "s2.shot_prompt": "← prompt #3: add CSV export",
 
   // [3] tapi
+  "s3.meet": "Meet tapi.",
   "s3.h2": "Which one is waiting? Just look at the face.",
   "s3.lead": "The mascot is a tapioca pearl named tapi. If pekoe is the home for your agents, tapi is the little companion who lives there. tapi tells you everything about state: in the bottom bar it wears the state of all your sessions as a face, and says in a few words which session is doing what.",
 

@@ -2,7 +2,7 @@
 // キーは index.html の data-i18n / data-i18n-attr と対応。値には <strong> <code> <em> <br> を使える。
 window.PEKOE_COPY = window.PEKOE_COPY || {};
 window.PEKOE_COPY.ja = {
-  "meta.title": "pekoe — A cozy home for your coding agents.",
+  "meta.title": "pekoe — コーディングエージェントたちの、居心地のいい家。",
   "meta.description": "Claude Code の使い方は変えずに、worktree・待ち・ブラウザ・レビューだけを引き受ける Ghostty のためのターミナルツール。",
 
   // 左パネル
@@ -44,6 +44,7 @@ window.PEKOE_COPY.ja = {
   "s2.shot_prompt": "← 指示 #3: CSV エクスポートを追加",
 
   // [3] tapi
+  "s3.meet": "tapi です。",
   "s3.h2": "「どれが待っているか」は、顔を見ればわかる。",
   "s3.lead": "マスコットはタピオカの粒、tapi(たぴ)。pekoe がエージェントたちの家なら、tapi はそこにいる相棒です。状態は全て tapi が教えてくれます。最下行で全セッションの状態を顔にして、どのセッションが何をしているかを一言で話します。",
 
