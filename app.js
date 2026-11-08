@@ -1,4 +1,4 @@
-/* boba LP — behaviour
+/* pekoe LP — behaviour
    1. tapi sprite (docs/mascot.md, palette D) drawn as pixel rects
    2. TUI grammar: left panels follow the right pane, status bar, keys, `?` modal
    3. i18n: copy/ja.js + copy/en.js → data-i18n / data-i18n-attr
@@ -167,7 +167,7 @@
   ['mousemove', 'keydown', 'touchstart'].forEach(ev => document.addEventListener(ev, () => { if (asleep) wake(); }, { passive: true }));
 
   /* ── 3. i18n ─────────────────────────────────────────────── */
-  const COPY = window.BOBA_COPY || {};
+  const COPY = window.PEKOE_COPY || {};
   const root = document.documentElement;
   const SVG_NS = 'http://www.w3.org/2000/svg';
   function applyLang(l) {
@@ -186,11 +186,11 @@
       });
     });
     document.querySelectorAll('#langbtn .opt').forEach(o => o.classList.toggle('on', o.dataset.l === l));
-    try { localStorage.setItem('boba-lang', l); } catch (e) { /* private mode etc. */ }
+    try { localStorage.setItem('pekoe-lang', l); } catch (e) { /* private mode etc. */ }
     track();
   }
   function toggleLang() { applyLang(root.dataset.lang === 'ja' ? 'en' : 'ja'); }
-  let lang = null; try { lang = localStorage.getItem('boba-lang'); } catch (e) { /* ignore */ }
+  let lang = null; try { lang = localStorage.getItem('pekoe-lang'); } catch (e) { /* ignore */ }
   if (lang !== 'ja' && lang !== 'en') lang = (navigator.language || 'ja').toLowerCase().startsWith('ja') ? 'ja' : 'en';
   document.getElementById('langbtn').addEventListener('click', toggleLang);
 

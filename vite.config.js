@@ -8,7 +8,7 @@ const CLASSIC_SCRIPTS = ['copy/ja.js', 'copy/en.js', 'app.js'];
 
 function copyClassicScripts() {
   return {
-    name: 'boba:copy-classic-scripts',
+    name: 'pekoe:copy-classic-scripts',
     apply: 'build',
     generateBundle() {
       for (const fileName of CLASSIC_SCRIPTS) {
@@ -18,11 +18,11 @@ function copyClassicScripts() {
   };
 }
 
-const port = process.env.BOBA_PORT ? Number(process.env.BOBA_PORT) : undefined;
+const port = process.env.PEKOE_PORT ? Number(process.env.PEKOE_PORT) : undefined;
 
 export default defineConfig(({ command, isPreview }) => ({
-  // GitHub Pages (https://sakamosu.github.io/boba-site/) 向け。dev サーバーはルートで配信する
-  base: command === 'build' || isPreview ? '/boba-site/' : '/',
+  // GitHub Pages (https://sakamosu.github.io/pekoe-site/) 向け。dev サーバーはルートで配信する
+  base: command === 'build' || isPreview ? '/pekoe-site/' : '/',
   server: port ? { port, strictPort: true } : {},
   plugins: [copyClassicScripts()],
 }));
