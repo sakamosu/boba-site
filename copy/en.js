@@ -16,7 +16,6 @@ window.PEKOE_COPY.en = {
   "lp4.r1": "principles",
 
   // [1] pekoe
-  "s1.h1": "As many agents as you like.<br>You just stay in the terminal.",
   "s1.lead": "Run Claude Code in parallel and the work stops being writing code: it becomes watching for waits, preparing worktrees, checking the browser, reading diffs. pekoe takes over <strong>only that surrounding work</strong>. How you use Claude Code doesn't change.",
   "s1.cta_flow": "see the flow",
   "s1.kv_alt": "pekoe key visual: tapi, a smiling tapioca pearl, in front of a terminal",
