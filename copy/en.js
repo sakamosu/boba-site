@@ -58,7 +58,8 @@ window.BOBA_COPY.en = {
   "s4.svg_aria": "bobad, its five clients, and one pty per worktree",
 
   // [5] Install
-  "s5.lead": "Requires Go 1.25+, tmux 3.3+, git. Optional: gh (land, PR review), Neovim 0.10+ (review surface), Chrome (element picking).",
+  "s5.lead": "Runs on macOS (tested in Ghostty). Requires Go 1.25+, tmux 3.3+, git. Optional: gh (land, PR review), Neovim 0.10+ (review surface), Chrome (element picking).",
+  "s5.soon": "boba isn’t public yet. Once the repository is on GitHub, the link and install steps will be right here.",
   "s5.c1": "# adds hooks to ~/.claude/settings.json",
   "s5.c2": "# optional: start bobad at login",
   "s5.c3": "# detect the repo, draft its config",

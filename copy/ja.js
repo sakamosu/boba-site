@@ -58,7 +58,8 @@ window.BOBA_COPY.ja = {
   "s4.svg_aria": "bobad と 5 つのクライアント、worktree ごとの pty の関係図",
 
   // [5] Install
-  "s5.lead": "必要なもの: Go 1.25+、tmux 3.3+、git。任意: gh(land・PR レビュー)、Neovim 0.10+(レビュー面)、Chrome(要素ピック)。",
+  "s5.lead": "動作環境: macOS(Ghostty で動作確認)。必要なもの: Go 1.25+、tmux 3.3+、git。任意: gh(land・PR レビュー)、Neovim 0.10+(レビュー面)、Chrome(要素ピック)。",
+  "s5.soon": "boba はまだ公開準備中です。GitHub でリポジトリを公開したら、ここにリンクとインストール手順を載せます。",
   "s5.c1": "# ~/.claude/settings.json に hooks を追加",
   "s5.c2": "# 任意: ログイン時に bobad",
   "s5.c3": "# 設定を検出して下書き",

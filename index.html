@@ -18,6 +18,7 @@
   <span class="path">~/repos/boba · tmux -L boba</span>
   <div class="r">
     <button class="kbtn lang" id="langbtn" type="button" aria-label="language"><b>l</b> <span class="opt on" data-l="ja">ja</span><span class="sl">/</span><span class="opt" data-l="en">en</span></button>
+    <span class="kbtn soon" aria-disabled="true" title="coming soon">GitHub <em>soon</em></span>
     <button class="kbtn" id="keysbtn" type="button"><b>?</b> keys</button>
   </div>
 </div>
@@ -49,6 +50,7 @@
       <legend class="ttl">[1] ◆ boba</legend>
       <div class="kicker chips" id="s1-what"><span class="chip pink">Claude Code</span><span class="chip cyan">Codex</span><span class="chip green">OpenCode</span><span class="chip yellow">Ghostty</span></div>
       <h1 data-i18n="s1.h1"></h1>
+      <p class="tagline">agents in worktrees, reviewed hunk by hunk</p>
       <div class="hero">
         <div>
           <p class="lead" style="margin-top:6px" data-i18n="s1.lead"></p>
@@ -280,7 +282,14 @@
       <div class="kicker chips" id="i-install"><span class="chip cream">v0.1</span><span class="chip green">tmux engine</span><span class="chip plan">libghostty-vt planned</span></div>
       <h2>make install</h2>
       <p class="lead" data-i18n="s5.lead"></p>
-      <div class="code"><pre><span class="c"># install</span>
+      <!-- 公開準備中の仮置き。公開したら下の <template> の中身をここに戻し、GitHub のリンクを入れる -->
+      <div class="code soon" id="install-soon">
+        <span class="chip plan">coming soon</span>
+        <p data-i18n="s5.soon"></p>
+        <span class="ghbtn" aria-disabled="true">github.com/sakamosu/boba</span>
+      </div>
+      <template id="install-steps">
+        <div class="code"><pre><span class="c"># install</span>
 <span class="p">$</span> make install            <span class="c"># ~/.local/bin/boba (+ bobad)</span>
 <span class="p">$</span> boba hooks install      <span class="c" data-i18n="s5.c1"></span>
 <span class="p">$</span> make install-launchd    <span class="c" data-i18n="s5.c2"></span>
@@ -294,6 +303,7 @@
 
 <span class="c"># agent-side</span>
 <span class="p">$</span> claude mcp add boba -- boba mcp</pre></div>
+      </template>
       <div class="pagefoot">
         <span>© 2026 Yuki Sakamoto · made in Ghostty, for one person</span>
       </div>
