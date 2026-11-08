@@ -12,7 +12,6 @@ window.BOBA_COPY.en = {
   "lp2.r1": "the screen",
   "lp3.sum": "just look at the face",
   "lp3.r1": "states &amp; faces",
-  "lp3.r2": "behavior",
   "lp4.sum": "Claude Code, untouched",
   "lp4.r1": "principles",
 
@@ -46,9 +45,6 @@ window.BOBA_COPY.en = {
   // [3] tapi
   "s3.h2": "Which one is waiting? Just look at the face.",
   "s3.lead": "The mascot is a tapioca pearl named tapi. tapi tells you everything about state: in the bottom bar it wears the state of all your sessions as a face, and says in a few words which session is doing what.",
-  "s3.rule1": "<em>One face, one place.</em> There are never two faces on screen.",
-  "s3.rule2": "<em>It moves only when it means something.</em> A blink every few seconds; it stops when the terminal loses focus.",
-  "s3.rule3": "<em>No mouth, so it speaks softly.</em> Ignore a wait and the words start blinking; after two minutes it becomes an OS notification.",
 
   // [4] Principles
   "s4.h2": "Claude Code stays untouched. Your repo stays clean.",
