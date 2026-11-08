@@ -5,17 +5,6 @@ window.PEKOE_COPY.ja = {
   "meta.title": "pekoe — コーディングエージェントたちの、居心地のいい家。",
   "meta.description": "Claude Code の使い方は変えずに、worktree・待ち・ブラウザ・レビューだけを引き受ける Ghostty のためのターミナルツール。",
 
-  // 左パネル
-  "lp1.sum": "ターミナルにいるだけ",
-  "lp1.r1": "約束",
-  "lp1.r2": "できること 3 つ",
-  "lp1.r3": "デモ動画",
-  "lp2.r1": "画面",
-  "lp3.sum": "顔を見ればわかる",
-  "lp3.r1": "状態と顔",
-  "lp4.sum": "Claude Code は素のまま",
-  "lp4.r1": "原則",
-
   // [1] pekoe
   "s1.h1": "コーディングエージェントたちの、<br>居心地のいい家。",
   "s1.h1_sub": "となりには、いつも tapi。",
