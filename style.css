@@ -244,7 +244,6 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 .code.soon .chip.plan{color:var(--t-text);border-color:var(--t-border)}
 .ghbtn{font-family:var(--mono);font-size:13px;color:var(--t-dim);border:1px dashed var(--t-border);border-radius:7px;padding:6px 12px;cursor:default}
 /* ヒーローの「これは何か」の一文 */
-.tagline{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--secondary-text);margin:12px 0 0}
 .code .p{color:var(--t-secondary)}.code .c{color:var(--t-dim)}.code .s{color:var(--t-warn)}
 table.where{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
 table.where td{padding:8px 10px 8px 0;border-top:1px solid var(--border-dim);vertical-align:top;color:var(--dim)}
@@ -322,11 +321,10 @@ table.where td code{font-size:12.5px}
   #s1 .brand{grid-column:1}
   #s1 .kicker{grid-column:1;justify-self:start;margin-top:0}
   #s1 .h1-sub{grid-column:1}
-  #s1 .tagline{grid-column:1;font-size:17px;margin-top:14px}
-  #s1 h1{grid-column:1;font-size:clamp(38px,3.6vw,48px);line-height:1.25;letter-spacing:-.02em;word-break:auto-phrase}
+  #s1   #s1 h1{grid-column:1;font-size:clamp(38px,3.6vw,48px);line-height:1.25;letter-spacing:-.02em;word-break:auto-phrase}
   #s1 .hero>div:first-child{grid-column:1;margin-top:22px}
   #s1 .lead{font-size:18px;line-height:1.75;max-width:34em}
-  #s1 .kv{grid-column:2;grid-row:1 / span 6;align-self:center;transform:translateX(-28px)}
+  #s1 .kv{grid-column:2;grid-row:1 / span 5;align-self:center;transform:translateX(-28px)}
   #s1 .kv img{max-width:360px}
   #s1 .outcomes{grid-column:1 / -1;margin-top:56px}
 
