@@ -9,6 +9,7 @@ window.PEKOE_COPY.en = {
   "lp1.sum": "without leaving the terminal",
   "lp1.r1": "the promise",
   "lp1.r2": "three things",
+  "lp1.r3": "demo",
   "lp2.r1": "the screen",
   "lp3.sum": "just look at the face",
   "lp3.r1": "states &amp; faces",
@@ -27,6 +28,7 @@ window.PEKOE_COPY.en = {
   "s1.o2.body": "One branch name, and a worktree comes up with all the tedious setup already done. The agent can start right away.",
   "s1.o3.title": "Review picks up where you left off",
   "s1.o3.body": "Read only what's new since your last review. Approve change by change, each one labeled with the prompt that produced it.",
+  "s1.demo_label": "pekoe demo video: creating a session, then run, wait, review and land, plus tapi’s five faces",
 
   // [2] Flow
   "s2.h2": "From a fresh worktree to a merged PR. One screen.",

@@ -140,6 +140,13 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 
 /* TUI screenshot */
 .term{background:var(--t-bg);color:var(--t-text);font-family:var(--mono);font-size:11.5px;line-height:1.5;border-radius:12px;box-shadow:0 24px 60px rgba(20,8,70,.45),inset 0 0 0 1px rgba(255,255,255,.06);overflow:hidden}
+/* demo video: .term と同じ角丸・影。16/9 を先に確保してレイアウトのずれを防ぐ */
+.demo{position:relative;margin:26px 0 6px;border-radius:12px;overflow:hidden;background:var(--t-bg);box-shadow:0 24px 60px rgba(20,8,70,.45),inset 0 0 0 1px rgba(255,255,255,.06);aspect-ratio:16/9}
+.demo video{display:block;width:100%;height:100%;object-fit:cover}
+.demo .demo-sound{position:absolute;right:12px;bottom:12px;background:rgba(16,15,26,.72);border-color:rgba(255,255,255,.22);color:var(--t-text);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.demo .demo-sound:hover{border-color:var(--t-text)}
+.demo .demo-sound[aria-pressed="true"] span{color:var(--t-ok)}
+.demo.controls .demo-sound{bottom:auto;top:12px}
 .term .tb{display:flex;align-items:center;gap:8px;padding:9px 12px;background:#100f1a;border-bottom:1px solid #22212f;font-size:11.5px}
 .term .tb i{width:11px;height:11px;border-radius:50%;background:#3b3b4d;display:inline-block}
 .term .tb span{margin-left:auto;color:var(--t-dim)}
@@ -327,6 +334,7 @@ table.where td code{font-size:12.5px}
   #s1 .kv{grid-column:2;grid-row:1 / span 5;align-self:center;transform:translateX(-28px)}
   #s1 .kv img{max-width:360px}
   #s1 .outcomes{grid-column:1 / -1;margin-top:56px}
+  #s1 .demo{grid-column:1 / -1;margin-top:32px}
 
   .pane h2{word-break:auto-phrase}
 

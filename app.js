@@ -1,6 +1,6 @@
 /* pekoe LP — behaviour
    1. tapi sprite (docs/mascot.md, palette D) drawn as pixel rects
-   2. TUI grammar: left panels follow the right pane, status bar, keys, `?` modal
+   2. TUI grammar: left panels follow the right pane, status bar, keys, `?` modal, demo video (m = sound)
    3. i18n: copy/ja.js + copy/en.js → data-i18n / data-i18n-attr
 */
 (function () {
@@ -62,6 +62,9 @@
     4: [['j/k', 'scroll'], [']', 'next'], ['[', 'prev'], ['l', 'lang'], ['?', 'keys']],
     5: [['[', 'prev'], ['g', 'top'], ['l', 'lang'], ['?', 'keys']],
   };
+  // demo video (単一ファイル版では index.html から除去されるので、無い時は何もしない)
+  const demo = document.getElementById('demo'), soundbtn = document.getElementById('soundbtn');
+  if (demo) KEYS[1].splice(3, 0, ['m', 'sound']);
   let cur = -1, lastRow = null;
   const skeys = document.getElementById('skeys'), smode = document.getElementById('smode'), spos = document.getElementById('spos'), lfootpos = document.getElementById('lfoot-pos');
   const renderKeys = n => { skeys.innerHTML = KEYS[n].map(([k, a]) => `<b>${k}</b>${a}`).join(''); };
@@ -108,6 +111,7 @@
       case 'top': closeModal(); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
       case 'bottom': closeModal(); window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' }); break;
       case 'lang': closeModal(); toggleLang(); break;
+      case 'sound': closeModal(); toggleSound(); break;
       case 'close': closeModal(); break;
     }
   }
@@ -141,12 +145,40 @@
     if (k === 'G') { window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' }); e.preventDefault(); return; }
     if (k === 'i') { go(4); e.preventDefault(); return; }
     if (k === 'l') { toggleLang(); e.preventDefault(); return; }
+    if (k === 'm' && demo) { toggleSound(); e.preventDefault(); return; }
     if (k === 'Escape' || k === 'Tab' || k === 'Shift' || k === ' ' || k === 'Enter' || k.startsWith('Arrow') || k.startsWith('Page') || k === 'Home' || k === 'End') return;
     if (k.length === 1) unknownKey(k);
   });
 
   // blink · sleep · pause when hidden (docs/mascot.md timing)
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // demo: ミュートで自動ループし、m / ボタンで音を出す。画面外・タブ非表示では止める
+  let demoInView = false;
+  const demoCanAutoplay = () => demo && demo.muted && !reduce && demoInView && !document.hidden;
+  function demoPlay() { const p = demo.play(); if (p) p.catch(() => { /* autoplay blocked etc. */ }); }
+  function syncDemo() {
+    if (!demo) return;
+    if (document.hidden || !demoInView) demo.pause();
+    else if (demoCanAutoplay()) demoPlay();
+  }
+  function setSound(on) {
+    demo.muted = !on; // ボタン表示は volumechange で合わせる
+    if (on) { demo.currentTime = 0; demoPlay(); } else syncDemo();
+  }
+  function paintSound() {
+    soundbtn.setAttribute('aria-pressed', String(!demo.muted));
+    soundbtn.querySelector('span').textContent = demo.muted ? 'sound off' : 'sound on';
+  }
+  function toggleSound() { if (demo) setSound(demo.muted); }
+  if (demo) {
+    if (reduce) { demo.autoplay = false; demo.pause(); demo.controls = true; demo.parentElement.classList.add('controls'); }
+    soundbtn.addEventListener('click', toggleSound);
+    demo.addEventListener('volumechange', paintSound); // controls から切り替えた時も合わせる
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(es => { demoInView = es[es.length - 1].isIntersecting; syncDemo(); }, { threshold: 0.25 }).observe(demo);
+    } else { demoInView = true; syncDemo(); }
+  }
   let blinkT = null, sleepT = null, asleep = false;
   function scheduleBlink() {
     clearTimeout(blinkT); if (reduce || document.hidden) return;
@@ -163,7 +195,7 @@
     clearTimeout(sleepT);
     sleepT = setTimeout(() => { asleep = true; setFace('sleep'); setSay('all quiet'); }, 180000);
   }
-  document.addEventListener('visibilitychange', () => { if (document.hidden) { clearTimeout(blinkT); clearTimeout(sleepT); } else { scheduleBlink(); wake(); } });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) { clearTimeout(blinkT); clearTimeout(sleepT); } else { scheduleBlink(); wake(); } syncDemo(); });
   ['mousemove', 'keydown', 'touchstart'].forEach(ev => document.addEventListener(ev, () => { if (asleep) wake(); }, { passive: true }));
 
   /* ── 3. i18n ─────────────────────────────────────────────── */
