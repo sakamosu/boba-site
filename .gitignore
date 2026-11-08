@@ -1,0 +1,9 @@
+node_modules/
+
+# 生成物(npm run build / python3 build.py で再生成できる)
+dist/
+dist-single/
+
+.DS_Store
+*.log
+.vite/

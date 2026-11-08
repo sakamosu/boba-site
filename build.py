@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Bundle the LP into a single self-contained HTML (dist/boba-lp.html).
+"""Bundle the LP into a single self-contained HTML (dist-single/boba-lp.html).
 
-    python3 build.py            # → dist/boba-lp.html
+    python3 build.py            # → dist-single/boba-lp.html
 
 Inlines style.css, copy/*.js, app.js and assets/*.webp (as data URIs) into index.html.
-Google Fonts stays external. The folder is the source of truth; dist/ is generated.
+Google Fonts stays external. The folder is the source of truth; dist-single/ is generated.
 """
 import base64, pathlib, re
 
@@ -29,7 +29,7 @@ def inline_img(m):
     return 'src="data:%s;base64,%s"' % (mime, base64.b64encode(path.read_bytes()).decode())
 html = re.sub(r'src="(assets/[^"]+)"', inline_img, html)
 
-out = HERE / 'dist' / 'boba-lp.html'
+out = HERE / 'dist-single' / 'boba-lp.html'
 out.parent.mkdir(exist_ok=True)
 out.write_text(html, encoding='utf-8')
 print(f'wrote {out.relative_to(HERE)} ({out.stat().st_size // 1024} KB)')
