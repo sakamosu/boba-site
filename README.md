@@ -50,3 +50,7 @@ npm run preview   # ビルド結果を http://localhost:4173/boba-site/ で確�
 - 画像と CSS は Vite がハッシュ付きファイル名で `dist/assets/` に出力する
 - `copy/*.js` と `app.js` は file:// でも動くようクラシックスクリプトのままにしているため、Vite はバンドルせず同じパスで `dist/` にコピーする(ビルド時の `can't be bundled without type="module"` 警告はこのため。想定どおり)
 - `dist/` と `dist-single/` はどちらも生成物なので git では管理しない
+
+## 公開
+
+main に push すると GitHub Actions(`.github/workflows/deploy.yml`)がビルドして https://sakamosu.github.io/boba-site/ にデプロイする。手動で流すときは Actions の「Deploy to GitHub Pages」から Run workflow。
