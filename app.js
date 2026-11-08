@@ -1,6 +1,6 @@
 /* pekoe LP — behaviour
    1. tapi sprite (docs/mascot.md, palette D) drawn as pixel rects
-   2. TUI grammar: left panels follow the right pane, status bar, keys, `?` modal, demo video (m = sound)
+   2. TUI grammar: tabs + status bar follow the focused pane, keys, `?` modal, demo video (m = sound)
    3. i18n: copy/ja.js + copy/en.js → data-i18n / data-i18n-attr
 */
 (function () {
@@ -51,10 +51,7 @@
 
   /* ── 2. sections / focus / keys ──────────────────────────── */
   const secs = [...document.querySelectorAll('.pane[data-sec]')];
-  const lps = [...document.querySelectorAll('.lp[data-sec]')];
   const tabs = [...document.querySelectorAll('.tabs a')];
-  const rows = [...document.querySelectorAll('.lp .row[data-row]')];
-  const rowTargets = rows.map(rw => document.getElementById(rw.dataset.row));
   const KEYS = {
     1: [['i', 'install'], ['2', 'flow'], ['l', 'lang'], ['?', 'keys']],
     2: [['j/k', 'scroll'], [']', 'next'], ['[', 'prev'], ['l', 'lang'], ['?', 'keys']],
@@ -65,18 +62,17 @@
   // demo video (単一ファイル版では index.html から除去されるので、無い時は何もしない)
   const demo = document.getElementById('demo'), soundbtn = document.getElementById('soundbtn');
   if (demo) KEYS[1].splice(3, 0, ['m', 'sound']);
-  let cur = -1, lastRow = null;
-  const skeys = document.getElementById('skeys'), smode = document.getElementById('smode'), spos = document.getElementById('spos'), lfootpos = document.getElementById('lfoot-pos');
+  let cur = -1;
+  const skeys = document.getElementById('skeys'), smode = document.getElementById('smode'), spos = document.getElementById('spos');
   const renderKeys = n => { skeys.innerHTML = KEYS[n].map(([k, a]) => `<b>${k}</b>${a}`).join(''); };
   const restFace = () => cur === secs.length - 1 ? 'done' : (cur === 2 ? 'work' : 'idle');
   function focusSec(i) {
     if (i === cur) return;
     cur = i;
     secs.forEach((s, j) => s.classList.toggle('focus', j === i));
-    lps.forEach((l, j) => l.classList.toggle('cur', j === i));
     tabs.forEach((t, j) => t.classList.toggle('sel', j === i));
     const s = secs[i];
-    smode.textContent = s.dataset.mode; spos.textContent = `${i + 1}/${secs.length}`; lfootpos.textContent = `${i + 1}/${secs.length}`;
+    smode.textContent = s.dataset.mode; spos.textContent = `${i + 1}/${secs.length}`;
     renderKeys(i + 1);
     if (!sayTimer) { setSay(s.dataset.say); setFace(restFace()); }
   }
@@ -85,15 +81,11 @@
     let i = 0; secs.forEach((s, j) => { if (s.offsetTop <= y) i = j; });
     if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4) i = secs.length - 1;
     focusSec(i);
-    let best = null; rowTargets.forEach((t, k) => { if (t && t.getBoundingClientRect().top + window.scrollY <= y + 40) best = k; });
-    if (best !== lastRow) { lastRow = best; rows.forEach((rw, k) => rw.classList.toggle('sel', k === best)); }
     wake();
   }
   let ticking = false;
   window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(() => { track(); ticking = false; }); ticking = true; } }, { passive: true });
   window.addEventListener('resize', track);
-  rows.forEach(rw => rw.addEventListener('click', () => { const t = document.getElementById(rw.dataset.row); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
-  lps.forEach((l, i) => l.querySelector('.ttl').addEventListener('click', () => go(i)));
   function go(i) { i = Math.max(0, Math.min(secs.length - 1, i)); secs[i].scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 
   // `?` modal — rows are selectable and runnable (lazygit-style menu)

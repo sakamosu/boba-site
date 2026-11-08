@@ -5,17 +5,6 @@ window.PEKOE_COPY.en = {
   "meta.title": "pekoe — A cozy home for your coding agents.",
   "meta.description": "A terminal tool for Ghostty that takes over worktrees, waiting, the browser and review — without changing how you use Claude Code.",
 
-  // left panels
-  "lp1.sum": "without leaving the terminal",
-  "lp1.r1": "the promise",
-  "lp1.r2": "three things",
-  "lp1.r3": "demo",
-  "lp2.r1": "the screen",
-  "lp3.sum": "just look at the face",
-  "lp3.r1": "states &amp; faces",
-  "lp4.sum": "Claude Code, untouched",
-  "lp4.r1": "principles",
-
   // [1] pekoe
   "s1.h1": "A cozy home for your coding agents.",
   "s1.h1_sub": "with tapi, your little companion",

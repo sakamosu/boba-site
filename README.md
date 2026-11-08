@@ -1,11 +1,11 @@
 # pekoe LP
 
-pekoe のランディングページ。ページ自体が pekoe の TUI の文法(左に番号付きパネル、右に本文、最下行にステータスバーとキーヒント)で組んである。
+pekoe のランディングページ。ページ自体が pekoe の TUI の文法(上部に番号付きタブ、その下に本文のペイン、最下行にステータスバーとキーヒント)で組んである。
 
 ```
 index.html     構造。文言は data-i18n="key" で参照するだけ
 style.css      見た目。カラートークンは docs/ui-guidelines.md の値
-app.js         tapi の描画、左パネルの追従、キー操作(1-5 / j k / [ ] / ? / l / m)、言語切り替え、デモ動画の再生制御
+app.js         tapi の描画、タブとステータスバーの追従、キー操作(1-5 / j k / [ ] / ? / l / m)、言語切り替え、デモ動画の再生制御
 copy/ja.js     日本語コピー(key → 文)
 copy/en.js     英語コピー
 assets/        ステッカー(WebP、背景は切り抜き済み)とデモ動画(pekoe-demo.webm / .mp4 / -poster.jpg)
