@@ -215,7 +215,7 @@
   }
   function toggleLang() { applyLang(root.dataset.lang === 'ja' ? 'en' : 'ja'); }
   let lang = null; try { lang = localStorage.getItem('pekoe-lang'); } catch (e) { /* ignore */ }
-  if (lang !== 'ja' && lang !== 'en') lang = (navigator.language || 'ja').toLowerCase().startsWith('ja') ? 'ja' : 'en';
+  if (lang !== 'ja' && lang !== 'en') lang = 'en';
   document.getElementById('langbtn').addEventListener('click', toggleLang);
 
   applyLang(lang);
