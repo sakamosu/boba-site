@@ -39,9 +39,9 @@ window.PEKOE_COPY.en = {
   "s3.lead": "tapi is a tapioca pearl who lives in pekoe. From the bottom line of the screen, tapi shows how all your sessions are doing through its face, and tells you in a few words who is doing what right now. When something starts waiting, the face changes, so you'll notice as long as tapi is in the corner of your eye.",
 
   // [4] Principles
-  "s4.h2": "Claude Code stays untouched. Your repo stays clean.",
+  "s4.h2": "Claude Code runs as usual. Your repo stays clean.",
   "s4.lead": "The daemon makes every decision; clients only handle display and input. Most of the principles below follow from that design.",
-  "s4.pr1": "Agents run inside a pty just as they always do. To the pty, whatever pekoe sends is no different from someone typing on the keyboard. State comes from hooks, not from reading the screen.",
+  "s4.pr1": "Agents run inside a pty just as they always do. To the pty, whatever pekoe sends is no different from someone typing on the keyboard. State comes from hooks, not from reading the screen. The only change on the Claude Code side is a set of hooks added to <code>settings.json</code> on first run.",
   "s4.pr2": "Config, state and snapshots live outside the repo or under <code>refs/pekoe/</code> (never pushed, never shown in <code>git log</code>). The only thing left behind is a worktree — something made with plain git.",
   "s4.pr3": "pekoe knows nothing about package managers or frameworks. The config holds the commands you already type in that repo; pekoe fills in the variables and runs them top to bottom.",
   "s4.pr4": "The terminal layer runs on tmux for now, and will eventually move to a mux of its own built on libghostty-vt. As long as the daemon/client boundary holds, swapping any layer costs no features.",
