@@ -313,7 +313,7 @@ table.where td code{font-size:12.5px}
   #s1   #s1 h1{grid-column:1;font-size:clamp(38px,3.6vw,48px);line-height:1.25;letter-spacing:-.02em;word-break:auto-phrase}
   #s1 .hero>div:first-child{grid-column:1;margin-top:22px}
   #s1 .lead{font-size:18px;line-height:1.75;max-width:34em}
-  #s1 .kv{grid-column:2;grid-row:1 / span 5;align-self:center;transform:translateX(-28px)}
+  #s1 .kv{grid-column:2;grid-row:1 / span 5;align-self:center;transform:translateX(-48px)}
   #s1 .kv img{max-width:360px}
   #s1 .outcomes{grid-column:1 / -1;margin-top:56px}
   #s1 .demo{grid-column:1 / -1;margin-top:32px}
