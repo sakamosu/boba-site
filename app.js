@@ -1,7 +1,8 @@
 /* pekoe LP — behaviour
    1. tapi sprite (docs/mascot.md, palette D) drawn as pixel rects
    2. TUI grammar: tabs + status bar follow the focused pane, keys, `?` modal, demo video (m = sound)
-   3. i18n: copy/ja.js + copy/en.js → data-i18n / data-i18n-attr
+   3. image slots: assets/ に本番の画像が置かれたら仮の画像と差し替える
+   4. i18n: copy/ja.js + copy/en.js → data-i18n / data-i18n-attr
 */
 (function () {
   'use strict';
@@ -52,20 +53,20 @@
   /* ── 2. sections / focus / keys ──────────────────────────── */
   const secs = [...document.querySelectorAll('.pane[data-sec]')];
   const tabs = [...document.querySelectorAll('.tabs a')];
-  const KEYS = {
-    1: [['i', 'install'], ['2', 'flow'], ['l', 'lang'], ['?', 'keys']],
-    2: [['j/k', 'scroll'], [']', 'next'], ['[', 'prev'], ['l', 'lang'], ['?', 'keys']],
-    3: [['j/k', 'scroll'], [']', 'next'], ['[', 'prev'], ['l', 'lang'], ['?', 'keys']],
-    4: [['j/k', 'scroll'], [']', 'next'], ['[', 'prev'], ['l', 'lang'], ['?', 'keys']],
-    5: [['[', 'prev'], ['g', 'top'], ['l', 'lang'], ['?', 'keys']],
-  };
+  const LAST = secs.length; // [7] install
+  const mid = () => [['j/k', 'scroll'], [']', 'next'], ['[', 'prev'], ['l', 'lang'], ['?', 'keys']];
+  const KEYS = { 1: [['i', 'install'], ['2', 'a day'], ['l', 'lang'], ['?', 'keys']] };
+  for (let n = 2; n < LAST; n++) KEYS[n] = mid();
+  KEYS[LAST] = [['[', 'prev'], ['g', 'top'], ['l', 'lang'], ['?', 'keys']];
   // demo video (単一ファイル版では index.html から除去されるので、無い時は何もしない)
   const demo = document.getElementById('demo'), soundbtn = document.getElementById('soundbtn');
-  if (demo) KEYS[1].splice(3, 0, ['m', 'sound']);
+  const demoSec = demo ? secs.indexOf(demo.closest('.pane')) + 1 : 0;
+  if (demo) KEYS[demoSec].splice(3, 0, ['m', 'sound']);
   let cur = -1;
   const skeys = document.getElementById('skeys'), smode = document.getElementById('smode'), spos = document.getElementById('spos');
   const renderKeys = n => { skeys.innerHTML = KEYS[n].map(([k, a]) => `<b>${k}</b>${a}`).join(''); };
-  const restFace = () => cur === secs.length - 1 ? 'done' : (cur === 2 ? 'work' : 'idle');
+  // 各ペインの data-face が、そのペインにいる間の tapi の顔(data-say が台詞)
+  const restFace = () => (secs[cur] && secs[cur].dataset.face) || 'idle';
   function focusSec(i) {
     if (i === cur) return;
     cur = i;
@@ -128,14 +129,14 @@
       return;
     }
     if (k === '?') { openModal(); e.preventDefault(); return; }
-    if (/^[1-5]$/.test(k)) { go(+k - 1); e.preventDefault(); return; }
+    if (/^[1-9]$/.test(k) && +k <= secs.length) { go(+k - 1); e.preventDefault(); return; }
     if (k === 'j' || k === 'ArrowDown') { window.scrollBy({ top: 140, behavior: 'smooth' }); e.preventDefault(); return; }
     if (k === 'k' || k === 'ArrowUp') { window.scrollBy({ top: -140, behavior: 'smooth' }); e.preventDefault(); return; }
     if (k === ']') { go(cur + 1); e.preventDefault(); return; }
     if (k === '[') { go(cur - 1); e.preventDefault(); return; }
     if (k === 'g') { window.scrollTo({ top: 0, behavior: 'smooth' }); e.preventDefault(); return; }
     if (k === 'G') { window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' }); e.preventDefault(); return; }
-    if (k === 'i') { go(4); e.preventDefault(); return; }
+    if (k === 'i') { go(LAST - 1); e.preventDefault(); return; }
     if (k === 'l') { toggleLang(); e.preventDefault(); return; }
     if (k === 'm' && demo) { toggleSound(); e.preventDefault(); return; }
     if (k === 'Escape' || k === 'Tab' || k === 'Shift' || k === ' ' || k === 'Enter' || k.startsWith('Arrow') || k.startsWith('Page') || k === 'Home' || k === 'End') return;
@@ -190,7 +191,16 @@
   document.addEventListener('visibilitychange', () => { if (document.hidden) { clearTimeout(blinkT); clearTimeout(sleepT); } else { scheduleBlink(); wake(); } syncDemo(); });
   ['mousemove', 'keydown', 'touchstart'].forEach(ev => document.addEventListener(ev, () => { if (asleep) wake(); }, { passive: true }));
 
-  /* ── 3. i18n ─────────────────────────────────────────────── */
+  /* ── 3. image slots ──────────────────────────────────────────
+     .slot に本番の画像(.slot-img)と仮の画像(.slot-fb)を並べておき、本番の画像が読めたら差し替える。
+     assets/ に決まった名前のファイルを置くだけで差し込める(README「画像を差し替える」) */
+  document.querySelectorAll('.slot').forEach(slot => {
+    const img = slot.querySelector('.slot-img'); if (!img) return;
+    const ok = () => { if (img.naturalWidth > 0) slot.classList.add('has-img'); };
+    if (img.complete) ok(); else img.addEventListener('load', ok);
+  });
+
+  /* ── 4. i18n ─────────────────────────────────────────────── */
   const COPY = window.PEKOE_COPY || {};
   const root = document.documentElement;
   const SVG_NS = 'http://www.w3.org/2000/svg';
