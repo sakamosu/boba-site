@@ -225,7 +225,6 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 .slot.has-img .slot-img{display:block}
 .slot.has-img .slot-fb{display:none}
 .slot img{display:block;max-width:100%;height:auto}
-.stk-slot img{filter:drop-shadow(0 14px 22px rgba(20,8,70,.35))}
 
 /* tapi: 役割 */
 .roles{margin-top:28px}
@@ -246,6 +245,8 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 /* 狭い幅: モックが全幅なので角に貼ると文字にかかる。モックの上に右寄せで置き、上端の余白にだけ重ねる */
 .pin{position:relative;z-index:2;display:block;width:84px;margin:0 10px -14px auto;transform:rotate(7deg);pointer-events:none}
 .pin.pin-2{transform:rotate(-6deg)}
+/* .shots は gap:14px の縦並びなので、02 と同じだけ重ねるには gap の分も戻す */
+.shots.pinned>.pin{margin-bottom:-28px}
 .pin img{filter:drop-shadow(0 10px 16px rgba(20,8,70,.4))}
 /* house rules: 本文の横にステッカー */
 .lead-row{display:flex;align-items:center;gap:16px}
@@ -392,7 +393,7 @@ table.where td code{font-size:12.5px}
   .step.flip>div:first-child{order:2}
   /* a day: 見出しは全幅、ステップの説明は少し狭く */
   #s2>.lead{max-width:56ch}
-  .pin{position:absolute;margin:0;width:132px;top:-58px;right:-40px}
+  .pin{position:absolute;margin:0;width:132px;top:-28px;right:-40px}
   .rules-slot{flex-basis:150px}
 
   /* house rules は逆向き: きまりの一覧 左 / 説明 右。pekoed の図は全幅 */
