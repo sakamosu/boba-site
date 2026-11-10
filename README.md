@@ -49,12 +49,12 @@ vite.config.js ローカル開発サーバーと GitHub Pages 向けビルド(di
 
 | ファイル | 大きさ | 場所 | 無い間に出るもの |
 | --- | --- | --- | --- |
-| `assets/kv-house.webp` | 16:9 | [1] home のキービジュアル | `pekoe-logo.webp` |
-| `assets/tapi-delegate.webp` | 正方形くらい(背景は切り抜き) | [2] a day の 02(tapi が任せる) | `tapi-work.webp` |
-| `assets/tapi-inbox.webp` | 正方形くらい(背景は切り抜き) | [2] a day の 04(受信箱) | `tapi-wait.webp` |
+| `assets/kv-house.webp` | 16:9 | 今は使っていない(ヒーローは `pekoe-logo.webp` のまま)。家の絵が要る所ができたら `.slot` で差し込む | — |
+| `assets/tapi-delegate.webp` | 正方形くらい(背景は切り抜き) | [2] a day の 02(tapi が任せる)。Sessions のモックの角に貼る | `tapi-work.webp` |
+| `assets/tapi-inbox.webp` | 正方形くらい(背景は切り抜き) | [2] a day の 04(受信箱)。報告のモックの角に貼る | `tapi-wait.webp` |
 | `assets/tapi-evidence.webp` | 正方形くらい(背景は切り抜き) | [2] a day の 06(段階 3 の根拠の受信箱)。`<template id="slot-evidence">` を出すときに使う | (枠ごと非表示) |
 | `assets/tapi-phone.webp` | 縦長(9:16) | [5] anywhere | `tapi-sleep.webp` |
-| `assets/tapi-rules.webp` | 正方形くらい(背景は切り抜き) | [6] house rules | `tapi-done.webp` |
+| `assets/tapi-rules.webp` | 正方形くらい(背景は切り抜き) | [6] house rules。リードの横 | `tapi-done.webp` |
 | `assets/og-image.png` | 1200×630 | SNS のカード(`og:image`) | なし(meta だけ先に入れてある) |
 
 - `og:image` はクローラー向けに絶対 URL(`https://sakamosu.github.io/pekoe-site/assets/og-image.png`)で書いてある。Vite は絶対 URL を拾わないので、`vite.config.js` が `assets/og-image.png` をハッシュなしで `dist/assets/` にコピーする

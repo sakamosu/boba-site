@@ -96,8 +96,6 @@ ul.plain li em{font-style:normal;color:var(--text)}
 .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;margin-top:14px}
 .hero .kv{text-align:center;position:relative}
 .hero .kv img{width:100%;max-width:320px;height:auto;filter:drop-shadow(0 22px 34px rgba(20,8,70,.45));animation:kvfloat 5s ease-in-out infinite}
-/* 本番のキービジュアル(16:9)は浮かせず、角丸のカードとして全幅に */
-.hero .kv .slot-img{max-width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;animation:none}
 .hero .kv .sp{position:absolute;color:var(--text);text-shadow:0 0 14px rgba(255,255,255,.8);animation:twinkle 2.6s ease-in-out infinite;pointer-events:none}
 @keyframes kvfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 @keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8) rotate(0)}50%{opacity:1;transform:scale(1.1) rotate(18deg)}}
@@ -243,8 +241,17 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 #s5 .phone-slot .slot-fb{background:var(--cream-card);padding:28px 18px;box-shadow:0 14px 34px rgba(20,8,70,.28)}
 
 /* house rules */
-.rules-slot{display:block;width:200px;margin:6px auto 18px}
-.step .stk-slot{display:block;width:120px;margin-top:4px}
+/* ステッカーは画面モックの右上の角(本文の側)に貼る。[3] と同じく少し傾ける */
+.pinned{position:relative;min-width:0}
+/* 狭い幅: モックが全幅なので角に貼ると文字にかかる。モックの上に右寄せで置き、上端の余白にだけ重ねる */
+.pin{position:relative;z-index:2;display:block;width:84px;margin:0 10px -14px auto;transform:rotate(7deg);pointer-events:none}
+.pin.pin-2{transform:rotate(-6deg)}
+.pin img{filter:drop-shadow(0 10px 16px rgba(20,8,70,.4))}
+/* house rules: 本文の横にステッカー */
+.lead-row{display:flex;align-items:center;gap:16px}
+.lead-row .lead{flex:1;margin:0}
+.rules-slot{flex:0 0 96px;transform:rotate(5deg)}
+.rules-slot img{filter:drop-shadow(0 10px 16px rgba(20,8,70,.35))}
 
 /* principles */
 .pr{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--border-dim);font-size:14.5px}
@@ -350,7 +357,7 @@ table.where td code{font-size:12.5px}
   .pane>.ttl{margin:0 0 18px;padding:0;font-size:13px}
 
   /* 2. ヒーロー: 左に kicker・見出し・本文・CTA、右に大きなロゴ */
-  #s1{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);column-gap:40px;align-items:start;padding-top:20px}
+  #s1{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.55fr);column-gap:40px;align-items:start;padding-top:20px}
   #s1 .hero{display:contents}
   #s1 .brand{grid-column:1}
   #s1 .kicker{grid-column:1;justify-self:start;margin-top:0}
@@ -359,7 +366,7 @@ table.where td code{font-size:12.5px}
   #s1 .hero>div:first-child{grid-column:1;margin-top:22px}
   #s1 .lead{font-size:18px;line-height:1.75;max-width:34em}
   #s1 .kv{grid-column:2;grid-row:1 / span 5;align-self:center;transform:translateX(-48px)}
-  #s1 .kv .slot-fb{max-width:360px}
+  #s1 .kv img{max-width:360px}
   #s1 .outcomes{grid-column:1 / -1;margin-top:56px}
   #s1 .demo{grid-column:1 / -1;margin-top:32px}
 
@@ -385,15 +392,15 @@ table.where td code{font-size:12.5px}
   .step.flip>div:first-child{order:2}
   /* a day: 見出しは全幅、ステップの説明は少し狭く */
   #s2>.lead{max-width:56ch}
-  .step .stk-slot{display:block;width:150px;margin-top:6px}
+  .pin{position:absolute;margin:0;width:132px;top:-58px;right:-40px}
+  .rules-slot{flex-basis:150px}
 
   /* house rules は逆向き: きまりの一覧 左 / 説明 右。pekoed の図は全幅 */
   #s6{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);column-gap:56px;align-items:start}
   #s6>.kicker{grid-column:2;grid-row:1;justify-self:start}
   #s6>h2{grid-column:2;grid-row:2}
-  #s6>.lead{grid-column:2;grid-row:3}
-  #s6>.rules-slot{grid-column:2;grid-row:4;justify-self:center}
-  #s6>.rules{grid-column:1;grid-row:1 / span 5;margin-top:0}
+  #s6>.lead-row{grid-column:2;grid-row:3}
+  #s6>.rules{grid-column:1;grid-row:1 / span 4;margin-top:0}
   #s6>h3,#s6>p:not(.lead),#s6>.archwrap{grid-column:1 / -1}
   #s6>h3{margin-top:48px}
   .pr{grid-template-columns:150px 1fr;gap:16px}

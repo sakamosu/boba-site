@@ -61,7 +61,7 @@
         </div>
         <div class="kv">
           <span class="sp" style="left:6%;top:10%;font-size:22px">✦</span><span class="sp" style="right:4%;top:22%;font-size:14px;animation-delay:-1.1s">✦</span><span class="sp" style="left:12%;bottom:10%;font-size:12px;animation-delay:-1.9s">✦</span><span class="sp" style="right:10%;bottom:4%;font-size:18px;animation-delay:-.6s">✦</span>
-          <span class="slot kv-slot"><img class="slot-img" src="assets/kv-house.webp" alt="" data-i18n-attr="alt=s1.kv_alt"><img class="slot-fb" src="assets/pekoe-logo.webp" alt="" data-i18n-attr="alt=s1.kv_alt"></span>
+          <img src="assets/pekoe-logo.webp" alt="" data-i18n-attr="alt=s1.kv_alt">
         </div>
       </div>
 
@@ -92,14 +92,13 @@
       </div>
 
       <div class="step flip" id="d-handoff">
-        <div><div class="num">02 <b>tapi → housemates</b><span class="st c-ok">● run</span></div><h3 data-i18n="s2.st2.title"></h3><p data-i18n="s2.st2.body"></p>
-          <span class="slot stk-slot"><img class="slot-img" src="assets/tapi-delegate.webp" alt="" data-i18n-attr="alt=s2.delegate_alt"><img class="slot-fb" src="assets/tapi-work.webp" alt="" data-i18n-attr="alt=s2.delegate_alt"></span></div>
-        <div class="shot"><span class="t-pri"><b>[1] ◆ Sessions 2/2</b></span>
+        <div><div class="num">02 <b>tapi → housemates</b><span class="st c-ok">● run</span></div><h3 data-i18n="s2.st2.title"></h3><p data-i18n="s2.st2.body"></p></div>
+        <div class="pinned"><span class="slot pin"><img class="slot-img" src="assets/tapi-delegate.webp" alt="" data-i18n-attr="alt=s2.delegate_alt"><img class="slot-fb" src="assets/tapi-work.webp" alt="" data-i18n-attr="alt=s2.delegate_alt"></span><div class="shot"><span class="t-pri"><b>[1] ◆ Sessions 2/2</b></span>
   orchestrator <span class="t-border">━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
 <span class="t-dim"><i class="nf nf-idle"></i></span> <b>tapi</b> <span class="t-dim">idle</span>     <span class="t-dim">1m   two housemates are on it</span>
 <i class="nf nf-cur"></i> app <span class="t-border">─────────────────────────────────────</span>
 <span class="t-ok"><i class="nf nf-run"></i></span> feat/csv         <span class="t-ok">run     </span> <span class="t-dim">3m  </span> <span class="t-ok">+86</span> <span class="t-err">-4</span>
-<span class="t-ok"><i class="nf nf-run"></i></span> fix/invoice-pdf  <span class="t-ok">run     </span> <span class="t-dim">3m  </span> <span class="t-ok">+12</span> <span class="t-err">-3</span></div>
+<span class="t-ok"><i class="nf nf-run"></i></span> fix/invoice-pdf  <span class="t-ok">run     </span> <span class="t-dim">3m  </span> <span class="t-ok">+12</span> <span class="t-err">-3</span></div></div>
       </div>
 
       <div class="step" id="d-build">
@@ -119,9 +118,8 @@ $ pekoe report "CSV export, PR #131" --status done \
       </div>
 
       <div class="step flip" id="d-inbox">
-        <div><div class="num">04 <b>inbox</b><span class="st c-warn"><i class="nf nf-wait"></i> 1 for you</span></div><h3 data-i18n="s2.st4.title"></h3><p data-i18n="s2.st4.body"></p>
-          <span class="slot stk-slot"><img class="slot-img" src="assets/tapi-inbox.webp" alt="" data-i18n-attr="alt=s2.inbox_alt"><img class="slot-fb" src="assets/tapi-wait.webp" alt="" data-i18n-attr="alt=s2.inbox_alt"></span></div>
-        <div class="shots">
+        <div><div class="num">04 <b>inbox</b><span class="st c-warn"><i class="nf nf-wait"></i> 1 for you</span></div><h3 data-i18n="s2.st4.title"></h3><p data-i18n="s2.st4.body"></p></div>
+        <div class="shots pinned"><span class="slot pin pin-2"><img class="slot-img" src="assets/tapi-inbox.webp" alt="" data-i18n-attr="alt=s2.inbox_alt"><img class="slot-fb" src="assets/tapi-wait.webp" alt="" data-i18n-attr="alt=s2.inbox_alt"></span>
           <div class="shot wrap"><span class="shot-ttl" data-tapi-line="idle"><span class="ttl-t"><b class="t-pri">[4] tapi the orchestrator</b><span class="t-dim"> · claude</span></span></span>
 <span class="t-pri">●</span> <span data-i18n="s2.rep.hello"></span>
 
@@ -163,9 +161,8 @@ $ pekoe report "CSV export, PR #131" --status done \
            出たら下の <template> を step として差し込み、assets/tapi-evidence.webp と copy の s2.st6.* を足す -->
       <template id="slot-evidence">
         <div class="step flip" id="d-evidence">
-          <div><div class="num">06 <b>pekoed</b></div><h3 data-i18n="s2.st6.title"></h3><p data-i18n="s2.st6.body"></p>
-            <span class="slot stk-slot"><img class="slot-img" src="assets/tapi-evidence.webp" alt=""><img class="slot-fb" src="assets/tapi-done.webp" alt=""></span></div>
-          <div class="shot"></div>
+          <div><div class="num">06 <b>pekoed</b></div><h3 data-i18n="s2.st6.title"></h3><p data-i18n="s2.st6.body"></p></div>
+          <div class="pinned"><span class="slot pin"><img class="slot-img" src="assets/tapi-evidence.webp" alt=""><img class="slot-fb" src="assets/tapi-done.webp" alt=""></span><div class="shot"></div></div>
         </div>
       </template>
     </fieldset>
@@ -355,8 +352,7 @@ feat/login wants to run
       <legend class="ttl">[6] ✎ house rules</legend>
       <div class="kicker chips" id="s6-pr"><span class="chip pink">tapi can't write</span><span class="chip yellow">human-only</span><span class="chip cyan">untrusted text</span><span class="chip green">zero footprint</span></div>
       <h2 data-i18n="s6.h2"></h2>
-      <p class="lead" data-i18n="s6.lead"></p>
-      <span class="slot rules-slot"><img class="slot-img" src="assets/tapi-rules.webp" alt="" data-i18n-attr="alt=s6.rules_alt"><img class="slot-fb" src="assets/tapi-done.webp" alt="" data-i18n-attr="alt=s6.rules_alt"></span>
+      <div class="lead-row"><p class="lead" data-i18n="s6.lead"></p><span class="slot rules-slot"><img class="slot-img" src="assets/tapi-rules.webp" alt="" data-i18n-attr="alt=s6.rules_alt"><img class="slot-fb" src="assets/tapi-done.webp" alt="" data-i18n-attr="alt=s6.rules_alt"></span></div>
 
       <div class="rules">
         <div class="pr"><b>tapi can't write</b><span data-i18n="s6.r1"></span></div>

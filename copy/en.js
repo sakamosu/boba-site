@@ -10,7 +10,7 @@ window.PEKOE_COPY.en = {
   "s1.h1_sub": "with tapi, always by your side",
   "s1.lead": "Ask tapi, and your housemates (the coding agents) get to work, each in its own worktree. <strong>What reaches you is only what needs your decision.</strong> Claude Code itself runs just as it always does.",
   "s1.cta_day": "see a day",
-  "s1.kv_alt": "pekoe key visual: tapi, a tapioca pearl, looking after a cozy house where coding agents work",
+  "s1.kv_alt": "pekoe key visual: tapi, a smiling tapioca pearl, in front of a terminal",
   "s1.o1.title": "Ask once",
   "s1.o1.body": "Tell tapi what you want, once. tapi splits the work and hands each piece to a housemate in its own worktree. No more checking in on them one by one.",
   "s1.o2.title": "Only decisions reach you",
