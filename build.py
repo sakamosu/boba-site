@@ -38,6 +38,12 @@ def inline_img(m):
     return 'src="data:%s;base64,%s"' % (mime, base64.b64encode(path.read_bytes()).decode())
 missing = []
 html = re.sub(r'src="(assets/[^"]+\.(?:webp|png|svg|jpg))"', inline_img, html)
+# favicon(<link rel="icon"> / apple-touch-icon)も data URI にする
+def inline_icon(m):
+    path = HERE / m.group(2)
+    mime = {'.png': 'image/png', '.svg': 'image/svg+xml'}[path.suffix]
+    return '%shref="data:%s;base64,%s"' % (m.group(1), mime, base64.b64encode(path.read_bytes()).decode())
+html = re.sub(r'(<link rel="(?:icon|apple-touch-icon)"[^>]*? )href="(assets/[^"]+)"', inline_icon, html)
 if missing:
     print('not yet in assets/ (placeholder shown):', ', '.join(sorted(set(missing))))
 
