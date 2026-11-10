@@ -245,8 +245,10 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 /* 狭い幅: モックが全幅なので角に貼ると文字にかかる。モックの上に右寄せで置き、上端の余白にだけ重ねる */
 .pin{position:relative;z-index:2;display:block;width:84px;margin:0 10px -14px auto;transform:rotate(7deg);pointer-events:none}
 .pin.pin-2{transform:rotate(-6deg)}
-/* .shots は gap:14px の縦並びなので、02 と同じだけ重ねるには gap の分も戻す */
-.shots.pinned>.pin{margin-bottom:-28px}
+/* 04 は説明側に貼る(.pin-side)。狭い幅では説明の後ろ = モックの上に来るので、02 と同じ位置にそろえる。
+   上は p の下マージンと相殺されるので「p のマージン + step の gap(22px)」ぶん、下は gap ぶん戻してモックに 14px 重ねる */
+.pin-side{position:relative;min-width:0}
+.pin-side>.pin{margin-top:35px;margin-bottom:-36px}
 .pin img{filter:drop-shadow(0 10px 16px rgba(20,8,70,.4))}
 /* house rules: 本文の横にステッカー */
 .lead-row{display:flex;align-items:center;gap:16px}
@@ -394,6 +396,10 @@ table.where td code{font-size:12.5px}
   /* a day: 見出しは全幅、ステップの説明は少し狭く */
   #s2>.lead{max-width:56ch}
   .pin{position:absolute;margin:0;width:132px;top:-28px;right:-40px}
+  /* 02: 見出しやバッジにかぶりすぎないよう、角から少し左へ */
+  #d-handoff .pin{right:-8px}
+  /* 04: 説明側のキッカー行の右、見出しの右上の空きに置く。下端が見出しの行にかからない高さ */
+  .pin-side>.pin{margin:0;top:-104px;right:0}
   .rules-slot{flex-basis:150px}
 
   /* house rules は逆向き: きまりの一覧 左 / 説明 右。pekoed の図は全幅 */
