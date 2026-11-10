@@ -72,6 +72,9 @@
     cur = i;
     secs.forEach((s, j) => s.classList.toggle('focus', j === i));
     tabs.forEach((t, j) => t.classList.toggle('sel', j === i));
+    // 狭い幅ではタブ列が横スクロールになるので、選んだタブが見えるように寄せる(ページは縦に動かさない)
+    const bar = tabs[i] && tabs[i].parentElement;
+    if (bar && bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: Math.max(0, tabs[i].offsetLeft - bar.clientWidth / 2 + tabs[i].offsetWidth / 2), behavior: 'smooth' });
     const s = secs[i];
     smode.textContent = s.dataset.mode; spos.textContent = `${i + 1}/${secs.length}`;
     renderKeys(i + 1);
