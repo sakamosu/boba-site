@@ -109,8 +109,8 @@
         <div><div class="num">03 <b>housemate</b><span class="st c-sec">✓ review</span></div><h3 data-i18n="s2.st3.title"></h3><p data-i18n="s2.st3.body"></p></div>
         <div class="shot">$ pnpm test                <span class="t-ok">✓</span> 42 passed
 <span class="t-dim"># independent review: an agent that isn't the author</span>
-$ pekoe report --status review --verdict <span class="t-ok">pass</span> \
-    --reviewed-sha 3f9c2a1
+$ pekoe report "review: pass" --status review \
+    --verdict <span class="t-ok">pass</span> --reviewed-sha 3f9c2a1
 $ pekoe land feat-csv
 <span class="t-ok">✓</span> rebase  <span class="t-ok">✓</span> test  <span class="t-ok">✓</span> push  <span class="t-ok">✓</span> gh pr create <span class="t-sec">#131</span>
 $ pekoe report "CSV export, PR #131" --status done \
@@ -144,7 +144,7 @@ $ pekoe report "CSV export, PR #131" --status done \
 <b class="t-pri">›</b> <b class="t-sec">1</b>  <span data-i18n="s2.inbox.o1"></span>
   <b class="t-sec">2</b>  <span data-i18n="s2.inbox.o2"></span>
 
-<span class="t-dim"><b class="t-sec">1-2</b> choose  <b class="t-sec">↵</b> answer  <b class="t-sec">n</b> note  <b class="t-sec">g</b> go to session  <b class="t-sec">esc</b> later</span></div>
+<span class="t-dim"><b class="t-sec">1-2</b> choose  <b class="t-sec">↵</b> answer  <b class="t-sec">n</b> note  <b class="t-sec">o</b> open link  <b class="t-sec">g</b> go to session  <b class="t-sec">x</b> dismiss  <b class="t-sec">esc</b> later</span></div>
         </div>
       </div>
 
@@ -286,7 +286,6 @@ $ pekoe report "CSV export, PR #131" --status done \
       <div class="step flip" id="st-wait">
         <div><div class="num">02 <b>]a</b><span class="st c-warn">● wait</span></div><h3 data-i18n="s4.st2.title"></h3><p data-i18n="s4.st2.body"></p></div>
         <div class="shot">$ pekoe ls
-<span class="t-dim">○</span> tapi        <span class="t-dim">idle</span>
 <span class="t-ok">●</span> feat/csv    <span class="t-ok">run</span>   +120 -8   :3003
 <span class="t-warn">●</span> login-ui    <span class="t-warn">wait</span>  2m        :3004
 <span class="t-sec">✓</span> docs        <span class="t-sec">done</span>  <span class="t-ok">✓test</span>     :3006
