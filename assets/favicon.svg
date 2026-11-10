@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- tapi(pekoe のマスコット、タピオカの粒)。16px でも読めるよう、紫の角丸の上に桃色の粒と目・口だけ -->
+  <defs>
+    <radialGradient id="pearl" cx="0.38" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#ffe2c4"/>
+      <stop offset="0.6" stop-color="#ffb98c"/>
+      <stop offset="1" stop-color="#f08a78"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#5b3fe9"/>
+  <circle cx="32" cy="33" r="24" fill="url(#pearl)"/>
+  <ellipse cx="23" cy="21" rx="7" ry="4.5" fill="#fffbf0" opacity=".7" transform="rotate(-30 23 21)"/>
+  <circle cx="23.5" cy="34" r="3.6" fill="#2a1659"/>
+  <circle cx="40.5" cy="34" r="3.6" fill="#2a1659"/>
+  <circle cx="18" cy="41" r="3.2" fill="#ff87da" opacity=".6"/>
+  <circle cx="46" cy="41" r="3.2" fill="#ff87da" opacity=".6"/>
+  <path d="M27.5 41.5q4.5 4 9 0" fill="none" stroke="#2a1659" stroke-width="2.8" stroke-linecap="round"/>
+</svg>
