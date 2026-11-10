@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="meta.title">pekoe — A cozy home for your coding agents.</title>
 <meta name="description" content="" data-i18n-attr="content=meta.description">
+<!-- OGP: クローラーは JS を動かさないので英語の固定文。画像は assets/og-image.png(1200×630)を置けば vite.config.js がそのままの名前で dist/assets/ にコピーする -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="pekoe">
+<meta property="og:title" content="pekoe — A cozy home for your coding agents.">
+<meta property="og:description" content="Ask tapi once. Your coding agents get to work, each in its own git worktree, and only the decisions reach you. The merge is always yours.">
+<meta property="og:url" content="https://sakamosu.github.io/pekoe-site/">
+<meta property="og:image" content="https://sakamosu.github.io/pekoe-site/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Outfit:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
@@ -23,16 +33,20 @@
   </div>
 </div>
 
+<!--
+  画像の差し込み枠(.slot): .slot-img が本番の画像、.slot-fb が仮の画像。
+  本番の画像ファイルが読めたら app.js が .has-img を付けて差し替える。ファイルを assets/ に置くだけでよい(README「画像を差し替える」)。
+-->
 <div class="app">
   <!-- ───────────── panes ───────────── -->
   <main class="right" id="right">
     <nav class="tabs" id="tabs">
-      <a href="#s1" data-sec="1">[1] pekoe</a><a href="#s2" data-sec="2">[2] Flow</a><a href="#s3" data-sec="3">[3] tapi</a><a href="#s4" data-sec="4">[4] Principles</a><a href="#s5" data-sec="5">[5] Install</a>
+      <a href="#s1" data-sec="1">[1] home</a><a href="#s2" data-sec="2">[2] a day</a><a href="#s3" data-sec="3">[3] tapi</a><a href="#s4" data-sec="4">[4] the house</a><a href="#s5" data-sec="5">[5] anywhere</a><a href="#s6" data-sec="6">[6] house rules</a><a href="#s7" data-sec="7">[7] install</a>
     </nav>
 
-    <!-- [1] pekoe -->
-    <fieldset class="pane" id="s1" data-sec="1" data-mode="PEKOE" data-say="agents in worktrees, reviewed hunk by hunk">
-      <legend class="ttl">[1] ◆ pekoe</legend>
+    <!-- [1] home -->
+    <fieldset class="pane" id="s1" data-sec="1" data-mode="HOME" data-face="idle" data-say="hi. 2 housemates are working">
+      <legend class="ttl">[1] ◆ home</legend>
       <div class="brand"><span class="name"><span class="w">pekoe</span></span></div>
       <div class="kicker chips" id="s1-what"><span class="chip pink">Claude Code</span><span class="chip cyan">Codex</span><span class="chip green">OpenCode</span><span class="chip yellow">Ghostty</span></div>
       <h1 data-i18n="s1.h1"></h1>
@@ -41,8 +55,8 @@
         <div>
           <p class="lead" style="margin-top:6px" data-i18n="s1.lead"></p>
           <div class="keys">
-            <a class="keyact primary" href="#s5"><b>i</b> install</a>
-            <a class="keyact" href="#s2"><b>2</b> <span data-i18n="s1.cta_flow"></span></a>
+            <a class="keyact primary" href="#s7"><b>i</b> install</a>
+            <a class="keyact" href="#s2"><b>2</b> <span data-i18n="s1.cta_day"></span></a>
           </div>
         </div>
         <div class="kv">
@@ -52,42 +66,150 @@
       </div>
 
       <div class="outcomes" id="s1-out">
-        <div class="o"><kbd>]a</kbd><div><b data-i18n="s1.o1.title"></b><span data-i18n="s1.o1.body"></span></div></div>
-        <div class="o"><kbd>n</kbd><div><b data-i18n="s1.o2.title"></b><span data-i18n="s1.o2.body"></span></div></div>
-        <div class="o"><kbd>r</kbd><div><b data-i18n="s1.o3.title"></b><span data-i18n="s1.o3.body"></span></div></div>
+        <div class="o"><kbd>t</kbd><div><b data-i18n="s1.o1.title"></b><span data-i18n="s1.o1.body"></span></div></div>
+        <div class="o"><kbd>]a</kbd><div><b data-i18n="s1.o2.title"></b><span data-i18n="s1.o2.body"></span></div></div>
+        <div class="o"><kbd>merge</kbd><div><b data-i18n="s1.o3.title"></b><span data-i18n="s1.o3.body"></span></div></div>
       </div>
-
-      <!-- demo -->
-      <div class="demo" id="s1-demo">
-        <video id="demo" poster="assets/pekoe-demo-poster.jpg" autoplay muted loop playsinline preload="metadata" data-i18n-attr="aria-label=s1.demo_label">
-          <source src="assets/pekoe-demo.webm" type="video/webm">
-          <source src="assets/pekoe-demo.mp4" type="video/mp4">
-        </video>
-        <button class="kbtn demo-sound" id="soundbtn" type="button" aria-pressed="false"><b>m</b> <span>sound off</span></button>
-      </div>
-      <!-- /demo -->
     </fieldset>
 
-    <!-- [2] Flow -->
-    <fieldset class="pane" id="s2" data-sec="2" data-mode="FLOW" data-say="new → run → wait → review → land">
-      <legend class="ttl">[2] ≡ Flow</legend>
-      <div class="kicker chips" id="s2-shot"><span class="chip cream">new</span><span class="chip green">run</span><span class="chip yellow">wait</span><span class="chip pink">review</span><span class="chip cyan">land</span></div>
+    <!-- [2] a day -->
+    <fieldset class="pane" id="s2" data-sec="2" data-mode="A DAY" data-face="wait" data-say="1 thing needs your call">
+      <legend class="ttl">[2] ≡ a day</legend>
+      <div class="kicker chips" id="s2-day"><span class="chip cream">ask</span><span class="chip cyan">hand off</span><span class="chip green">build · review</span><span class="chip yellow">inbox</span><span class="chip pink">merge</span></div>
       <h2 data-i18n="s2.h2"></h2>
       <p class="lead" data-i18n="s2.lead"></p>
 
-      <!-- TUI screenshot (real theme tokens) -->
-      <div class="term" style="margin-top:20px">
+      <div class="step" id="d-ask">
+        <div><div class="num">01 <b>you → tapi</b><span class="st c-sec">t</span></div><h3 data-i18n="s2.st1.title"></h3><p data-i18n="s2.st1.body"></p></div>
+        <div class="shot wrap"><span class="shot-ttl" data-tapi-line="idle"><span class="ttl-t"><b class="t-pri">[4] tapi the orchestrator</b><span class="t-dim"> · claude</span><span class="t-sec"> · typing</span></span></span>
+<span class="t-sec">&gt;</span> <span data-i18n="s2.chat.you"></span>
+
+<span class="t-pri">●</span> <span data-i18n="s2.chat.tapi1"></span>
+  <span class="t-dim">Bash</span>  pekoe --json new feat/csv --repo app --request 12 --prompt …
+  <span class="t-dim">Bash</span>  pekoe --json new fix/invoice-pdf --repo app --request 12 --prompt …
+
+<span class="t-pri">●</span> <span data-i18n="s2.chat.tapi2"></span></div>
+      </div>
+
+      <div class="step flip" id="d-handoff">
+        <div><div class="num">02 <b>tapi → housemates</b><span class="st c-ok">● run</span></div><h3 data-i18n="s2.st2.title"></h3><p data-i18n="s2.st2.body"></p></div>
+        <div class="pinned"><span class="slot pin"><img class="slot-img" src="assets/tapi-delegate.webp" alt="" data-i18n-attr="alt=s2.delegate_alt"><img class="slot-fb" src="assets/tapi-work.webp" alt="" data-i18n-attr="alt=s2.delegate_alt"></span><div class="shot"><span class="t-pri"><b>[1] ◆ Sessions 2/2</b></span>
+  orchestrator <span class="t-border">━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="t-dim"><i class="nf nf-idle"></i></span> <b>tapi</b> <span class="t-dim">idle</span>     <span class="t-dim">1m   two housemates are on it</span>
+<i class="nf nf-cur"></i> app <span class="t-border">─────────────────────────────────────</span>
+<span class="t-ok"><i class="nf nf-run"></i></span> feat/csv         <span class="t-ok">run     </span> <span class="t-dim">3m  </span> <span class="t-ok">+86</span> <span class="t-err">-4</span>
+<span class="t-ok"><i class="nf nf-run"></i></span> fix/invoice-pdf  <span class="t-ok">run     </span> <span class="t-dim">3m  </span> <span class="t-ok">+12</span> <span class="t-err">-3</span></div></div>
+      </div>
+
+      <div class="step" id="d-build">
+        <div><div class="num">03 <b>housemate</b><span class="st c-sec">✓ review</span></div><h3 data-i18n="s2.st3.title"></h3><p data-i18n="s2.st3.body"></p></div>
+        <div class="shot">$ pnpm test                <span class="t-ok">✓</span> 42 passed
+<span class="t-dim"># independent review: an agent that isn't the author</span>
+$ pekoe report "review: pass" --status review \
+    --verdict <span class="t-ok">pass</span> --reviewed-sha 3f9c2a1
+$ pekoe land feat-csv
+  rebased onto origin/main
+  tests passed
+  pushed feat/csv
+  PR <span class="t-sec">#131</span>
+$ pekoe report "CSV export, PR #131" --status done \
+    --evidence https://github.com/you/app/pull/131 \
+    --evidence ~/shots/csv-export.png</div>
+      </div>
+
+      <div class="step flip" id="d-inbox">
+        <div><div class="num">04 <b>inbox</b><span class="st c-warn"><i class="nf nf-wait"></i> 1 for you</span></div><h3 data-i18n="s2.st4.title"></h3><p data-i18n="s2.st4.body"></p></div>
+        <div class="shots pinned"><span class="slot pin pin-2"><img class="slot-img" src="assets/tapi-inbox.webp" alt="" data-i18n-attr="alt=s2.inbox_alt"><img class="slot-fb" src="assets/tapi-wait.webp" alt="" data-i18n-attr="alt=s2.inbox_alt"></span>
+          <div class="shot wrap"><span class="shot-ttl" data-tapi-line="idle"><span class="ttl-t"><b class="t-pri">[4] tapi the orchestrator</b><span class="t-dim"> · claude</span></span></span>
+<span class="t-pri">●</span> <span data-i18n="s2.rep.hello"></span>
+
+  <b class="t-warn" data-i18n="s2.rep.h1"></b>
+  <span data-i18n="s2.rep.d1"></span>
+  <span data-i18n="s2.rep.d2"></span>
+  <b class="t-sec" data-i18n="s2.rep.h2"></b>
+  <span data-i18n="s2.rep.n1"></span>
+  <b class="t-sec" data-i18n="s2.rep.h3"></b>
+  <span data-i18n="s2.rep.p1"></span>
+  <span data-i18n="s2.rep.p2"></span></div>
+          <div class="shot wrap modal-shot"><span class="t-warn"><i class="nf nf-wait"></i></span> <b class="t-pri">Inbox #7</b><span class="t-dim"> · approve · from fix-invoice-pdf</span>
+
+<b>pekoe read</b>
+<span class="t-dim">  session  </span>fix-invoice-pdf<span class="t-dim"> · waiting · fix/invoice-pdf</span>
+<span class="t-dim">  HEAD     </span>9e1b04c2d<span class="t-dim"> · +12 −3 · 2 files</span>
+<span class="rule"></span><span class="t-dim">the agent says (its words, not pekoe's)</span>
+<span data-i18n="s2.inbox.q"></span>
+
+<b class="t-pri">›</b> <b class="t-sec">1</b>  <span data-i18n="s2.inbox.o1"></span>
+  <b class="t-sec">2</b>  <span data-i18n="s2.inbox.o2"></span>
+
+<span class="t-dim">note</span>
+
+<span class="t-dim"><b class="t-sec">1-2</b> choose  <b class="t-sec">↵</b> answer  <b class="t-sec">n</b> note  <b class="t-sec">o</b> open link  <b class="t-sec">g</b> go to session  <b class="t-sec">x</b> dismiss  <b class="t-sec">esc</b> later</span></div>
+        </div>
+      </div>
+
+      <div class="step" id="d-merge">
+        <div><div class="num">05 <b>you</b><span class="st c-ok">✓ merged</span></div><h3 data-i18n="s2.st5.title"></h3><p data-i18n="s2.st5.body"></p></div>
+        <div class="shot">$ gh pr merge 131            <span class="t-dim"># you, or the Merge button</span>
+<span class="t-ok">✓</span> merged     feat/csv → main
+<span class="t-dim">pekoed</span>  <span class="t-ok">✓</span> teardown → rm ~/worktrees/app/feat-csv
+
+<span class="t-dim">tapi</span>    feat-csv merged. fix-invoice-pdf is next.</div>
+      </div>
+
+      <!-- 段階 3(実装中): マージしてよいかの根拠を pekoed が揃えて受信箱に出す。
+           出たら下の <template> を step として差し込み、assets/tapi-evidence.webp と copy の s2.st6.* を足す -->
+      <template id="slot-evidence">
+        <div class="step flip" id="d-evidence">
+          <div><div class="num">06 <b>pekoed</b></div><h3 data-i18n="s2.st6.title"></h3><p data-i18n="s2.st6.body"></p></div>
+          <div class="pinned"><span class="slot pin"><img class="slot-img" src="assets/tapi-evidence.webp" alt=""><img class="slot-fb" src="assets/tapi-done.webp" alt=""></span><div class="shot"></div></div>
+        </div>
+      </template>
+    </fieldset>
+
+    <!-- [3] tapi -->
+    <fieldset class="pane" id="s3" data-sec="3" data-mode="TAPI" data-face="work" data-say="i hand things off. i don't write code">
+      <legend class="ttl">[3] ◉ tapi</legend>
+      <div class="kicker chips" id="s3-states"><span class="chip pink">orchestrator</span><span class="chip yellow">5 faces</span><span class="chip cyan">status bar</span><span class="chip green">can't write</span></div>
+      <h2><span class="en" data-i18n="s3.meet"></span></h2>
+      <p class="lead" data-i18n="s3.lead"></p>
+
+      <div class="stickers">
+        <div class="stk"><div class="tile"><img src="assets/tapi-work.webp" alt="tapi work"><div class="nm">work</div></div><div class="line" data-tapi-line="work"><span>3 working</span></div></div>
+        <div class="stk"><div class="tile"><img src="assets/tapi-wait.webp" alt="tapi wait"><div class="nm">wait</div></div><div class="line" data-tapi-line="wait"><span class="t-warn">needs you</span></div></div>
+        <div class="stk"><div class="tile"><img src="assets/tapi-done.webp" alt="tapi done"><div class="nm">done</div></div><div class="line" data-tapi-line="done"><span>csv done</span></div></div>
+        <div class="stk"><div class="tile"><img src="assets/tapi-error.webp" alt="tapi error"><div class="nm">error</div></div><div class="line" data-tapi-line="error"><span class="t-err">auth failed</span></div></div>
+        <div class="stk"><div class="tile"><img src="assets/tapi-sleep.webp" alt="tapi sleep"><div class="nm">sleep</div></div><div class="line" data-tapi-line="sleep"><span class="t-dim">all quiet</span></div></div>
+      </div>
+
+      <div class="roles">
+        <div class="pr"><b>faces</b><span data-i18n="s3.r1"></span></div>
+        <div class="pr"><b>orchestrator</b><span data-i18n="s3.r2"></span></div>
+        <div class="pr"><b>hands off</b><span data-i18n="s3.r3"></span></div>
+      </div>
+    </fieldset>
+
+    <!-- [4] the house -->
+    <fieldset class="pane" id="s4" data-sec="4" data-mode="HOUSE" data-face="work" data-say="every room is open. walk right in">
+      <legend class="ttl">[4] ⌂ the house</legend>
+      <div class="kicker chips" id="s4-shot"><span class="chip cream">new</span><span class="chip yellow">wait</span><span class="chip pink">review</span><span class="chip green">pick</span><span class="chip cyan">land</span></div>
+      <h2 data-i18n="s4.h2"></h2>
+      <p class="lead" data-i18n="s4.lead"></p>
+
+      <div class="term">
         <div class="tb"><i></i><i></i><i></i><span>pekoe — ~/src/app · tmux -L pekoe</span></div>
         <div class="body">
           <div class="col">
             <div class="tp focus">
               <div class="ttl">[1] ◆ Sessions 2/4</div>
-              <div class="row repo"><span class="st t-sec"><i class="nf nf-cur"></i></span><span>app</span><i class="rule"></i></div>
-              <div class="row"><span class="st t-ok"><i class="nf nf-run"></i></span><span class="nm">feat/csv</span><span class="t-ok">run</span><span class="t-dim">+120 -8</span><span class="t-dim">:3003</span></div>
-              <div class="row sel"><span class="st t-warn"><i class="nf nf-wait"></i></span><span class="nm">login-ui</span><span class="t-warn">wait 2m</span><span class="t-dim">+42 -3</span><span class="t-dim">:3004</span></div>
-              <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span class="nm">perf</span><span class="t-dim">idle</span><span class="t-dim">+0 -0</span><span class="t-dim">:3005</span></div>
+              <div class="row repo"><span class="st"></span><span>orchestrator</span><i class="rule heavy"></i></div>
+              <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span style="white-space:pre"><b>tapi</b> <span class="t-dim">idle     3m  </span></span><span class="t-dim">2 housemates working</span></div>
+              <div class="row repo"><span class="st"><i class="nf nf-cur"></i></span><span>app</span><i class="rule"></i></div>
+              <div class="row"><span class="st t-ok"><i class="nf nf-run"></i></span><span class="nm">feat/csv</span><span class="t-ok c8">run</span><span class="t-dim c4">5m</span><span><span class="t-ok">+120</span> <span class="t-err">-8</span></span></div>
+              <div class="row sel"><span class="st t-warn"><i class="nf nf-wait"></i></span><span class="nm">feat/login</span><span class="t-warn c8">wait</span><span class="t-dim c4">2m</span><span><span class="t-ok">+42</span> <span class="t-err">-3</span></span></div>
+              <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span class="nm t-dim">perf</span><span class="t-dim c8">idle</span><span class="c4"></span></div>
               <div class="row repo dimmed"><span class="st"></span><span class="t-dim">site</span><i class="rule"></i></div>
-              <div class="row"><span class="st t-sec"><i class="nf nf-done"></i></span><span class="nm">docs</span><span class="t-sec">done</span><span class="t-ok">✓test</span><span class="t-dim">:3006</span></div>
+              <div class="row"><span class="st t-sec"><i class="nf nf-done"></i></span><span class="nm">docs</span><span class="t-sec c8">done</span><span class="t-dim c4">1m</span><span><span class="t-ok">+18</span> <span class="t-err">-2</span> <span class="t-ok">✓</span></span></div>
               <div class="foot"><span class="t-warn"><i class="nf nf-wait"></i></span> 1 waiting · oldest 2m &nbsp; <span class="t-sec"><i class="nf nf-done"></i></span> 1 to review</div>
             </div>
             <div class="tp">
@@ -138,41 +260,51 @@
       </div>
       <div class="legend"><span><b class="c-ok"><i class="nf nf-run"></i></b>run</span><span><b class="c-warn"><i class="nf nf-wait"></i></b>wait</span><span><b class="c-dim"><i class="nf nf-idle"></i></b>idle</span><span><b class="c-sec"><i class="nf nf-done"></i></b>done</span><span><b class="c-err"><i class="nf nf-fail"></i></b>fail</span></div>
 
-      <div class="step" id="st-new" style="margin-top:26px">
-        <div><div class="num">01 <b>pekoe new</b><span class="st c-dim">◌ creating</span></div><h3 data-i18n="s2.st1.title"></h3><p data-i18n="s2.st1.body"></p></div>
+      <!-- demo -->
+      <div class="demo" id="s4-demo">
+        <video id="demo" poster="assets/pekoe-demo-poster.jpg" autoplay muted loop playsinline preload="metadata" data-i18n-attr="aria-label=s4.demo_label">
+          <source src="assets/pekoe-demo.webm" type="video/webm">
+          <source src="assets/pekoe-demo.mp4" type="video/mp4">
+        </video>
+        <button class="kbtn demo-sound" id="soundbtn" type="button" aria-pressed="false"><b>m</b> <span>sound off</span></button>
+      </div>
+      <!-- /demo -->
+
+      <div class="step" id="st-new">
+        <div><div class="num">01 <b>pekoe new</b><span class="st c-dim">◌ creating</span></div><h3 data-i18n="s4.st1.title"></h3><p data-i18n="s4.st1.body"></p></div>
         <div class="shot">$ pekoe new feat/csv --from gh#128
-<span class="t-ok">✓</span> worktree   ~/worktrees/app/feat-csv
-<span class="t-ok">✓</span> copy       .env.local  .envrc
-<span class="t-ok">✓</span> setup      mise install
-<span class="t-ok">✓</span> setup      pnpm install --offline
-<span class="t-dim">⠹</span> setup      createdb app_feat-csv
-<span class="t-dim">○</span> port       :3007
-<span class="t-dim">○</span> claude     --prompt "issue #128 …"</div>
+feat/csv → ~/worktrees/app/feat-csv :3007
+  <span class="t-ok">✓</span> worktree  ~/worktrees/app/feat-csv <span class="t-dim">0.4s</span>
+  <span class="t-ok">✓</span> env       .env.local .envrc <span class="t-dim">0.1s</span>
+  <span class="t-ok">✓</span> port      :3007
+  <span class="t-ok">✓</span> install   mise install <span class="t-dim">2.1s</span>
+  <span class="t-ok">✓</span> install   pnpm install --offline <span class="t-dim">6.8s</span>
+  <span class="t-ok">✓</span> db        createdb app_feat-csv <span class="t-dim">0.9s</span>
+  <span class="t-ok">✓</span> start     claude · new session · snapshot #0
+claude started · open with `pekoe` · attach raw with `pekoe attach feat-csv`</div>
       </div>
 
-      <div class="step" id="st-run">
-        <div><div class="num">02 <b>run</b><span class="st c-ok">● run</span></div><h3 data-i18n="s2.st2.title"></h3><p data-i18n="s2.st2.body"></p></div>
+      <div class="step flip" id="st-wait">
+        <div><div class="num">02 <b>]a</b><span class="st c-warn">● wait</span></div><h3 data-i18n="s4.st2.title"></h3><p data-i18n="s4.st2.body"></p></div>
         <div class="shot">$ pekoe ls
-<span class="t-ok">●</span> feat/csv    <span class="t-ok">run</span>   +120 -8   :3003
-<span class="t-warn">●</span> login-ui    <span class="t-warn">wait</span>  2m        :3004
-<span class="t-dim">○</span> perf        <span class="t-dim">idle</span>            :3005
-<span class="t-sec">✓</span> docs        <span class="t-sec">done</span>  <span class="t-ok">✓test</span>     :3006
-<span class="t-err">✗</span> auth-fix    <span class="t-err">fail</span>  setup: pnpm install</div>
-      </div>
+<span class="t-ok"><i class="nf nf-run"></i></span>  feat/csv                <span class="t-ok">run     </span>  <span class="t-dim">5m  </span>  <span class="t-ok">+120</span> <span class="t-err">-8</span>  <span class="t-dim">:3003</span>
+<span class="t-warn"><i class="nf nf-wait"></i></span>  feat/login              <span class="t-warn">wait    </span>  <span class="t-dim">2m  </span>  <span class="t-ok">+42</span> <span class="t-err">-3</span>  <span class="t-dim">:3004</span>  <span class="t-dim">Edit src/lib/auth.ts</span>  <span class="t-dim">slug login-ui</span>
+<span class="t-sec"><i class="nf nf-done"></i></span>  docs                    <span class="t-sec">done    </span>  <span class="t-dim">1m  </span>  <span class="t-ok">✓</span>test  <span class="t-dim">:3006</span>
 
-      <div class="step" id="st-wait">
-        <div><div class="num">03 <b>wait</b><span class="st c-warn">● wait</span></div><h3 data-i18n="s2.st3.title"></h3><p data-i18n="s2.st3.body"></p></div>
-        <div class="shot"><span class="t-dim">⌘⇧E in Chrome → pick</span>
-<span class="box"><span class="t-sec">◎</span> localhost:3004/login
-<span class="t-dim">button.primary</span>  "Sign in"
-<span class="t-dim">→</span> disabled until the form is valid
-<span class="t-sec">↵</span><span class="t-dim"> send</span>  <span class="t-sec">^s</span><span class="t-dim"> other</span>  <span class="t-sec">esc</span><span class="t-dim"> drop</span></span>
-<span class="t-dim">port :3004 → worktree feat/login → session login-ui</span></div>
+<span class="box"><span class="t-warn"><i class="nf nf-wait"></i></span> <b class="t-pri">Permission</b> <span class="t-dim">· feat/login · waiting 2m</span>
+
+feat/login wants to run
+
+<b>Edit</b>  src/lib/auth.ts
+
+<span class="t-dim">  rule     </span>Edit(…)<span class="t-dim"> not in allowlist · </span><b class="t-sec">A</b><span class="t-dim"> always allow</span>
+
+<span class="t-sec">y</span><span class="t-dim"> allow  </span><span class="t-sec">n</span><span class="t-dim"> deny  </span><span class="t-sec">g</span><span class="t-dim"> go to session  </span><span class="t-sec">A</span><span class="t-dim"> always  </span><span class="t-sec">esc</span><span class="t-dim"> later</span></span></div>
       </div>
 
       <div class="step" id="st-review">
-        <div><div class="num">04 <b>review</b><span class="st c-sec">✓ done</span></div><h3 data-i18n="s2.st4.title"></h3><p data-i18n="s2.st4.body"></p></div>
-        <div class="shot"><span class="t-dim">src/lib/csv.ts</span>  <span class="t-dim">hunk 2/5</span>  <span class="t-dim" data-i18n="s2.shot_prompt"></span>
+        <div><div class="num">03 <b>review</b><span class="st c-sec">✓ done</span></div><h3 data-i18n="s4.st3.title"></h3><p data-i18n="s4.st3.body"></p></div>
+        <div class="shot"><span class="t-dim">src/lib/csv.ts</span>  <span class="t-dim">hunk 2/5</span>  <span class="t-dim" data-i18n="s4.shot_prompt"></span>
 <span class="sel"><span class="t-pri">▶</span> @@ -12,4 +12,9 @@</span>
   <span class="t-ok">▎+</span> export function toCsv(rows) {
   <span class="t-ok">▎+</span>   return rows.map(escape).join("\n")
@@ -180,52 +312,62 @@
 <span class="box"><span class="t-sec">a</span> <span class="t-dim">approve</span>  <span class="t-sec">?</span> <span class="t-dim">why</span>  <span class="t-sec">c</span> <span class="t-dim">comment</span>  <span class="t-sec">S</span> <span class="t-dim">send</span></span></div>
       </div>
 
+      <div class="step flip" id="st-pick">
+        <div><div class="num">04 <b>pick</b><span class="st c-sec">◎ Chrome</span></div><h3 data-i18n="s4.st4.title"></h3><p data-i18n="s4.st4.body"></p></div>
+        <div class="shot"><span class="t-dim">⌘⇧E in Chrome → pick</span>
+<span class="box"><span class="t-sec">◎</span> localhost:3004/login
+<span class="t-dim">button.primary</span>  "Sign in"
+<span class="t-dim">→</span> disabled until the form is valid
+<span class="t-sec">↵</span><span class="t-dim"> send</span>  <span class="t-sec">^s</span><span class="t-dim"> other</span>  <span class="t-sec">^n</span><span class="t-dim"> new</span>  <span class="t-sec">esc</span><span class="t-dim"> discard</span></span>
+<span class="t-dim">port :3004 → worktree feat/login → session login-ui</span></div>
+      </div>
+
       <div class="step" id="st-land">
-        <div><div class="num">05 <b>pekoe land</b><span class="st c-ok">✓ landed</span></div><h3 data-i18n="s2.st5.title"></h3><p data-i18n="s2.st5.body"></p></div>
-        <div class="shot">$ pekoe land feat/csv
-<span class="t-ok">✓</span> rebase     main → feat/csv
-<span class="t-ok">✓</span> test       pnpm test  <span class="t-dim">42 passed</span>
-<span class="t-ok">✓</span> push       origin/feat/csv
-<span class="t-dim">⠹</span> gh pr create  <span class="t-dim">#131</span>
-<span class="t-dim">○</span> on merge   teardown → rm ~/worktrees/app/feat-csv</div>
+        <div><div class="num">05 <b>pekoe land</b><span class="st c-ok">✓ landed</span></div><h3 data-i18n="s4.st5.title"></h3><p data-i18n="s4.st5.body"></p></div>
+        <div class="shot">$ pekoe land feat-csv
+  rebased onto origin/main
+  tests passed
+  pushed feat/csv
+  PR <span class="t-sec">#131</span>
+<span class="t-dim"># after the merge: teardown → rm ~/worktrees/app/feat-csv</span></div>
       </div>
     </fieldset>
 
-    <!-- [3] tapi -->
-    <fieldset class="pane" id="s3" data-sec="3" data-mode="TAPI" data-say="hi. i'm tapi">
-      <legend class="ttl">[3] ◉ tapi</legend>
-      <div class="kicker chips" id="s3-states"><span class="chip pink">mascot</span><span class="chip yellow">5 faces</span><span class="chip cyan">status bar</span></div>
-      <h2><span class="en" data-i18n="s3.meet"></span></h2>
-      <p class="lead" data-i18n="s3.lead"></p>
-
-      <div class="stickers">
-        <div class="stk"><div class="tile"><img src="assets/tapi-work.webp" alt="tapi work"><div class="nm">work</div></div><div class="line" data-tapi-line="work"><span>3 working</span></div></div>
-        <div class="stk"><div class="tile"><img src="assets/tapi-wait.webp" alt="tapi wait"><div class="nm">wait</div></div><div class="line" data-tapi-line="wait"><span class="t-warn">needs you</span></div></div>
-        <div class="stk"><div class="tile"><img src="assets/tapi-done.webp" alt="tapi done"><div class="nm">done</div></div><div class="line" data-tapi-line="done"><span>csv done</span></div></div>
-        <div class="stk"><div class="tile"><img src="assets/tapi-error.webp" alt="tapi error"><div class="nm">error</div></div><div class="line" data-tapi-line="error"><span class="t-err">auth failed</span></div></div>
-        <div class="stk"><div class="tile"><img src="assets/tapi-sleep.webp" alt="tapi sleep"><div class="nm">sleep</div></div><div class="line" data-tapi-line="sleep"><span class="t-dim">all quiet</span></div></div>
+    <!-- [5] anywhere(段階 3 で実装中。今は coming の小さな枠だけ) -->
+    <fieldset class="pane" id="s5" data-sec="5" data-mode="ANYWHERE" data-face="sleep" data-say="your phone, soon">
+      <legend class="ttl">[5] ⇢ anywhere</legend>
+      <div class="kicker chips" id="s5-soon"><span class="chip plan">coming</span><span class="chip cyan">iPhone</span><span class="chip green">Tailscale</span></div>
+      <h2 data-i18n="s5.h2"></h2>
+      <div class="anywhere">
+        <div class="code soon">
+          <p data-i18n="s5.now"></p>
+          <p data-i18n="s5.next"></p>
+        </div>
+        <span class="slot phone-slot"><img class="slot-img" src="assets/tapi-phone.webp" alt="" data-i18n-attr="alt=s5.phone_alt"><img class="slot-fb" src="assets/tapi-sleep.webp" alt="" data-i18n-attr="alt=s5.phone_alt"></span>
       </div>
-
     </fieldset>
 
-    <!-- [4] Principles -->
-    <fieldset class="pane" id="s4" data-sec="4" data-mode="PRINCIPLES" data-say="nothing touches your repo">
-      <legend class="ttl">[4] ✎ Principles</legend>
-      <div class="kicker chips" id="s4-pr"><span class="chip pink">untouched</span><span class="chip cyan">zero footprint</span><span class="chip yellow">just a shell</span><span class="chip green">swappable</span></div>
-      <h2 data-i18n="s4.h2"></h2>
-      <p class="lead" data-i18n="s4.lead"></p>
+    <!-- [6] house rules -->
+    <fieldset class="pane" id="s6" data-sec="6" data-mode="RULES" data-face="idle" data-say="i can't write. you merge">
+      <legend class="ttl">[6] ✎ house rules</legend>
+      <div class="kicker chips" id="s6-pr"><span class="chip pink">tapi can't write</span><span class="chip yellow">human-only</span><span class="chip cyan">untrusted text</span><span class="chip green">zero footprint</span></div>
+      <h2 data-i18n="s6.h2"></h2>
+      <div class="lead-row"><p class="lead" data-i18n="s6.lead"></p><span class="slot rules-slot"><img class="slot-img" src="assets/tapi-rules.webp" alt="" data-i18n-attr="alt=s6.rules_alt"><img class="slot-fb" src="assets/tapi-done.webp" alt="" data-i18n-attr="alt=s6.rules_alt"></span></div>
 
-      <div style="margin-top:18px">
-        <div class="pr"><b>untouched</b><span data-i18n="s4.pr1"></span></div>
-        <div class="pr"><b>zero footprint</b><span data-i18n="s4.pr2"></span></div>
-        <div class="pr"><b>just a shell</b><span data-i18n="s4.pr3"></span></div>
-        <div class="pr"><b>swappable</b><span data-i18n="s4.pr4"></span></div>
+      <div class="rules">
+        <div class="pr"><b>tapi can't write</b><span data-i18n="s6.r1"></span></div>
+        <div class="pr"><b>human-only</b><span data-i18n="s6.r2"></span></div>
+        <div class="pr"><b>untrusted text</b><span data-i18n="s6.r3"></span></div>
+        <div class="pr"><b>untouched</b><span data-i18n="s6.pr1"></span></div>
+        <div class="pr"><b>zero footprint</b><span data-i18n="s6.pr2"></span></div>
+        <div class="pr"><b>just a shell</b><span data-i18n="s6.pr3"></span></div>
+        <div class="pr"><b>swappable</b><span data-i18n="s6.pr4"></span></div>
       </div>
 
-      <h3 id="s4-daemon"><span class="ic">·</span>everything talks to pekoed</h3>
-      <p data-i18n="s4.daemon"></p>
+      <h3 id="s6-daemon"><span class="ic">·</span>everything talks to pekoed</h3>
+      <p data-i18n="s6.daemon"></p>
       <div class="archwrap">
-        <svg class="arch-svg" viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="" data-i18n-attr="aria-label=s4.svg_aria">
+        <svg class="arch-svg" viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="" data-i18n-attr="aria-label=s6.svg_aria">
           <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#fffbf0"/></marker></defs>
           <g fill="none" stroke="#fffbf0" stroke-width="1.6" stroke-linecap="round" stroke-opacity=".75">
             <path id="w1" d="M240 85 C330 85 340 240 425 240"/>
@@ -264,7 +406,7 @@
           <rect x="446" y="318" width="108" height="34" rx="17" fill="#fffbf0"/><text x="500" y="341" text-anchor="middle" class="bn">pekoed</text>
           <rect x="410" y="368" width="80" height="22" rx="11" fill="none" stroke="#fffbf0" stroke-opacity=".3"/><text x="450" y="383" text-anchor="middle" class="chipt">state.db</text>
           <rect x="498" y="368" width="92" height="22" rx="11" fill="none" stroke="#fffbf0" stroke-opacity=".3"/><text x="544" y="383" text-anchor="middle" class="chipt">refs/pekoe/*</text>
-          <text x="740" y="80" class="muted" data-i18n="s4.svg_pty"></text>
+          <text x="740" y="80" class="muted" data-i18n="s6.svg_pty"></text>
           <g class="tcard"><rect x="740" y="100" width="220" height="64" rx="10"/><g data-tapi1="work" data-x="754" data-y="124" data-w="40"></g><text x="806" y="128" class="tt">claude · feat/csv</text><text x="806" y="150" class="td"><tspan fill="#51d75e">● run</tspan>  +120 -8  :3003</text></g>
           <g class="tcard"><rect x="740" y="210" width="220" height="64" rx="10"/><g data-tapi1="wait" data-x="754" data-y="234" data-w="40"></g><text x="806" y="238" class="tt">codex · login-ui</text><text x="806" y="260" class="td"><tspan fill="#edc812">● wait</tspan>  2m  :3004</text></g>
           <g class="tcard"><rect x="740" y="320" width="220" height="64" rx="10"/><g data-tapi1="done" data-x="754" data-y="344" data-w="40"></g><text x="806" y="348" class="tt">claude · docs</text><text x="806" y="370" class="td"><tspan fill="#11cded">✓ done</tspan>  <tspan fill="#51d75e">✓test</tspan>  :3006</text></g>
@@ -272,30 +414,31 @@
       </div>
     </fieldset>
 
-    <!-- [5] Install -->
-    <fieldset class="pane" id="s5" data-sec="5" data-mode="INSTALL" data-say="make install, then pekoe new">
-      <legend class="ttl">[5] &gt; Install</legend>
-      <div class="kicker chips" id="i-install"><span class="chip cream">v0.1</span><span class="chip green">tmux engine</span><span class="chip plan">libghostty-vt planned</span></div>
+    <!-- [7] install -->
+    <fieldset class="pane" id="s7" data-sec="7" data-mode="INSTALL" data-face="done" data-say="make install, then just ask">
+      <legend class="ttl">[7] &gt; install</legend>
+      <div class="kicker chips" id="i-install"><span class="chip cream">v0.1</span><span class="chip green">tmux engine</span></div>
       <h2>make install</h2>
-      <p class="lead" data-i18n="s5.lead"></p>
+      <p class="lead" data-i18n="s7.lead"></p>
       <!-- 公開準備中の仮置き。公開したら下の <template> の中身をここに戻し、GitHub のリンクを入れる -->
       <div class="code soon" id="install-soon">
         <span class="chip plan">coming soon</span>
-        <p data-i18n="s5.soon"></p>
+        <p data-i18n="s7.soon"></p>
         <span class="ghbtn" aria-disabled="true">github.com/sakamosu/pekoe</span>
       </div>
       <template id="install-steps">
         <div class="code"><pre><span class="c"># install</span>
 <span class="p">$</span> make install            <span class="c"># ~/.local/bin/pekoe (+ pekoed)</span>
-<span class="p">$</span> pekoe hooks install      <span class="c" data-i18n="s5.c1"></span>
-<span class="p">$</span> make install-launchd    <span class="c" data-i18n="s5.c2"></span>
+<span class="p">$</span> pekoe hooks install      <span class="c" data-i18n="s7.c1"></span>
+<span class="p">$</span> pekoe skills install     <span class="c" data-i18n="s7.c5"></span>
+<span class="p">$</span> make install-launchd    <span class="c" data-i18n="s7.c2"></span>
 
 <span class="c"># use</span>
 <span class="p">$</span> cd ~/src/app
-<span class="p">$</span> pekoe init               <span class="c" data-i18n="s5.c3"></span>
-<span class="p">$</span> pekoe new feat/csv --prompt <span class="s" data-i18n="s5.c4"></span>
+<span class="p">$</span> pekoe init               <span class="c" data-i18n="s7.c3"></span>
+<span class="p">$</span> pekoe new feat/csv --prompt <span class="s" data-i18n="s7.c4"></span>
 <span class="p">$</span> pekoe new feat/invoice --from gh#128
-<span class="p">$</span> pekoe                    <span class="c"># TUI</span>
+<span class="p">$</span> pekoe                    <span class="c" data-i18n="s7.c6"></span>
 
 <span class="c"># agent-side</span>
 <span class="p">$</span> claude mcp add pekoe -- pekoe mcp</pre></div>
@@ -311,9 +454,9 @@
 <!-- ───────────── status bar: the one place a face lives ───────────── -->
 <div class="status" id="status">
   <div class="inner">
-    <span class="seg tapi" id="stapi"><span class="face" data-tapi-live="idle"></span><span class="say" id="say">agents in worktrees, reviewed hunk by hunk</span></span>
-    <span class="seg mode" id="smode">PEKOE</span>
-    <span class="seg" id="spos">1/5</span>
+    <span class="seg tapi" id="stapi"><span class="face" data-tapi-live="idle"></span><span class="say" id="say">hi. 2 housemates are working</span></span>
+    <span class="seg mode" id="smode">HOME</span>
+    <span class="seg" id="spos">1/7</span>
     <span class="seg">⎇ main</span>
     <span class="skeys" id="skeys"></span>
   </div>
@@ -324,11 +467,13 @@
   <div class="mbox">
     <div class="ttl">Keys</div>
     <div class="grp">this page</div>
-    <div class="mrow" data-act="sec:1"><b>1</b><span>[1] pekoe</span></div>
-    <div class="mrow" data-act="sec:2"><b>2</b><span>[2] Flow</span></div>
+    <div class="mrow" data-act="sec:1"><b>1</b><span>[1] home</span></div>
+    <div class="mrow" data-act="sec:2"><b>2</b><span>[2] a day</span></div>
     <div class="mrow" data-act="sec:3"><b>3</b><span>[3] tapi</span></div>
-    <div class="mrow" data-act="sec:4"><b>4</b><span>[4] Principles</span></div>
-    <div class="mrow" data-act="sec:5"><b>5</b><span>[5] Install</span></div>
+    <div class="mrow" data-act="sec:4"><b>4</b><span>[4] the house</span></div>
+    <div class="mrow" data-act="sec:5"><b>5</b><span>[5] anywhere</span></div>
+    <div class="mrow" data-act="sec:6"><b>6</b><span>[6] house rules</span></div>
+    <div class="mrow" data-act="sec:7"><b>7</b><span>[7] install</span></div>
     <div class="mrow" data-act="next"><b>]</b><span>next panel</span></div>
     <div class="mrow" data-act="prev"><b>[</b><span>prev panel</span></div>
     <div class="grp">global</div>
@@ -336,7 +481,7 @@
     <div class="mrow" data-act="up"><b>k</b><span>scroll up</span></div>
     <div class="mrow" data-act="top"><b>g</b><span>top</span></div>
     <div class="mrow" data-act="bottom"><b>G</b><span>bottom</span></div>
-    <div class="mrow" data-act="sec:5"><b>i</b><span>install</span></div>
+    <div class="mrow" data-act="sec:7"><b>i</b><span>install</span></div>
     <div class="mrow" data-act="lang"><b>l</b><span>language: ja / en</span></div>
     <!-- demo --><div class="mrow" data-act="sound"><b>m</b><span>demo sound on / off</span></div><!-- /demo -->
     <div class="mrow" data-act="close"><b>?</b><span>this list</span></div>

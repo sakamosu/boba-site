@@ -30,9 +30,16 @@ html = re.sub(r'<script src="([^"]+)"></script>', inline_script, html)
 # images
 def inline_img(m):
     path = HERE / m.group(1)
+    if not path.exists():
+        # 差し込み枠(.slot)の本番の画像がまだ無い: そのまま残し、ページ側で仮の画像を出す
+        missing.append(m.group(1))
+        return m.group(0)
     mime = {'.webp': 'image/webp', '.png': 'image/png', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg'}[path.suffix]
     return 'src="data:%s;base64,%s"' % (mime, base64.b64encode(path.read_bytes()).decode())
+missing = []
 html = re.sub(r'src="(assets/[^"]+\.(?:webp|png|svg|jpg))"', inline_img, html)
+if missing:
+    print('not yet in assets/ (placeholder shown):', ', '.join(sorted(set(missing))))
 
 out = HERE / 'dist-single' / 'pekoe-lp.html'
 out.parent.mkdir(exist_ok=True)

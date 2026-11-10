@@ -144,7 +144,9 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 .tp.focus .ttl{color:var(--t-primary);font-weight:700}
 .tp .row{display:flex;gap:9px;padding:0 9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tp .row.sel{background:var(--t-select)}
-.tp .row .nm{min-width:8ch}.tp .row .st{min-width:3ch}
+.tp .row .nm{min-width:11ch}.tp .row .st{min-width:3ch}
+/* sessionLine の列: 状態語 8 桁・経過時間 4 桁 */
+.tp .row .c8{min-width:8ch}.tp .row .c4{min-width:4ch}
 .tp .foot{color:var(--t-dim);margin-top:auto;padding:4px 9px 0;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* 状態アイコン: pekoe の既定(icons = nerd)と同じ Font Awesome 4 系の形。run は点字スピナー */
 .nf{display:inline-block;width:1em;height:1em;vertical-align:-.14em;font-style:normal;background:currentColor;-webkit-mask:var(--nf) center/contain no-repeat;mask:var(--nf) center/contain no-repeat}
@@ -159,6 +161,9 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 @media (prefers-reduced-motion:reduce){.nf-run::before{animation:none;content:'●'}}
 /* 複数リポジトリのときの見出し行: 印 + 名前 + border 色の罫線 */
 .tp .row.repo{align-items:center}.tp .row.repo .rule{flex:1;border-top:1px solid var(--t-border);min-width:1ch}
+/* orchestrator の見出しは太い罫線(━)。名前は dim にしない */
+.tp .row.repo .rule.heavy{border-top-width:2px}
+.t-border{color:var(--t-border)}
 .t-ok{color:var(--t-ok)}.t-warn{color:var(--t-warn)}.t-err{color:var(--t-err)}.t-dim{color:var(--t-dim)}.t-pri{color:var(--t-primary)}.t-sec{color:var(--t-secondary)}
 .tp.agent{flex:1;padding:13px 0 8px;display:flex;flex-direction:column}
 .tp.agent .out{padding:0 11px;white-space:pre;overflow:hidden;flex:1}
@@ -185,6 +190,19 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 .step p{font-size:14.5px}
 .shot{background:var(--t-bg);color:var(--t-text);border-radius:10px;padding:12px 13px;font-family:var(--mono);font-size:11.6px;line-height:1.55;white-space:pre;overflow:hidden;box-shadow:0 14px 36px rgba(20,8,70,.35)}
 .shot .sel{background:var(--t-select);display:block;margin:0 -13px;padding:0 13px}
+.shot{overflow-x:auto}
+.shot.wrap{white-space:pre-wrap;overflow-wrap:anywhere}
+.shot b{font-weight:700}
+.shot .shot-ttl{display:inline-flex;align-items:center;gap:8px}
+.shot .shot-ttl svg{width:30px;height:12px;flex:0 0 auto}
+/* パネル名は TUI と同じく 1 行に収め、狭い幅では末尾を … で切る */
+.shot .shot-ttl{max-width:100%;vertical-align:top}
+.shot .shot-ttl .ttl-t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.shot .rule{display:block;border-top:1px solid var(--t-border);margin:4px 0 2px}
+/* 状態アイコンの幅をそろえる(run の点字スピナーは文字なので狭い) */
+.shot .nf-run{display:inline-block;width:1em;text-align:center}
+.shots{display:flex;flex-direction:column;gap:14px;min-width:0}
+.shot.modal-shot{border:1px solid var(--t-primary);box-shadow:0 18px 44px rgba(20,8,70,.45)}
 .shot .box{border:1px solid var(--t-border);border-radius:5px;padding:4px 8px;display:inline-block;margin-top:4px}
 
 /* tapi */
@@ -200,6 +218,41 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 .esc{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-top:8px}
 .esc>span{border:1px solid var(--border-dim);border-radius:6px;padding:3px 9px}
 .esc i{font-style:normal}
+
+/* image slots: 本番の画像が読めたら .has-img(app.js)。それまでは仮の画像 */
+.slot{display:inline-block;max-width:100%}
+.slot .slot-img{display:none}
+.slot.has-img .slot-img{display:block}
+.slot.has-img .slot-fb{display:none}
+.slot img{display:block;max-width:100%;height:auto}
+
+/* tapi: 役割 */
+.roles{margin-top:28px}
+
+/* anywhere */
+.anywhere{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;margin-top:8px}
+.anywhere .code.soon{gap:10px}
+.anywhere .code.soon p{font-size:14.5px}
+.anywhere .code.soon strong{color:var(--t-warn);font-weight:700}
+.phone-slot{justify-self:center;width:200px}
+.phone-slot img{aspect-ratio:9/16;object-fit:contain;border-radius:22px}
+.phone-slot.has-img img{object-fit:cover;box-shadow:0 18px 40px rgba(20,8,70,.4)}
+#s5 .phone-slot .slot-fb{background:var(--cream-card);padding:28px 18px;box-shadow:0 14px 34px rgba(20,8,70,.28)}
+
+/* house rules */
+/* ステッカーは画面モックの右上の角(本文の側)に貼る。[3] と同じく少し傾ける */
+.pinned{position:relative;min-width:0}
+/* 狭い幅: モックが全幅なので角に貼ると文字にかかる。モックの上に右寄せで置き、上端の余白にだけ重ねる */
+.pin{position:relative;z-index:2;display:block;width:84px;margin:0 10px -14px auto;transform:rotate(7deg);pointer-events:none}
+.pin.pin-2{transform:rotate(-6deg)}
+/* .shots は gap:14px の縦並びなので、02 と同じだけ重ねるには gap の分も戻す */
+.shots.pinned>.pin{margin-bottom:-28px}
+.pin img{filter:drop-shadow(0 10px 16px rgba(20,8,70,.4))}
+/* house rules: 本文の横にステッカー */
+.lead-row{display:flex;align-items:center;gap:16px}
+.lead-row .lead{flex:1;margin:0}
+.rules-slot{flex:0 0 96px;transform:rotate(5deg)}
+.rules-slot img{filter:drop-shadow(0 10px 16px rgba(20,8,70,.35))}
 
 /* principles */
 .pr{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--border-dim);font-size:14.5px}
@@ -323,39 +376,49 @@ table.where td code{font-size:12.5px}
   /* 4. 「待ちを見逃さない」などのカードは横 3 列 */
   .outcomes{grid-template-columns:repeat(3,1fr);gap:18px}
 
-  /* 3. 文章と画像を左右交互に。Flow: 説明 左 / ターミナル 右 */
-  #s2{display:grid;grid-template-columns:minmax(0,.68fr) minmax(0,1.32fr);column-gap:48px;align-items:start}
-  #s2>.kicker{grid-column:1;grid-row:1;justify-self:start}
-  #s2>h2{grid-column:1;grid-row:2;font-size:clamp(22px,1.9vw,26px)}
-  #s2>.lead{grid-column:1;grid-row:3}
-  #s2>.term{grid-column:2;grid-row:1 / span 4;margin-top:0!important}
-  #s2>.legend{grid-column:2;grid-row:5}
-  #s2>.step{grid-column:1 / -1}
+  /* 3. 文章と画像を左右交互に。the house: 説明 左 / ターミナル 右 */
+  #s4{display:grid;grid-template-columns:minmax(0,.68fr) minmax(0,1.32fr);column-gap:48px;align-items:start}
+  #s4>.kicker{grid-column:1;grid-row:1;justify-self:start}
+  #s4>h2{grid-column:1;grid-row:2;font-size:clamp(22px,1.9vw,26px)}
+  #s4>.lead{grid-column:1;grid-row:3}
+  #s4>.term{grid-column:2;grid-row:1 / span 4;margin-top:0!important}
+  #s4>.legend{grid-column:2;grid-row:5}
+  #s4>.step,#s4>.demo{grid-column:1 / -1}
   .term .body{grid-template-columns:40% 60%}
-  #s2 .term{font-size:11px}
-  #s2 .tp .foot{font-size:10.5px}
-  /* ステップは 01 から交互に「説明 | 画面」「画面 | 説明」 */
+  #s4 .term{font-size:11px}
+  #s4 .tp .foot{font-size:10.5px}
+  /* ステップは交互に「説明 | 画面」「画面 | 説明」(.flip が後者) */
   .step{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:center;padding:36px 0}
-  #st-run,#st-review{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
-  #st-run>div:first-child,#st-review>div:first-child{order:2}
+  .step.flip{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
+  .step.flip>div:first-child{order:2}
+  /* a day: 見出しは全幅、ステップの説明は少し狭く */
+  #s2>.lead{max-width:56ch}
+  .pin{position:absolute;margin:0;width:132px;top:-28px;right:-40px}
+  .rules-slot{flex-basis:150px}
 
-  /* Principles は逆向き: 原則の一覧 左 / 説明 右。pekoed の図は全幅 */
-  #s4{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56px;align-items:start}
-  #s4>.kicker{grid-column:2;grid-row:1;justify-self:start}
-  #s4>h2{grid-column:2;grid-row:2}
-  #s4>.lead{grid-column:2;grid-row:3}
-  #s4>div:nth-of-type(2){grid-column:1;grid-row:1 / span 4;align-self:center;margin-top:0!important}
-  #s4>h3,#s4>p:not(.lead),#s4>.archwrap{grid-column:1 / -1}
-  #s4>h3{margin-top:48px}
+  /* house rules は逆向き: きまりの一覧 左 / 説明 右。pekoed の図は全幅 */
+  #s6{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);column-gap:56px;align-items:start}
+  #s6>.kicker{grid-column:2;grid-row:1;justify-self:start}
+  #s6>h2{grid-column:2;grid-row:2}
+  #s6>.lead-row{grid-column:2;grid-row:3}
+  #s6>.rules{grid-column:1;grid-row:1 / span 4;margin-top:0}
+  #s6>h3,#s6>p:not(.lead),#s6>.archwrap{grid-column:1 / -1}
+  #s6>h3{margin-top:48px}
   .pr{grid-template-columns:150px 1fr;gap:16px}
 
-  /* Install: 説明 左 / コマンド 右 */
-  #s5{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:48px;align-items:start}
-  #s5>.kicker{grid-column:1 / -1;grid-row:1;justify-self:start}
-  #s5>h2{grid-column:1;grid-row:2}
-  #s5>.lead{grid-column:1;grid-row:3}
-  #s5>.code{grid-column:2;grid-row:2 / span 3}
-  #s5>.pagefoot{grid-column:1 / -1}
+  /* tapi: 役割の 3 行は 2 カラムの幅に抑える */
+  #s3 .roles{max-width:900px;margin-left:auto;margin-right:auto}
+
+  /* anywhere: 説明 左 / スマホ 右 */
+  .anywhere{grid-template-columns:minmax(0,1fr) 220px;gap:40px}
+
+  /* install: 説明 左 / コマンド 右 */
+  #s7{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:48px;align-items:start}
+  #s7>.kicker{grid-column:1 / -1;grid-row:1;justify-self:start}
+  #s7>h2{grid-column:1;grid-row:2}
+  #s7>.lead{grid-column:1;grid-row:3}
+  #s7>.code{grid-column:2;grid-row:2 / span 3}
+  #s7>.pagefoot{grid-column:1 / -1}
 
   /* 5. tapi は 5 体を横一列。下の行は「表情 | 状態」の 2 色ピル */
   .stickers{grid-template-columns:repeat(5,1fr);gap:24px;margin:32px auto 8px;max-width:1000px}
