@@ -32,7 +32,7 @@ window.PEKOE_COPY.en = {
   "s2.st3.title": "Housemates build it, then pass an independent review",
   "s2.st3.body": "Each housemate goes plan → implement → test → independent review → <code>pekoe land</code>. The review is done by an agent that isn't the author: it reads the diff and records pass or fail with the commit SHA. Then the housemate reports with <code>pekoe report</code>, attaching the PR and evidence such as screenshots.",
   "s2.st4.title": "Only “needs your decision” reaches you",
-  "s2.st4.body": "Everyday choices are made by the housemates and tapi. What comes up to you is what only a person can do (logging in, merging) and approvals for things that can't be undone. A question shows up on the bottom line as <code>✉ … asks · ]a</code>, and <code>]a</code> takes you to answer it: the facts pekoed read itself come first, the agent's words come after, fenced off. tapi's report is always one message, in the same order: needs your decision, what I'm doing now, in progress.",
+  "s2.st4.body": "Everyday choices are made by the housemates and tapi. What comes up to you is what only a person can do (logging in, merging) and approvals for things that can't be undone. A question shows up on the bottom line as <code>? … asks · ]a</code>, and <code>]a</code> takes you to answer it: the facts pekoed read itself come first, the agent's words come after, fenced off. tapi's report is always one message, in the same order: needs your decision, what I'm doing now, in progress.",
   "s2.inbox_alt": "tapi bringing you a letter from the inbox",
   "s2.rep.hello": "feat-csv is done, PR #131 is up.",
   "s2.rep.h1": "Needs your decision",

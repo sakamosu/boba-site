@@ -81,7 +81,7 @@
 
       <div class="step" id="d-ask">
         <div><div class="num">01 <b>you → tapi</b><span class="st c-sec">t</span></div><h3 data-i18n="s2.st1.title"></h3><p data-i18n="s2.st1.body"></p></div>
-        <div class="shot wrap"><span class="shot-ttl" data-tapi-line="work">[4] tapi chat · claude · typing</span>
+        <div class="shot wrap"><span class="shot-ttl" data-tapi-line="work"><span class="ttl-t">[4] tapi the orchestrator · claude · typing</span></span>
 <span class="t-sec">&gt;</span> <span data-i18n="s2.chat.you"></span>
 
 <span class="t-pri">●</span> <span data-i18n="s2.chat.tapi1"></span>
@@ -95,14 +95,11 @@
         <div><div class="num">02 <b>tapi → housemates</b><span class="st c-ok">● run</span></div><h3 data-i18n="s2.st2.title"></h3><p data-i18n="s2.st2.body"></p>
           <span class="slot stk-slot"><img class="slot-img" src="assets/tapi-delegate.webp" alt="" data-i18n-attr="alt=s2.delegate_alt"><img class="slot-fb" src="assets/tapi-work.webp" alt="" data-i18n-attr="alt=s2.delegate_alt"></span></div>
         <div class="shot"><span class="t-pri"><b>[1] ◆ Sessions 2/2</b></span>
-<span class="t-dim">orchestrator ──────────────────────</span>
-<span class="t-dim"><i class="nf nf-idle"></i></span> tapi             <span class="t-dim">idle 1m   two housemates are on it</span>
-<span class="t-sec"><i class="nf nf-cur"></i></span> app <span class="t-dim">──────────────────────────────</span>
+  orchestrator <span class="t-border">━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="t-dim"><i class="nf nf-idle"></i></span> <b>tapi</b> <span class="t-dim">idle</span>     <span class="t-dim">1m   two housemates are on it</span>
+<i class="nf nf-cur"></i> app <span class="t-border">─────────────────────────────────────</span>
 <span class="t-ok"><i class="nf nf-run"></i></span> feat/csv         <span class="t-ok">run</span>   <span class="t-dim">+86 -4    :3003</span>
-<span class="t-ok"><i class="nf nf-run"></i></span> fix/invoice-pdf  <span class="t-ok">run</span>   <span class="t-dim">+12 -3    :3004</span>
-
-<span class="t-dim">~/worktrees/app/feat-csv          setup ✓  port 3003</span>
-<span class="t-dim">~/worktrees/app/fix-invoice-pdf   setup ✓  port 3004</span></div>
+<span class="t-ok"><i class="nf nf-run"></i></span> fix/invoice-pdf  <span class="t-ok">run</span>   <span class="t-dim">+12 -3    :3004</span></div>
       </div>
 
       <div class="step" id="d-build">
@@ -112,7 +109,10 @@
 $ pekoe report "review: pass" --status review \
     --verdict <span class="t-ok">pass</span> --reviewed-sha 3f9c2a1
 $ pekoe land feat-csv
-<span class="t-ok">✓</span> rebase  <span class="t-ok">✓</span> test  <span class="t-ok">✓</span> push  <span class="t-ok">✓</span> gh pr create <span class="t-sec">#131</span>
+  rebased onto origin/main
+  tests passed
+  pushed feat/csv
+  PR <span class="t-sec">#131</span>
 $ pekoe report "CSV export, PR #131" --status done \
     --evidence https://github.com/you/app/pull/131 \
     --evidence ~/shots/csv-export.png</div>
@@ -122,7 +122,7 @@ $ pekoe report "CSV export, PR #131" --status done \
         <div><div class="num">04 <b>inbox</b><span class="st c-warn"><i class="nf nf-wait"></i> 1 for you</span></div><h3 data-i18n="s2.st4.title"></h3><p data-i18n="s2.st4.body"></p>
           <span class="slot stk-slot"><img class="slot-img" src="assets/tapi-inbox.webp" alt="" data-i18n-attr="alt=s2.inbox_alt"><img class="slot-fb" src="assets/tapi-wait.webp" alt="" data-i18n-attr="alt=s2.inbox_alt"></span></div>
         <div class="shots">
-          <div class="shot wrap"><span class="shot-ttl" data-tapi-line="idle">[4] tapi chat · claude</span>
+          <div class="shot wrap"><span class="shot-ttl" data-tapi-line="idle"><span class="ttl-t">[4] tapi the orchestrator · claude</span></span>
 <span class="t-pri">●</span> <span data-i18n="s2.rep.hello"></span>
 
   <b class="t-warn" data-i18n="s2.rep.h1"></b>
@@ -203,9 +203,9 @@ $ pekoe report "CSV export, PR #131" --status done \
           <div class="col">
             <div class="tp focus">
               <div class="ttl">[1] ◆ Sessions 2/4</div>
-              <div class="row repo dimmed"><span class="st"></span><span class="t-dim">orchestrator</span><i class="rule"></i></div>
+              <div class="row repo"><span class="st"></span><span>orchestrator</span><i class="rule heavy"></i></div>
               <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span class="nm">tapi</span><span class="t-dim">idle 3m</span><span class="t-dim">2 housemates working</span></div>
-              <div class="row repo"><span class="st t-sec"><i class="nf nf-cur"></i></span><span>app</span><i class="rule"></i></div>
+              <div class="row repo"><span class="st"><i class="nf nf-cur"></i></span><span>app</span><i class="rule"></i></div>
               <div class="row"><span class="st t-ok"><i class="nf nf-run"></i></span><span class="nm">feat/csv</span><span class="t-ok">run</span><span class="t-dim">+120 -8</span><span class="t-dim">:3003</span></div>
               <div class="row sel"><span class="st t-warn"><i class="nf nf-wait"></i></span><span class="nm">login-ui</span><span class="t-warn">wait 2m</span><span class="t-dim">+42 -3</span><span class="t-dim">:3004</span></div>
               <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span class="nm">perf</span><span class="t-dim">idle</span><span class="t-dim">+0 -0</span><span class="t-dim">:3005</span></div>
@@ -274,25 +274,31 @@ $ pekoe report "CSV export, PR #131" --status done \
       <div class="step" id="st-new">
         <div><div class="num">01 <b>pekoe new</b><span class="st c-dim">◌ creating</span></div><h3 data-i18n="s4.st1.title"></h3><p data-i18n="s4.st1.body"></p></div>
         <div class="shot">$ pekoe new feat/csv --from gh#128
-<span class="t-ok">✓</span> worktree   ~/worktrees/app/feat-csv
-<span class="t-ok">✓</span> copy       .env.local  .envrc
-<span class="t-ok">✓</span> setup      mise install
-<span class="t-ok">✓</span> setup      pnpm install --offline
-<span class="t-dim">⠹</span> setup      createdb app_feat-csv
-<span class="t-dim">○</span> port       :3007
-<span class="t-dim">○</span> claude     --prompt "issue #128 …"</div>
+feat/csv → ~/worktrees/app/feat-csv :3007
+  <span class="t-ok">✓</span> worktree  ~/worktrees/app/feat-csv <span class="t-dim">0.4s</span>
+  <span class="t-ok">✓</span> env       .env.local .envrc <span class="t-dim">0.1s</span>
+  <span class="t-ok">✓</span> port      :3007
+  <span class="t-ok">✓</span> install   mise install <span class="t-dim">2.1s</span>
+  <span class="t-ok">✓</span> install   pnpm install --offline <span class="t-dim">6.8s</span>
+  <span class="t-ok">✓</span> db        createdb app_feat-csv <span class="t-dim">0.9s</span>
+  <span class="t-ok">✓</span> start     claude · new session · snapshot #0
+claude started · open with `pekoe` · attach raw with `pekoe attach feat-csv`</div>
       </div>
 
       <div class="step flip" id="st-wait">
         <div><div class="num">02 <b>]a</b><span class="st c-warn">● wait</span></div><h3 data-i18n="s4.st2.title"></h3><p data-i18n="s4.st2.body"></p></div>
         <div class="shot">$ pekoe ls
-<span class="t-ok">●</span> feat/csv    <span class="t-ok">run</span>   +120 -8   :3003
-<span class="t-warn">●</span> login-ui    <span class="t-warn">wait</span>  2m        :3004
-<span class="t-sec">✓</span> docs        <span class="t-sec">done</span>  <span class="t-ok">✓test</span>     :3006
+<span class="t-ok"><i class="nf nf-run"></i></span>  feat/csv                <span class="t-ok">run     </span>  <span class="t-dim">5m  </span>  <span class="t-ok">+120</span> <span class="t-err">-8</span>  <span class="t-dim">:3003</span>
+<span class="t-warn"><i class="nf nf-wait"></i></span>  feat/login              <span class="t-warn">wait    </span>  <span class="t-dim">2m  </span>  <span class="t-ok">+42</span> <span class="t-err">-3</span>  <span class="t-dim">:3004</span>  <span class="t-dim">Edit src/lib/auth.ts</span>  <span class="t-dim">slug login-ui</span>
+<span class="t-sec"><i class="nf nf-done"></i></span>  docs                    <span class="t-sec">done    </span>  <span class="t-dim">1m  </span>  <span class="t-ok">✓</span>test  <span class="t-dim">:3006</span>
 
-<span class="box"><span class="t-warn"><i class="nf nf-wait"></i></span> <b class="t-pri">Permission</b> <span class="t-dim">· login-ui</span>
-Edit  src/lib/auth.ts
-<span class="t-sec">y</span><span class="t-dim"> allow  </span><span class="t-sec">n</span><span class="t-dim"> deny  </span><span class="t-sec">A</span><span class="t-dim"> always  </span><span class="t-sec">g</span><span class="t-dim"> go  </span><span class="t-sec">esc</span><span class="t-dim"> later</span></span></div>
+<span class="box"><span class="t-warn"><i class="nf nf-wait"></i></span> <b class="t-pri">Permission</b> <span class="t-dim">· feat/login · waiting 2m</span>
+
+feat/login wants to run
+
+<b>Edit</b>  src/lib/auth.ts
+
+<span class="t-sec">y</span><span class="t-dim"> allow  </span><span class="t-sec">n</span><span class="t-dim"> deny  </span><span class="t-sec">g</span><span class="t-dim"> go to session  </span><span class="t-sec">A</span><span class="t-dim"> always  </span><span class="t-sec">esc</span><span class="t-dim"> later</span></span></div>
       </div>
 
       <div class="step" id="st-review">
@@ -311,18 +317,18 @@ Edit  src/lib/auth.ts
 <span class="box"><span class="t-sec">◎</span> localhost:3004/login
 <span class="t-dim">button.primary</span>  "Sign in"
 <span class="t-dim">→</span> disabled until the form is valid
-<span class="t-sec">↵</span><span class="t-dim"> send</span>  <span class="t-sec">^s</span><span class="t-dim"> other</span>  <span class="t-sec">esc</span><span class="t-dim"> drop</span></span>
+<span class="t-sec">↵</span><span class="t-dim"> send</span>  <span class="t-sec">^s</span><span class="t-dim"> other</span>  <span class="t-sec">^n</span><span class="t-dim"> new</span>  <span class="t-sec">esc</span><span class="t-dim"> discard</span></span>
 <span class="t-dim">port :3004 → worktree feat/login → session login-ui</span></div>
       </div>
 
       <div class="step" id="st-land">
         <div><div class="num">05 <b>pekoe land</b><span class="st c-ok">✓ landed</span></div><h3 data-i18n="s4.st5.title"></h3><p data-i18n="s4.st5.body"></p></div>
-        <div class="shot">$ pekoe land feat/csv
-<span class="t-ok">✓</span> rebase     main → feat/csv
-<span class="t-ok">✓</span> test       pnpm test  <span class="t-dim">42 passed</span>
-<span class="t-ok">✓</span> push       origin/feat/csv
-<span class="t-dim">⠹</span> gh pr create  <span class="t-dim">#131</span>
-<span class="t-dim">○</span> on merge   teardown → rm ~/worktrees/app/feat-csv</div>
+        <div class="shot">$ pekoe land feat-csv
+  rebased onto origin/main
+  tests passed
+  pushed feat/csv
+  PR <span class="t-sec">#131</span>
+<span class="t-dim"># after the merge: teardown → rm ~/worktrees/app/feat-csv</span></div>
       </div>
     </fieldset>
 

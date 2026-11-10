@@ -161,6 +161,9 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 @media (prefers-reduced-motion:reduce){.nf-run::before{animation:none;content:'●'}}
 /* 複数リポジトリのときの見出し行: 印 + 名前 + border 色の罫線 */
 .tp .row.repo{align-items:center}.tp .row.repo .rule{flex:1;border-top:1px solid var(--t-border);min-width:1ch}
+/* orchestrator の見出しは太い罫線(━)。名前は dim にしない */
+.tp .row.repo .rule.heavy{border-top-width:2px}
+.t-border{color:var(--t-border)}
 .t-ok{color:var(--t-ok)}.t-warn{color:var(--t-warn)}.t-err{color:var(--t-err)}.t-dim{color:var(--t-dim)}.t-pri{color:var(--t-primary)}.t-sec{color:var(--t-secondary)}
 .tp.agent{flex:1;padding:13px 0 8px;display:flex;flex-direction:column}
 .tp.agent .out{padding:0 11px;white-space:pre;overflow:hidden;flex:1}
@@ -192,7 +195,12 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 .shot b{font-weight:700}
 .shot .shot-ttl{display:inline-flex;align-items:center;gap:8px;color:var(--t-primary);font-weight:700}
 .shot .shot-ttl svg{width:30px;height:12px;flex:0 0 auto}
+/* パネル名は TUI と同じく 1 行に収め、狭い幅では末尾を … で切る */
+.shot .shot-ttl{max-width:100%;vertical-align:top}
+.shot .shot-ttl .ttl-t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .shot .rule{display:block;border-top:1px solid var(--t-border);margin:4px 0 2px}
+/* 状態アイコンの幅をそろえる(run の点字スピナーは文字なので狭い) */
+.shot .nf-run{display:inline-block;width:1em;text-align:center}
 .shots{display:flex;flex-direction:column;gap:14px;min-width:0}
 .shot.modal-shot{border:1px solid var(--t-primary);box-shadow:0 18px 44px rgba(20,8,70,.45)}
 .shot .box{border:1px solid var(--t-border);border-radius:5px;padding:4px 8px;display:inline-block;margin-top:4px}
