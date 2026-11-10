@@ -5,23 +5,58 @@ pekoe のランディングページ。ページ自体が pekoe の TUI の文�
 ```
 index.html     構造。文言は data-i18n="key" で参照するだけ
 style.css      見た目。カラートークンは docs/ui-guidelines.md の値
-app.js         tapi の描画、タブとステータスバーの追従、キー操作(1-5 / j k / [ ] / ? / l / m)、言語切り替え、デモ動画の再生制御
+app.js         tapi の描画、タブとステータスバーの追従、キー操作(1-7 / j k / [ ] / g G / i / ? / l / m)、画像の差し込み枠、言語切り替え、デモ動画の再生制御
 copy/ja.js     日本語コピー(key → 文)
 copy/en.js     英語コピー
 assets/        ステッカー(WebP、背景は切り抜き済み)とデモ動画(pekoe-demo.webm / .mp4 / -poster.jpg)
+scripts/check-copy.mjs  en / ja のキーと index.html の参照の照合(npm run check:copy)
 build.py       配布用の 1 枚 HTML を dist-single/ に生成
 vite.config.js ローカル開発サーバーと GitHub Pages 向けビルド(dist/)
 ```
+
+## 構成
+
+7 つのペイン(上部のタブと番号キー 1〜7 で移動)。各ペインの `data-mode` がステータスバーのモード、`data-say` が tapi の台詞、`data-face` が tapi の顔。
+
+| タブ | 中身 |
+| --- | --- |
+| [1] home | コンセプトの 2 行、リード、3 つの約束(一度頼むだけ / 届くのは決めることだけ / マージはいつもあなた) |
+| [2] a day | tapi に頼む → tapi が分けて任せる → 同居人が実装・独立レビュー → 受信箱 → あなたがマージ。段階 3 の「根拠の受信箱」は `<template id="slot-evidence">` に枠だけ |
+| [3] tapi | 5 つの顔、統括役であること、tapi は書かない・マージしない |
+| [4] the house | 自分で手を入れるときの設備(worktree・待ちへの応答・差分レビュー・Chrome の要素選び・land)とデモ動画 |
+| [5] anywhere | 今の Web UI でできることと、作っているもの(coming の小さな枠) |
+| [6] house rules | 安全のきまりと設計の原則、pekoed の図 |
+| [7] install | 公開前の仮置きと、公開後に出すインストール手順(`<template id="install-steps">`) |
+
+機能の説明は pekoe 本体の docs(README・docs/orchestration.md・docs/tapi-chat.md)に書かれていることだけにする。段階 3 以降の機能を「できる」と書かない。
 
 ## 編集
 
 - 文言を直す → `copy/ja.js` / `copy/en.js` の値を直す。キーは両ファイルで揃える
 - 文言を増やす → `index.html` に `data-i18n="新キー"` の要素を置き、両方の copy にキーを足す。属性は `data-i18n-attr="alt=key"`
-- 画像を差し替える → `assets/` の同名ファイルを置き換える
+- 画像を差し替える → `assets/` の同名ファイルを置き換える(下の「画像を差し替える」)
+- コピーを直したら `npm run check:copy` で en / ja のキーの過不足と index.html の参照を照合する
 - デモ動画を差し替える → `assets/pekoe-demo.webm`・`pekoe-demo.mp4`・`pekoe-demo-poster.jpg` を同名で置き換える(webm と mp4 は同じ中身で両方用意する)
 - 単一ファイル版(`build.py`)には動画を入れない。`index.html` の `<!-- demo -->` 〜 `<!-- /demo -->` はブロックごと除去される
 
 `index.html` をブラウザで開けばそのまま見られる(file:// でも動く)。
+
+## 画像を差し替える
+
+既存の画像は `assets/` の同名ファイルを置き換えればよい。次の画像はまだ無く、決まった名前で置くだけで差し込まれる(`.slot` の枠。ファイルが読めたら `app.js` が仮の画像と差し替える。Vite のビルドと `build.py` も、置いてあれば取り込む)。
+
+| ファイル | 大きさ | 場所 | 無い間に出るもの |
+| --- | --- | --- | --- |
+| `assets/kv-house.webp` | 16:9 | [1] home のキービジュアル | `pekoe-logo.webp` |
+| `assets/tapi-delegate.webp` | 正方形くらい(背景は切り抜き) | [2] a day の 02(tapi が任せる) | `tapi-work.webp` |
+| `assets/tapi-inbox.webp` | 正方形くらい(背景は切り抜き) | [2] a day の 04(受信箱) | `tapi-wait.webp` |
+| `assets/tapi-evidence.webp` | 正方形くらい(背景は切り抜き) | [2] a day の 06(段階 3 の根拠の受信箱)。`<template id="slot-evidence">` を出すときに使う | (枠ごと非表示) |
+| `assets/tapi-phone.webp` | 縦長(9:16) | [5] anywhere | `tapi-sleep.webp` |
+| `assets/tapi-rules.webp` | 正方形くらい(背景は切り抜き) | [6] house rules | `tapi-done.webp` |
+| `assets/og-image.png` | 1200×630 | SNS のカード(`og:image`) | なし(meta だけ先に入れてある) |
+
+- `og:image` はクローラー向けに絶対 URL(`https://sakamosu.github.io/pekoe-site/assets/og-image.png`)で書いてある。Vite は絶対 URL を拾わないので、`vite.config.js` が `assets/og-image.png` をハッシュなしで `dist/assets/` にコピーする
+- 置いた画像が出ないときは、ファイル名と拡張子(`.webp` / `.png`)を確かめる。無い画像へのリクエストは 404 になるが、仮の画像が出るので見た目は崩れない
 
 ## 配布用の 1 枚
 
