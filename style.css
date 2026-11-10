@@ -7,7 +7,7 @@
   --primary:#ff87da; --primary-text:#ffa9e5; --secondary:#11cded; --secondary-text:#a6f0fa;
   --warn:#edc812; --ok:#51d75e; --err:#ff7172; --ink:#2a1659;
   --t-bg:#151421; --t-surface:#1e1d2c; --t-border:#3b3b4d; --t-dim:#848495; --t-text:#e0e0eb;
-  --t-primary:#ff87da; --t-primary-end:#9bb7f2; --t-secondary:#11cded; --t-warn:#edc812; --t-ok:#51d75e; --t-err:#ff7172; --t-select:#441e39;
+  --t-primary:#ff87da; --t-primary-end:#9bb7f2; --t-secondary:#11cded; --t-warn:#edc812; --t-ok:#51d75e; --t-err:#ff7172; --t-select:#441e39; --t-tapi:#e4c49a;
   --sans:"Outfit","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",system-ui,sans-serif;
   --mono:"JetBrains Mono","SF Mono",Menlo,Consolas,"Hiragino Sans",monospace;
   --round:"Fredoka","Zen Maru Gothic","Hiragino Maru Gothic ProN","Outfit",system-ui,sans-serif;
@@ -164,7 +164,18 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 /* orchestrator の見出しは太い罫線(━)。名前は dim にしない */
 .tp .row.repo .rule.heavy{border-top-width:2px}
 .t-border{color:var(--t-border)}
+/* tapi の行の落ち着いた状態(asleep・idle・done・exited)の行頭: tapi の体の色(mascot の PaletteDark.Bd)の粒 ●。幅は状態アイコン(.nf)と同じ 1em */
+.t-tapi{color:var(--t-tapi)}.pearl{display:inline-block;width:1em;text-align:center}
 .t-ok{color:var(--t-ok)}.t-warn{color:var(--t-warn)}.t-err{color:var(--t-err)}.t-dim{color:var(--t-dim)}.t-pri{color:var(--t-primary)}.t-sec{color:var(--t-secondary)}
+/* 右上の活動量(スパークライン)とトークン数 */
+.tp .ttr{position:absolute;top:-9px;right:9px;background:var(--t-bg);padding:0 5px;font-size:11.5px;white-space:pre}
+/* 列を空白でそろえる行(アイコンは 1 桁) */
+.tp .row.pre{white-space:pre;display:block}.tp .row.pre .nf{width:1ch}
+/* 狭い幅は TUI の narrow 表示: 左列は Sessions のタブ付きパネル 1 枚([2][3] とフッターは出ない) */
+.tp .ttl-w{display:none}
+.tp .ttl-n{white-space:pre;right:9px;overflow:hidden;text-overflow:ellipsis}
+.tp .ttl-n span{font-weight:400}
+.term .tp.sub,.term .tp.focus .foot,.tp .ttr{display:none}
 .tp.agent{flex:1;padding:13px 0 8px;display:flex;flex-direction:column}
 .tp.agent .out{padding:0 11px;white-space:pre;overflow:hidden;flex:1}
 .tp.agent .pick{margin:10px 9px 3px;border:1px solid var(--t-border);border-radius:5px;padding:6px 9px;white-space:pre;overflow:hidden}
@@ -174,9 +185,12 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 .tseg.mode{background:var(--t-primary);color:var(--t-bg);font-weight:700;letter-spacing:.04em}
 .tseg.tapi{background:transparent;padding-left:0}
 .tseg.tapi svg{width:36px;height:14px}
-.tbar .tkeys{margin-left:auto;color:var(--t-dim)}
-.tbar .tkeys b{color:var(--t-secondary);font-weight:700;margin-left:9px;margin-right:3px}
-.tbar .tkeys b:first-child{margin-left:0}
+/* パスはキー案内が残した幅だけ使う(TUI と同じく先に縮む) */
+.tbar .tseg{flex:0 0 auto}
+.tbar .tpath{color:var(--t-dim);min-width:0;overflow:hidden;text-overflow:ellipsis;flex:0 100 auto}
+/* キー案内は TUI と同じく入りきるものだけ出す(折り返した分は 1 行の高さの外で隠れる) */
+.tbar .tkeys{margin-left:auto;color:var(--t-dim);min-width:0;flex:0 1 auto;flex-wrap:wrap;column-gap:9px;height:1.5em;overflow:hidden}
+.tbar .tkeys b{color:var(--t-secondary);font-weight:700;margin-right:3px}
 .legend{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--dim);margin:12px 2px 0}
 .legend b{font-weight:700;margin-right:6px}
 .c-ok{color:var(--ok)}.c-warn{color:var(--warn)}.c-err{color:var(--err)}.c-sec{color:var(--secondary-text)}.c-pri{color:var(--primary-text)}.c-dim{color:var(--dim)}
@@ -387,6 +401,9 @@ table.where td code{font-size:12.5px}
   #s4>.legend{grid-column:2;grid-row:5}
   #s4>.step,#s4>.demo{grid-column:1 / -1}
   .term .body{grid-template-columns:40% 60%}
+  .tp .ttl-w{display:block}.tp .ttl-n{display:none}
+  .term .tp.sub{display:flex}.term .tp.focus .foot{display:block}
+  .tbar .tkeys{display:flex}.tp .ttr{display:block}
   #s4 .term{font-size:11px}
   #s4 .tp .foot{font-size:10.5px}
   /* ステップは交互に「説明 | 画面」「画面 | 説明」(.flip が後者) */
