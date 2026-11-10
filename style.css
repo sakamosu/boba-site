@@ -146,7 +146,9 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 .tp.focus .ttl{color:var(--t-primary);font-weight:700}
 .tp .row{display:flex;gap:9px;padding:0 9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tp .row.sel{background:var(--t-select)}
-.tp .row .nm{min-width:8ch}.tp .row .st{min-width:3ch}
+.tp .row .nm{min-width:11ch}.tp .row .st{min-width:3ch}
+/* sessionLine の列: 状態語 8 桁・経過時間 4 桁 */
+.tp .row .c8{min-width:8ch}.tp .row .c4{min-width:4ch}
 .tp .foot{color:var(--t-dim);margin-top:auto;padding:4px 9px 0;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* 状態アイコン: pekoe の既定(icons = nerd)と同じ Font Awesome 4 系の形。run は点字スピナー */
 .nf{display:inline-block;width:1em;height:1em;vertical-align:-.14em;font-style:normal;background:currentColor;-webkit-mask:var(--nf) center/contain no-repeat;mask:var(--nf) center/contain no-repeat}
@@ -193,7 +195,7 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 .shot{overflow-x:auto}
 .shot.wrap{white-space:pre-wrap;overflow-wrap:anywhere}
 .shot b{font-weight:700}
-.shot .shot-ttl{display:inline-flex;align-items:center;gap:8px;color:var(--t-primary);font-weight:700}
+.shot .shot-ttl{display:inline-flex;align-items:center;gap:8px}
 .shot .shot-ttl svg{width:30px;height:12px;flex:0 0 auto}
 /* パネル名は TUI と同じく 1 行に収め、狭い幅では末尾を … で切る */
 .shot .shot-ttl{max-width:100%;vertical-align:top}

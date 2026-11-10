@@ -81,7 +81,7 @@
 
       <div class="step" id="d-ask">
         <div><div class="num">01 <b>you → tapi</b><span class="st c-sec">t</span></div><h3 data-i18n="s2.st1.title"></h3><p data-i18n="s2.st1.body"></p></div>
-        <div class="shot wrap"><span class="shot-ttl" data-tapi-line="work"><span class="ttl-t">[4] tapi the orchestrator · claude · typing</span></span>
+        <div class="shot wrap"><span class="shot-ttl" data-tapi-line="idle"><span class="ttl-t"><b class="t-pri">[4] tapi the orchestrator</b><span class="t-dim"> · claude</span><span class="t-sec"> · typing</span></span></span>
 <span class="t-sec">&gt;</span> <span data-i18n="s2.chat.you"></span>
 
 <span class="t-pri">●</span> <span data-i18n="s2.chat.tapi1"></span>
@@ -98,8 +98,8 @@
   orchestrator <span class="t-border">━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
 <span class="t-dim"><i class="nf nf-idle"></i></span> <b>tapi</b> <span class="t-dim">idle</span>     <span class="t-dim">1m   two housemates are on it</span>
 <i class="nf nf-cur"></i> app <span class="t-border">─────────────────────────────────────</span>
-<span class="t-ok"><i class="nf nf-run"></i></span> feat/csv         <span class="t-ok">run</span>   <span class="t-dim">+86 -4    :3003</span>
-<span class="t-ok"><i class="nf nf-run"></i></span> fix/invoice-pdf  <span class="t-ok">run</span>   <span class="t-dim">+12 -3    :3004</span></div>
+<span class="t-ok"><i class="nf nf-run"></i></span> feat/csv         <span class="t-ok">run     </span> <span class="t-dim">3m  </span> <span class="t-ok">+86</span> <span class="t-err">-4</span>
+<span class="t-ok"><i class="nf nf-run"></i></span> fix/invoice-pdf  <span class="t-ok">run     </span> <span class="t-dim">3m  </span> <span class="t-ok">+12</span> <span class="t-err">-3</span></div>
       </div>
 
       <div class="step" id="d-build">
@@ -122,7 +122,7 @@ $ pekoe report "CSV export, PR #131" --status done \
         <div><div class="num">04 <b>inbox</b><span class="st c-warn"><i class="nf nf-wait"></i> 1 for you</span></div><h3 data-i18n="s2.st4.title"></h3><p data-i18n="s2.st4.body"></p>
           <span class="slot stk-slot"><img class="slot-img" src="assets/tapi-inbox.webp" alt="" data-i18n-attr="alt=s2.inbox_alt"><img class="slot-fb" src="assets/tapi-wait.webp" alt="" data-i18n-attr="alt=s2.inbox_alt"></span></div>
         <div class="shots">
-          <div class="shot wrap"><span class="shot-ttl" data-tapi-line="idle"><span class="ttl-t">[4] tapi the orchestrator · claude</span></span>
+          <div class="shot wrap"><span class="shot-ttl" data-tapi-line="idle"><span class="ttl-t"><b class="t-pri">[4] tapi the orchestrator</b><span class="t-dim"> · claude</span></span></span>
 <span class="t-pri">●</span> <span data-i18n="s2.rep.hello"></span>
 
   <b class="t-warn" data-i18n="s2.rep.h1"></b>
@@ -143,6 +143,8 @@ $ pekoe report "CSV export, PR #131" --status done \
 
 <b class="t-pri">›</b> <b class="t-sec">1</b>  <span data-i18n="s2.inbox.o1"></span>
   <b class="t-sec">2</b>  <span data-i18n="s2.inbox.o2"></span>
+
+<span class="t-dim">note</span>
 
 <span class="t-dim"><b class="t-sec">1-2</b> choose  <b class="t-sec">↵</b> answer  <b class="t-sec">n</b> note  <b class="t-sec">o</b> open link  <b class="t-sec">g</b> go to session  <b class="t-sec">x</b> dismiss  <b class="t-sec">esc</b> later</span></div>
         </div>
@@ -204,13 +206,13 @@ $ pekoe report "CSV export, PR #131" --status done \
             <div class="tp focus">
               <div class="ttl">[1] ◆ Sessions 2/4</div>
               <div class="row repo"><span class="st"></span><span>orchestrator</span><i class="rule heavy"></i></div>
-              <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span class="nm">tapi</span><span class="t-dim">idle 3m</span><span class="t-dim">2 housemates working</span></div>
+              <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span style="white-space:pre"><b>tapi</b> <span class="t-dim">idle     3m  </span></span><span class="t-dim">2 housemates working</span></div>
               <div class="row repo"><span class="st"><i class="nf nf-cur"></i></span><span>app</span><i class="rule"></i></div>
-              <div class="row"><span class="st t-ok"><i class="nf nf-run"></i></span><span class="nm">feat/csv</span><span class="t-ok">run</span><span class="t-dim">+120 -8</span><span class="t-dim">:3003</span></div>
-              <div class="row sel"><span class="st t-warn"><i class="nf nf-wait"></i></span><span class="nm">login-ui</span><span class="t-warn">wait 2m</span><span class="t-dim">+42 -3</span><span class="t-dim">:3004</span></div>
-              <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span class="nm">perf</span><span class="t-dim">idle</span><span class="t-dim">+0 -0</span><span class="t-dim">:3005</span></div>
+              <div class="row"><span class="st t-ok"><i class="nf nf-run"></i></span><span class="nm">feat/csv</span><span class="t-ok c8">run</span><span class="t-dim c4">5m</span><span><span class="t-ok">+120</span> <span class="t-err">-8</span></span></div>
+              <div class="row sel"><span class="st t-warn"><i class="nf nf-wait"></i></span><span class="nm">feat/login</span><span class="t-warn c8">wait</span><span class="t-dim c4">2m</span><span><span class="t-ok">+42</span> <span class="t-err">-3</span></span></div>
+              <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span class="nm t-dim">perf</span><span class="t-dim c8">idle</span><span class="c4"></span></div>
               <div class="row repo dimmed"><span class="st"></span><span class="t-dim">site</span><i class="rule"></i></div>
-              <div class="row"><span class="st t-sec"><i class="nf nf-done"></i></span><span class="nm">docs</span><span class="t-sec">done</span><span class="t-ok">✓test</span><span class="t-dim">:3006</span></div>
+              <div class="row"><span class="st t-sec"><i class="nf nf-done"></i></span><span class="nm">docs</span><span class="t-sec c8">done</span><span class="t-dim c4">1m</span><span><span class="t-ok">+18</span> <span class="t-err">-2</span> <span class="t-ok">✓</span></span></div>
               <div class="foot"><span class="t-warn"><i class="nf nf-wait"></i></span> 1 waiting · oldest 2m &nbsp; <span class="t-sec"><i class="nf nf-done"></i></span> 1 to review</div>
             </div>
             <div class="tp">
@@ -297,6 +299,8 @@ claude started · open with `pekoe` · attach raw with `pekoe attach feat-csv`</
 feat/login wants to run
 
 <b>Edit</b>  src/lib/auth.ts
+
+<span class="t-dim">  rule     </span>Edit(…)<span class="t-dim"> not in allowlist · </span><b class="t-sec">A</b><span class="t-dim"> always allow</span>
 
 <span class="t-sec">y</span><span class="t-dim"> allow  </span><span class="t-sec">n</span><span class="t-dim"> deny  </span><span class="t-sec">g</span><span class="t-dim"> go to session  </span><span class="t-sec">A</span><span class="t-dim"> always  </span><span class="t-sec">esc</span><span class="t-dim"> later</span></span></div>
       </div>
