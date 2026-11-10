@@ -86,13 +86,14 @@
       <div class="step" id="d-ask">
         <div><div class="num">01 <b>you → tapi</b><span class="st c-sec">t</span></div><h3 data-i18n="s2.st1.title"></h3><p data-i18n="s2.st1.body"></p></div>
         <div class="shot wrap"><span class="shot-ttl" data-tapi-line="idle"><span class="ttl-t"><b class="t-pri">[4] tapi the orchestrator</b><span class="t-dim"> · claude</span><span class="t-sec"> · typing</span></span></span>
-<span class="t-sec">&gt;</span> <span data-i18n="s2.chat.you"></span>
+<span class="t-sec">&gt; <span data-i18n="s2.chat.you"></span></span>
 
-<span class="t-pri">●</span> <span data-i18n="s2.chat.tapi1"></span>
-  <span class="t-dim">Bash</span>  pekoe --json new feat/csv --repo app --request 12 --prompt …
-  <span class="t-dim">Bash</span>  pekoe --json new fix/invoice-pdf --repo app --request 12 --prompt …
+⏺ <span data-i18n="s2.chat.tapi1"></span>
 
-<span class="t-pri">●</span> <span data-i18n="s2.chat.tapi2"></span></div>
+<span class="t-ok">⏺</span> <b>Bash</b>(pekoe --json new feat/csv --repo app --request 12 --prompt …)
+<span class="t-ok">⏺</span> <b>Bash</b>(pekoe --json new fix/invoice-pdf --repo app --request 12 --prompt …)
+
+⏺ <span data-i18n="s2.chat.tapi2"></span></div>
       </div>
 
       <div class="step flip" id="d-handoff">
@@ -125,7 +126,7 @@ $ pekoe report "CSV export, PR #131" --status done \
         <div class="pin-side"><div class="num">04 <b>inbox</b><span class="st c-warn"><i class="nf nf-wait"></i> 1 for you</span></div><h3 data-i18n="s2.st4.title"></h3><p data-i18n="s2.st4.body"></p><span class="slot pin pin-2"><img class="slot-img" src="assets/tapi-inbox.webp" alt="" data-i18n-attr="alt=s2.inbox_alt"><img class="slot-fb" src="assets/tapi-wait.webp" alt="" data-i18n-attr="alt=s2.inbox_alt"></span></div>
         <div class="shots">
           <div class="shot wrap"><span class="shot-ttl" data-tapi-line="idle"><span class="ttl-t"><b class="t-pri">[4] tapi the orchestrator</b><span class="t-dim"> · claude</span></span></span>
-<span class="t-pri">●</span> <span data-i18n="s2.rep.hello"></span>
+⏺ <span data-i18n="s2.rep.hello"></span>
 
   <b class="t-warn" data-i18n="s2.rep.h1"></b>
   <span data-i18n="s2.rep.d1"></span>
@@ -200,69 +201,81 @@ $ pekoe report "CSV export, PR #131" --status done \
       <h2 data-i18n="s4.h2"></h2>
       <p class="lead" data-i18n="s4.lead"></p>
 
+      <!-- pekoe の TUI(internal/tui: view.go・taprow.go・repos.go・conflicts.go)と同じ構成。
+           アイコンは icons = unicode のパネル名 + nerd の状態アイコン(.nf)。狭い幅では TUI の narrow 表示(左列が 1 枚のタブ付きパネル)になる -->
       <div class="term">
         <div class="tb"><i></i><i></i><i></i><span>pekoe — ~/src/app · tmux -L pekoe</span></div>
         <div class="body">
           <div class="col">
             <div class="tp focus">
-              <div class="ttl">[1] ◆ Sessions 2/4</div>
+              <div class="ttl ttl-w">[1] ◆ Sessions 2/4</div>
+              <div class="ttl ttl-n">◆ Sessions 2/4<span class="t-dim">  ⎇ Worktrees  ⊙ Issues 3 mine  ≡ Changes 3</span></div>
               <div class="row repo"><span class="st"></span><span>orchestrator</span><i class="rule heavy"></i></div>
-              <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span style="white-space:pre"><b>tapi</b> <span class="t-dim">idle     3m  </span></span><span class="t-dim">2 housemates working</span></div>
+              <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span style="white-space:pre"><b>tapi</b> <span class="t-dim">idle     3m  </span></span><span class="t-dim">csv is done. login needs your ok</span></div>
               <div class="row repo"><span class="st"><i class="nf nf-cur"></i></span><span>app</span><i class="rule"></i></div>
               <div class="row"><span class="st t-ok"><i class="nf nf-run"></i></span><span class="nm">feat/csv</span><span class="t-ok c8">run</span><span class="t-dim c4">5m</span><span><span class="t-ok">+120</span> <span class="t-err">-8</span></span></div>
               <div class="row sel"><span class="st t-warn"><i class="nf nf-wait"></i></span><span class="nm">feat/login</span><span class="t-warn c8">wait</span><span class="t-dim c4">2m</span><span><span class="t-ok">+42</span> <span class="t-err">-3</span></span></div>
               <div class="row"><span class="st t-dim"><i class="nf nf-idle"></i></span><span class="nm t-dim">perf</span><span class="t-dim c8">idle</span><span class="c4"></span></div>
-              <div class="row repo dimmed"><span class="st"></span><span class="t-dim">site</span><i class="rule"></i></div>
-              <div class="row"><span class="st t-sec"><i class="nf nf-done"></i></span><span class="nm">docs</span><span class="t-sec c8">done</span><span class="t-dim c4">1m</span><span><span class="t-ok">+18</span> <span class="t-err">-2</span> <span class="t-ok">✓</span></span></div>
-              <div class="foot"><span class="t-warn"><i class="nf nf-wait"></i></span> 1 waiting · oldest 2m &nbsp; <span class="t-sec"><i class="nf nf-done"></i></span> 1 to review</div>
+              <div class="row repo"><span class="st"></span><span class="t-dim">site</span><i class="rule"></i></div>
+              <div class="row"><span class="st t-sec"><i class="nf nf-done"></i></span><span class="nm">docs <span class="t-dim">#42</span> <span class="t-ok">✓</span></span><span class="t-sec c8">done</span><span class="t-dim c4">1m</span><span><span class="t-ok">+18</span> <span class="t-err">-2</span> <span class="t-ok">✓</span></span></div>
+              <div class="foot"><span class="t-warn"><i class="nf nf-wait"></i></span> 1 waiting · oldest 2m &nbsp;&nbsp; <span class="t-sec"><i class="nf nf-done"></i></span> 1 to review</div>
             </div>
-            <div class="tp">
-              <div class="ttl">[2] ⎇ Worktrees</div>
-              <div class="row"><span class="nm">main</span></div>
-              <div class="row"><span class="nm">feat/login</span><span class="t-sec"><i class="nf nf-cur"></i></span></div>
-              <div class="row"><span class="nm">feat/csv</span><span class="t-dim">~/worktrees/app/feat-csv</span></div>
+            <div class="tp sub">
+              <div class="ttl">[2] ⎇ Worktrees 4 <span>app</span></div>
+              <div class="row pre">  main             <span class="t-dim">       ~/src/app</span></div>
+              <div class="row pre">  feat/csv         <span class="t-dim">:3003</span></div>
+              <div class="row pre"><i class="nf nf-cur"></i> feat/login       <span class="t-dim">:3004  ~/worktrees/app/feat-login</span></div>
+              <div class="row pre">  perf</div>
             </div>
-            <div class="tp">
-              <div class="ttl">[3] ≡ Changes 3</div>
-              <div class="row"><span class="t-ok">▎A</span><span>src/components/LoginForm.tsx</span></div>
-              <div class="row"><span class="t-warn">▎M</span><span>src/lib/auth.ts</span></div>
-              <div class="row"><span class="t-err">▎D</span><span>src/lib/legacy-login.ts</span></div>
+            <div class="tp sub">
+              <div class="ttl">[3] ≡ Changes 3 <span>feat/login</span></div>
+              <div class="row pre"><span class="t-ok">A</span> src/components/LoginForm.tsx</div>
+              <div class="row pre"><span class="t-warn">M</span> src/lib/auth.ts</div>
+              <div class="row pre"><span class="t-err">D</span> src/lib/legacy-login.ts</div>
             </div>
           </div>
           <div class="col">
             <div class="tp agent">
-              <div class="ttl">[4] &gt; Agent login-ui</div>
-<div class="out"><span class="t-sec">&gt;</span> add validation to the login form
+              <div class="ttl">[4] &gt; Agent feat/login <span>· claude · :3004</span></div>
+              <div class="ttr"><span class="t-dim">▁▂▄▆▅▃▂</span><span class="t-sec">▁</span> <span class="t-dim">31k tok</span></div>
+<div class="out"><span class="t-sec">&gt; add validation to the login form</span>
 
-<span class="t-pri">●</span> Adding email/password validation to LoginForm.tsx.
+⏺ I'll check the email and password before submit.
 
-  <span class="t-dim">Read</span>  src/components/LoginForm.tsx
-  <span class="t-dim">Edit</span>  src/components/LoginForm.tsx
-  <span class="t-ok">+</span>   if (!email.includes("@")) {
-  <span class="t-ok">+</span>     setError("email", "looks wrong")
-  <span class="t-ok">+</span>   }
-  <span class="t-dim">Bash</span>  pnpm test
-        <span class="t-ok">✓</span> 42 passed
+<span class="t-ok">⏺</span> <b>Update</b>(src/components/LoginForm.tsx)
+  <span class="t-dim">⎿</span>  Updated src/components/LoginForm.tsx with 3 additions
+<span class="t-ok">       18 + if (!email.includes("@")) {</span>
+<span class="t-ok">       19 +   setError("email", "looks wrong")</span>
+<span class="t-ok">       20 + }</span>
 
-<span class="t-pri">●</span> Done. 3 files, 42 lines. Wire the error toast too?
+<span class="t-ok">⏺</span> <b>Bash</b>(pnpm test)
+  <span class="t-dim">⎿</span>  42 passed
 
-<span class="t-warn">?</span> Allow <b>Edit</b> src/lib/auth.ts?  <span class="t-dim">[1] yes  [2] always  [esc] no</span></div>
-<div class="pick"><span class="t-sec">◎</span> from Chrome · <span class="t-dim">localhost:3004/login</span>
-<span class="t-dim">button.primary</span>  "Sign in"  <span class="t-dim">→ disable until the form is valid</span>
-<span class="ph">clip 320×96 · png</span>
-<span class="t-sec">↵</span><span class="t-dim"> send  </span><span class="t-sec">^s</span><span class="t-dim"> other  </span><span class="t-sec">^n</span><span class="t-dim"> new  </span><span class="t-sec">esc</span><span class="t-dim"> discard</span></div>
+<span class="t-dim">────────────────────────────────────────────────</span>
+ <b>Edit file</b>  src/lib/auth.ts
+ Do you want to make this edit to auth.ts?
+ <span class="t-sec">❯ 1. Yes</span>
+   2. Yes, allow all edits during this session <span class="t-dim">(shift+tab)</span>
+   3. No, and tell Claude what to do differently <span class="t-dim">(esc)</span></div>
+<div class="pick"><span class="t-sec">◎</span> <b>Pick #0007</b> <span class="t-dim">from Chrome · localhost:3004/login · 12s ago</span>
+
+<span class="t-dim">element   </span>&lt;button class="primary"&gt; "Sign in"
+<span class="t-dim">component </span><span class="t-sec">&lt;LoginForm&gt;</span> <span class="t-dim">src/components/LoginForm.tsx:42</span>
+<span class="ph">clip 320×96 · png</span>  <span class="t-dim">attached as @…/picks/0007.png</span>
+<span class="t-sec">›</span> disabled until the form is valid
+<span class="t-sec">4</span><span class="t-dim"> focus card</span></div>
             </div>
           </div>
         </div>
         <div class="tbar">
-          <span class="tseg tapi" data-tapi-line="wait"><span class="t-warn">login-ui needs you</span></span>
+          <span class="tseg tapi" data-tapi-line="wait"><span class="t-warn">feat/login needs you</span></span>
           <span class="tseg mode">◆ SESSIONS</span>
-          <span class="tseg">⎇ feat/login</span>
-          <span class="tseg"><span class="t-ok">2 run</span>&nbsp;·&nbsp;<span class="t-warn">1 wait</span></span>
-          <span class="tkeys"><b>j/k</b>move<b>enter</b>open<b>n</b>new<b>]a</b>next<b>r</b>review<b>?</b>help</span>
+          <span class="tseg">⎇ <span class="t-dim">app</span> feat/login <span class="t-dim">:3004</span></span>
+          <span class="tpath">~/worktrees/app/feat-login</span>
+          <span class="tkeys"><span><b>j/k</b>move</span><span><b>↵</b>open</span><span><b>n</b>new</span><span><b>r</b>review</span><span><b>]a</b>next wait</span><span><b>?</b>help</span></span>
         </div>
       </div>
-      <div class="legend"><span><b class="c-ok"><i class="nf nf-run"></i></b>run</span><span><b class="c-warn"><i class="nf nf-wait"></i></b>wait</span><span><b class="c-dim"><i class="nf nf-idle"></i></b>idle</span><span><b class="c-sec"><i class="nf nf-done"></i></b>done</span><span><b class="c-err"><i class="nf nf-fail"></i></b>fail</span></div>
+      <div class="legend"><span><b class="c-ok"><i class="nf nf-run"></i></b>run</span><span><b class="c-warn"><i class="nf nf-wait"></i></b>wait</span><span><b class="c-dim"><i class="nf nf-idle"></i></b>idle</span><span><b class="c-sec"><i class="nf nf-done"></i></b>done</span><span><b class="c-pri">▶</b>review</span><span><b class="c-err"><i class="nf nf-fail"></i></b>fail</span></div>
 
       <!-- demo -->
       <div class="demo" id="s4-demo">
@@ -308,21 +321,22 @@ feat/login wants to run
 
       <div class="step" id="st-review">
         <div><div class="num">03 <b>review</b><span class="st c-sec">✓ done</span></div><h3 data-i18n="s4.st3.title"></h3><p data-i18n="s4.st3.body"></p></div>
-        <div class="shot"><span class="t-dim">src/lib/csv.ts</span>  <span class="t-dim">hunk 2/5</span>  <span class="t-dim" data-i18n="s4.shot_prompt"></span>
-<span class="sel"><span class="t-pri">▶</span> @@ -12,4 +12,9 @@</span>
-  <span class="t-ok">▎+</span> export function toCsv(rows) {
-  <span class="t-ok">▎+</span>   return rows.map(escape).join("\n")
-  <span class="t-err">▎-</span>   return rows.join(",")
-<span class="box"><span class="t-sec">a</span> <span class="t-dim">approve</span>  <span class="t-sec">?</span> <span class="t-dim">why</span>  <span class="t-sec">c</span> <span class="t-dim">comment</span>  <span class="t-sec">S</span> <span class="t-dim">send</span></span></div>
+        <div class="shot"><b class="t-pri">[4] ± Diff src/lib/csv.ts</b> <span class="t-dim">· hunk 2/5</span>
+<span class="sel"><span class="t-pri">▶</span> <span class="t-dim">@@ -12,4 +12,9 @@</span>  <span class="t-dim" data-i18n="s4.shot_prompt"></span></span>  <span class="t-dim">  12   12   export function toCsv(rows) {</span>
+<span class="t-err">▎</span> <span class="t-dim">  13      </span><span class="t-err">-</span>   return rows.join(",")
+<span class="t-ok">▎</span> <span class="t-dim">       13 </span><span class="t-ok">+</span>   return rows.map(escape).join("\n")
+<span class="box"><span class="t-sec">a</span> <span class="t-dim">approve</span>  <span class="t-sec">x</span> <span class="t-dim">revert</span>  <span class="t-sec">c</span> <span class="t-dim">comment</span>  <span class="t-sec">?</span> <span class="t-dim">ask</span>  <span class="t-sec">]h</span> <span class="t-dim">next</span>  <span class="t-sec">S</span> <span class="t-dim">send</span></span></div>
       </div>
 
       <div class="step flip" id="st-pick">
         <div><div class="num">04 <b>pick</b><span class="st c-sec">◎ Chrome</span></div><h3 data-i18n="s4.st4.title"></h3><p data-i18n="s4.st4.body"></p></div>
         <div class="shot"><span class="t-dim">⌘⇧E in Chrome → pick</span>
-<span class="box"><span class="t-sec">◎</span> localhost:3004/login
-<span class="t-dim">button.primary</span>  "Sign in"
-<span class="t-dim">→</span> disabled until the form is valid
-<span class="t-sec">↵</span><span class="t-dim"> send</span>  <span class="t-sec">^s</span><span class="t-dim"> other</span>  <span class="t-sec">^n</span><span class="t-dim"> new</span>  <span class="t-sec">esc</span><span class="t-dim"> discard</span></span>
+<span class="box"><span class="t-sec">◎</span> <b>Pick #0007</b> <span class="t-dim">from Chrome · localhost:3004/login · 12s ago</span>
+
+<span class="t-dim">element   </span>&lt;button class="primary"&gt; "Sign in"
+<span class="t-dim">component </span><span class="t-sec">&lt;LoginForm&gt;</span> <span class="t-dim">src/components/LoginForm.tsx:42</span>
+<span class="t-sec">›</span> disabled until the form is valid
+<span class="t-sec">↵</span><span class="t-dim"> send to login-ui</span>  <span class="t-sec">^s</span><span class="t-dim"> other session</span>  <span class="t-sec">^n</span><span class="t-dim"> new session</span>  <span class="t-sec">esc</span><span class="t-dim"> discard</span></span>
 <span class="t-dim">port :3004 → worktree feat/login → session login-ui</span></div>
       </div>
 
