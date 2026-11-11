@@ -26,7 +26,7 @@ vite.config.js ローカル開発サーバーと GitHub Pages 向けビルド(di
 | [4] the house | 自分で手を入れるときの設備(worktree・待ちへの応答・差分レビュー・Chrome の要素選び・land)とデモ動画 |
 | [5] anywhere | 今の Web UI でできることと、作っているもの(coming の小さな枠) |
 | [6] house rules | 安全のきまりと設計の原則、pekoed の図 |
-| [7] install | 公開前の仮置きと、公開後に出すインストール手順(`<template id="install-steps">`) |
+| [7] install | 動作環境、GitHub へのリンク、インストール手順 |
 
 機能の説明は pekoe 本体の docs(README・docs/orchestration.md・docs/tapi-chat.md)に書かれていることだけにする。段階 3 以降の機能を「できる」と書かない。
 

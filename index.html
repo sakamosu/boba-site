@@ -32,7 +32,7 @@
   <span class="path">~/repos/pekoe · tmux -L pekoe</span>
   <div class="r">
     <button class="kbtn lang" id="langbtn" type="button" aria-label="language"><b>l</b> <span class="opt" data-l="ja">ja</span><span class="sl">/</span><span class="opt on" data-l="en">en</span></button>
-    <span class="kbtn soon" aria-disabled="true" title="coming soon">GitHub <em>soon</em></span>
+    <a class="kbtn" href="https://github.com/sakamosu/pekoe">GitHub</a>
     <button class="kbtn" id="keysbtn" type="button"><b>?</b> keys</button>
   </div>
 </div>
@@ -435,17 +435,13 @@ feat/login wants to run
     <!-- [7] install -->
     <fieldset class="pane" id="s7" data-sec="7" data-mode="INSTALL" data-face="done" data-say="make install, then just ask">
       <legend class="ttl">[7] &gt; install</legend>
-      <div class="kicker chips" id="i-install"><span class="chip cream">v0.1</span><span class="chip green">tmux engine</span></div>
+      <div class="kicker chips" id="i-install"><span class="chip cream">v0.3.0</span><span class="chip green">tmux engine</span></div>
       <h2>make install</h2>
       <p class="lead" data-i18n="s7.lead"></p>
-      <!-- 公開準備中の仮置き。公開したら下の <template> の中身をここに戻し、GitHub のリンクを入れる -->
-      <div class="code soon" id="install-soon">
-        <span class="chip plan">coming soon</span>
-        <p data-i18n="s7.soon"></p>
-        <span class="ghbtn" aria-disabled="true">github.com/sakamosu/pekoe</span>
-      </div>
-      <template id="install-steps">
-        <div class="code"><pre><span class="c"># install</span>
+      <p class="ghlink"><a class="keyact" href="https://github.com/sakamosu/pekoe"><b>⎇</b> github.com/sakamosu/pekoe</a></p>
+      <div class="code"><pre><span class="c"># install</span>
+<span class="p">$</span> git clone https://github.com/sakamosu/pekoe
+<span class="p">$</span> cd pekoe
 <span class="p">$</span> make install            <span class="c"># ~/.local/bin/pekoe (+ pekoed)</span>
 <span class="p">$</span> pekoe hooks install      <span class="c" data-i18n="s7.c1"></span>
 <span class="p">$</span> pekoe skills install     <span class="c" data-i18n="s7.c5"></span>
@@ -460,7 +456,6 @@ feat/login wants to run
 
 <span class="c"># agent-side</span>
 <span class="p">$</span> claude mcp add pekoe -- pekoe mcp</pre></div>
-      </template>
       <div class="pagefoot">
         <span>© 2026 Yuki Sakamoto · made in Ghostty, for one person</span>
         <span>pekoe /pekoː/</span>

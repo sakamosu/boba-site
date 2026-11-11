@@ -95,12 +95,11 @@ window.PEKOE_COPY.ja = {
   "s6.svg_aria": "pekoed と 5 つのクライアント、worktree ごとの pty の関係図",
 
   // [7] install
-  "s7.lead": "動作環境: macOS(Ghostty で開発・確認)。必要なもの: tmux 3.3 以上、git、ソースからビルドするなら Go 1.27.3 以上。任意: gh(取り込みと PR レビュー)、Neovim 0.10 以上(レビュー画面)、Chrome(要素の選択)、Tailscale(Web UI)。",
-  "s7.soon": "pekoe はまだ公開準備中です。リポジトリを公開したら、ここにリンクとインストール手順を載せます。",
+  "s7.lead": "動作環境: macOS(Ghostty で開発・確認。Linux 向けのビルドも出ていますが、一部は未確認です)。必要なもの: tmux 3.3 以上、git、ソースからビルドするなら Go 1.27.4 以上。任意: gh(issue の取り込み、land、PR の表示とレビュー)、Neovim 0.10 以上(レビュー画面)、Chrome(拡張機能での要素の選択、TUI 内のプレビュー)、Tailscale(Web UI)。",
   "s7.c1": "# ~/.claude/settings.json に hooks を追加",
   "s7.c2": "# 任意: ログイン時に pekoed を起動",
   "s7.c3": "# リポジトリを検出して設定を下書き",
   "s7.c4": "\"CSV エクスポートを追加\"",
-  "s7.c5": "# tapi とセッションが使うスキルを ~/.claude/skills にリンク",
+  "s7.c5": "# 任意: tapi とセッションが使うスキルを ~/.claude/skills にリンク",
   "s7.c6": "# TUI。t で tapi に頼む"
 };

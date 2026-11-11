@@ -1,6 +1,6 @@
 // copy/en.js と copy/ja.js のキーがそろっているか、index.html が参照するキーがすべてあるか、
 // 使われていないキーが無いかを照合する。 node scripts/check-copy.mjs(問題があれば exit 1)
-// <template> の中(公開前の install 手順など)の参照も数える。
+// <template> の中の参照も数える。
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 
