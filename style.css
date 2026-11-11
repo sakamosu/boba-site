@@ -54,9 +54,6 @@ legend{float:none;width:auto}
 .kbtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-family:var(--mono);font-size:12.5px;color:var(--dim);cursor:pointer;background:transparent;text-decoration:none}
 .kbtn b{color:var(--secondary-text);font-weight:700}
 .kbtn:hover{border-color:var(--text);color:var(--text)}
-/* 公開前の仮ボタン: 押せないことが見て分かるように */
-.kbtn.soon,.kbtn.soon:hover{cursor:default;border-style:dashed;border-color:var(--border);color:var(--dim)}
-.kbtn.soon em{font-style:normal;color:var(--warn)}
 
 /* grid */
 .app{max-width:1240px;margin:0 auto;padding:0 14px}
@@ -298,11 +295,11 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 /* install */
 .code{background:var(--t-bg);border-radius:10px;padding:18px 20px;font-family:var(--mono);font-size:12.8px;line-height:1.8;color:var(--t-text);overflow:auto;box-shadow:0 14px 36px rgba(20,8,70,.35)}
 .code pre{margin:0}
-/* Install の仮置きカード */
+/* 準備中のカード([5] anywhere) */
 .code.soon{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:22px 22px 24px;font-family:var(--sans)}
 .code.soon p{margin:0;color:var(--t-text);font-size:15px;line-height:1.7;max-width:36em}
 .code.soon .chip.plan{color:var(--t-text);border-color:var(--t-border)}
-.ghbtn{font-family:var(--mono);font-size:13px;color:var(--t-dim);border:1px dashed var(--t-border);border-radius:7px;padding:6px 12px;cursor:default}
+.ghlink{margin:0 0 16px}
 /* ヒーローの「これは何か」の一文 */
 .code .p{color:var(--t-secondary)}.code .c{color:var(--t-dim)}.code .s{color:var(--t-warn)}
 table.where{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
@@ -451,7 +448,7 @@ table.where td code{font-size:12.5px}
   .stk .line span.t-err{background:var(--err)}
   .stk .line span.t-dim{background:var(--cream-card);color:var(--card-dim)}
 }
-@media (max-width:560px){.stickers{grid-template-columns:1fr 1fr}.kbtn.soon em{display:none}}
+@media (max-width:560px){.stickers{grid-template-columns:1fr 1fr}}
 
 /* ── language toggle ── */
 .kbtn.lang .opt{color:var(--dim)}

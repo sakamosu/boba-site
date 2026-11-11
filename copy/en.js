@@ -95,7 +95,6 @@ window.PEKOE_COPY.en = {
 
   // [7] install
   "s7.lead": "Runs on: macOS (developed and tested in Ghostty). Requires: tmux 3.3 or later, git, and Go 1.27.3 or later to build from source. Optional: gh (landing and PR review), Neovim 0.10 or later (review screen), Chrome (element picking), Tailscale (Web UI).",
-  "s7.soon": "pekoe isn’t public yet. Once the repository is published, the link and install steps will be right here.",
   "s7.c1": "# adds hooks to ~/.claude/settings.json",
   "s7.c2": "# optional: start pekoed at login",
   "s7.c3": "# detect the repo and draft its config",
