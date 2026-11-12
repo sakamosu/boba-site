@@ -106,7 +106,7 @@ window.PEKOE_COPY.ja = {
   "s7.c5": "# 任意: tapi とセッションが使うスキルを ~/.claude/skills にリンク",
   "s7.c6": "# TUI。t で tapi に頼む",
   "s7.c7": "# 既定のビルド(Web UI なし)",
-  "s7.c8": "# 任意: ログイン時に pekoed を起動する launchd のコマンドを表示",
+  "s7.c8": "# 任意: pekoed をログイン時に起動する launchd の手順",
   "s7.c9": "# pekoe update は Homebrew で入れたものを断る",
   "s7.c10": "# Web UI も入れてビルド"
 };

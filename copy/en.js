@@ -105,7 +105,7 @@ window.PEKOE_COPY.en = {
   "s7.c5": "# optional: link the skills tapi and sessions use into ~/.claude/skills",
   "s7.c6": "# TUI: t to ask tapi",
   "s7.c7": "# default build (no Web UI)",
-  "s7.c8": "# optional: launchd commands to start pekoed at login",
+  "s7.c8": "# optional: launchd steps to start pekoed at login",
   "s7.c9": "# pekoe update refuses a Homebrew install",
   "s7.c10": "# also build in the Web UI"
 };
