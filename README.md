@@ -21,14 +21,14 @@ vite.config.js ローカル開発サーバーと GitHub Pages 向けビルド(di
 | タブ | 中身 |
 | --- | --- |
 | [1] home | コンセプトの 2 行、リード、3 つの約束(一度頼むだけ / 届くのは決めることだけ / マージはいつもあなた) |
-| [2] a day | tapi に頼む → tapi が分けて任せる → 同居人が実装・独立レビュー → 受信箱 → あなたがマージ。段階 3 の「根拠の受信箱」は `<template id="slot-evidence">` に枠だけ |
+| [2] a day | tapi に頼む → tapi が分けて任せる → 同居人が実装・独立レビュー → 受信箱 → あなたがマージ。「根拠の受信箱」(本体では実装済み。サイトではまだ出していない)は `<template id="slot-evidence">` に枠だけ |
 | [3] tapi | 5 つの顔、統括役であること、tapi は書かない・マージしない |
 | [4] the house | 自分で手を入れるときの設備(worktree・待ちへの応答・差分レビュー・Chrome の要素選び・land)とデモ動画 |
 | [5] anywhere | Web UI でスマホからできること(見る・答える・受信箱・tapi に頼む)と、TUI のダッシュボード |
 | [6] house rules | 安全のきまりと設計の原則、pekoed の図 |
 | [7] install | 動作環境、GitHub へのリンク、インストール手順 |
 
-機能の説明は pekoe 本体の docs(README・docs/orchestration.md・docs/tapi-chat.md・docs/web.md)に書かれていることだけにする。段階 3 以降の機能を「できる」と書かない。
+機能の説明は pekoe 本体の docs(README・docs/orchestration.md・docs/tapi-chat.md・docs/web.md)に書かれていることだけにする。本体の docs で実装済みと書かれていない機能(設計中・後回しのもの)を「できる」と書かない。
 
 ## 編集
 
@@ -52,7 +52,7 @@ vite.config.js ローカル開発サーバーと GitHub Pages 向けビルド(di
 | `assets/kv-house.webp` | 16:9 | 今は使っていない(ヒーローは `pekoe-logo.webp` のまま)。家の絵が要る所ができたら `.slot` で差し込む | — |
 | `assets/tapi-delegate.webp` | 正方形くらい(背景は切り抜き) | [2] a day の 02(tapi が任せる)。Sessions のモックの角に貼る | `tapi-work.webp` |
 | `assets/tapi-inbox.webp` | 正方形くらい(背景は切り抜き) | [2] a day の 04(受信箱)。報告のモックの角に貼る | `tapi-wait.webp` |
-| `assets/tapi-evidence.webp` | 正方形くらい(背景は切り抜き) | [2] a day の 06(段階 3 の根拠の受信箱)。`<template id="slot-evidence">` を出すときに使う | (枠ごと非表示) |
+| `assets/tapi-evidence.webp` | 正方形くらい(背景は切り抜き) | [2] a day の 06(根拠の受信箱。サイトではまだ出していない)。`<template id="slot-evidence">` を出すときに使う | (枠ごと非表示) |
 | `assets/tapi-phone.webp` | 縦長(9:16) | [5] anywhere | `tapi-sleep.webp` |
 | `assets/tapi-rules.webp` | 正方形くらい(背景は切り抜き) | [6] house rules。リードの横 | `tapi-done.webp` |
 | `assets/og-image.png` | 1200×630 | SNS のカード(`og:image`) | なし(meta だけ先に入れてある) |
