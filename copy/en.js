@@ -73,9 +73,13 @@ window.PEKOE_COPY.en = {
   "s4.shot_prompt": "← prompt #3: add CSV export",
 
   // [5] anywhere
-  "s5.h2": "From your phone, too. Soon.",
-  "s5.now": "<strong>Today</strong>: with the optional Web UI build (inside your Tailscale tailnet only), you can see your sessions and their screens on an iPhone, answer permission prompts and send a quick message.",
-  "s5.next": "<strong>In the works</strong>: answering the inbox and asking tapi from your phone, and a dashboard in the TUI that shows the whole house at a glance.",
+  "s5.h2": "From your phone, too: answer and ask.",
+  "s5.lead": "Put the Web UI (an optional build, reachable only inside your Tailscale tailnet) on your iPhone's home screen, and this is what you can do when you're out.",
+  "s5.c1": "<strong>See</strong>: your sessions and their states, and each agent's screen. The Overview tab shows the summary and the pipeline (<code>impl → review → PR → CI → merge</code>).",
+  "s5.c2": "<strong>Answer</strong>: allow or deny permission prompts (with a confirmation first), and pick from a question's options with a keypad. You can send a quick message too.",
+  "s5.c3": "<strong>Decide</strong>: answer the inbox from the Inbox tab, with the facts and links first and the agent's words after.",
+  "s5.c4": "<strong>Ask</strong>: send tapi a message in tapi chat. A sheet shows the recipient and the full text before it goes (by default). Sending works only when you have limited devices with <code>allow_devices</code>.",
+  "s5.desk": "At the Mac, select the tapi row in the TUI for the dashboard: the inbox, the pipeline and your requests on one screen.",
   "s5.phone_alt": "tapi on a phone screen",
 
   // [6] house rules

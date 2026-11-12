@@ -351,15 +351,21 @@ feat/login wants to run
       </div>
     </fieldset>
 
-    <!-- [5] anywhere(段階 3 で実装中。今は coming の小さな枠だけ) -->
-    <fieldset class="pane" id="s5" data-sec="5" data-mode="ANYWHERE" data-face="sleep" data-say="your phone, soon">
+    <!-- [5] anywhere(Web UI でスマホからできること。本体の docs/web.md の「できるのは次の 8 つだけ」に合わせる) -->
+    <fieldset class="pane" id="s5" data-sec="5" data-mode="ANYWHERE" data-face="done" data-say="answer from your phone">
       <legend class="ttl">[5] ⇢ anywhere</legend>
-      <div class="kicker chips" id="s5-soon"><span class="chip plan">coming</span><span class="chip cyan">iPhone</span><span class="chip green">Tailscale</span></div>
+      <div class="kicker chips" id="s5-web"><span class="chip cyan">iPhone</span><span class="chip green">Tailscale</span></div>
       <h2 data-i18n="s5.h2"></h2>
       <div class="anywhere">
-        <div class="code soon">
-          <p data-i18n="s5.now"></p>
-          <p data-i18n="s5.next"></p>
+        <div class="code can">
+          <p data-i18n="s5.lead"></p>
+          <ul>
+            <li data-i18n="s5.c1"></li>
+            <li data-i18n="s5.c2"></li>
+            <li data-i18n="s5.c3"></li>
+            <li data-i18n="s5.c4"></li>
+          </ul>
+          <p class="desk" data-i18n="s5.desk"></p>
         </div>
         <span class="slot phone-slot"><img class="slot-img" src="assets/tapi-phone.webp" alt="" data-i18n-attr="alt=s5.phone_alt"><img class="slot-fb" src="assets/tapi-sleep.webp" alt="" data-i18n-attr="alt=s5.phone_alt"></span>
       </div>

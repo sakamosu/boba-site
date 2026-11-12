@@ -24,11 +24,11 @@ vite.config.js ローカル開発サーバーと GitHub Pages 向けビルド(di
 | [2] a day | tapi に頼む → tapi が分けて任せる → 同居人が実装・独立レビュー → 受信箱 → あなたがマージ。段階 3 の「根拠の受信箱」は `<template id="slot-evidence">` に枠だけ |
 | [3] tapi | 5 つの顔、統括役であること、tapi は書かない・マージしない |
 | [4] the house | 自分で手を入れるときの設備(worktree・待ちへの応答・差分レビュー・Chrome の要素選び・land)とデモ動画 |
-| [5] anywhere | 今の Web UI でできることと、作っているもの(coming の小さな枠) |
+| [5] anywhere | Web UI でスマホからできること(見る・答える・受信箱・tapi に頼む)と、TUI のダッシュボード |
 | [6] house rules | 安全のきまりと設計の原則、pekoed の図 |
 | [7] install | 動作環境、GitHub へのリンク、インストール手順 |
 
-機能の説明は pekoe 本体の docs(README・docs/orchestration.md・docs/tapi-chat.md)に書かれていることだけにする。段階 3 以降の機能を「できる」と書かない。
+機能の説明は pekoe 本体の docs(README・docs/orchestration.md・docs/tapi-chat.md・docs/web.md)に書かれていることだけにする。段階 3 以降の機能を「できる」と書かない。
 
 ## 編集
 
