@@ -7,7 +7,7 @@ window.PEKOE_COPY.en = {
 
   // [1] home
   "s1.h1": "A cozy home for your coding agents.",
-  "s1.h1_sub": "with tapi, always by your side",
+  "s1.h1_sub": "with tapi, your little companion",
   "s1.lead": "Ask tapi, and your housemates (the coding agents) get to work, each in its own worktree. <strong>What reaches you is only what needs your decision.</strong> Claude Code itself runs just as it always does.",
   "s1.cta_day": "see a day",
   "s1.kv_alt": "pekoe key visual: tapi, a smiling tapioca pearl, in front of a terminal",
