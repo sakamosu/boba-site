@@ -398,7 +398,7 @@ table.where td code{font-size:12.5px}
   #s4>.lead{grid-column:1;grid-row:3}
   #s4>.term{grid-column:2;grid-row:1 / span 4;margin-top:0!important}
   #s4>.legend{grid-column:2;grid-row:5}
-  #s4>.step,#s4>.demo{grid-column:1 / -1}
+  #s4>.step{grid-column:1 / -1}
   .term .body{grid-template-columns:40% 60%}
   .tp .ttl-w{display:block}.tp .ttl-n{display:none}
   .term .tp.sub{display:flex}.term .tp.focus .foot{display:block}

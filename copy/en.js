@@ -21,6 +21,7 @@ window.PEKOE_COPY.en = {
   // [2] a day
   "s2.h2": "A day at pekoe: you ask, they work, you decide.",
   "s2.lead": "From one request to a merged PR. The only things you do are ask, answer, and merge.",
+  "s2.demo_label": "pekoe demo video: ask tapi once and it splits the work across sessions, brings only the decisions to your inbox, and leaves the merge of reviewed PRs to you, plus answering from your phone",
   "s2.st1.title": "Ask tapi, once",
   "s2.st1.body": "Press <code>t</code> from any panel and tapi chat opens. Just write what you want done. Every request is kept in a ledger, so even after you reset the conversation, tapi picks up where things are.",
   "s2.chat.you": "add CSV export to app. oh, and the invoice PDF layout is broken",
@@ -59,7 +60,6 @@ window.PEKOE_COPY.en = {
   // [4] the house
   "s4.h2": "Want to step in yourself? The house has everything.",
   "s4.lead": "You can type into any session, any time. Creating sessions in the TUI and running them yourself, without tapi, works just as before. Sessions and worktrees on the left, the agent's own screen on the right.",
-  "s4.demo_label": "pekoe demo video: ask tapi once and it splits the work across sessions, brings only the decisions to your inbox, and leaves the merge of reviewed PRs to you, plus answering from your phone",
   "s4.st1.title": "Make a worktree",
   "s4.st1.body": "Give it a branch name and the agent starts working in a worktree that's already set up. Give it an issue number instead and the issue body becomes the first prompt. Write the setup steps once per repo, then feel free to forget them.",
   "s4.st2.title": "Answer a wait",
