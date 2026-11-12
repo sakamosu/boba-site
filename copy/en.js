@@ -59,7 +59,7 @@ window.PEKOE_COPY.en = {
   // [4] the house
   "s4.h2": "Want to step in yourself? The house has everything.",
   "s4.lead": "You can type into any session, any time. Creating sessions in the TUI and running them yourself, without tapi, works just as before. Sessions and worktrees on the left, the agent's own screen on the right.",
-  "s4.demo_label": "pekoe demo video: creating a session, then run, wait, review and land, plus tapi’s five faces",
+  "s4.demo_label": "pekoe demo video: ask tapi once and it splits the work across sessions, brings only the decisions to your inbox, and leaves the merge of reviewed PRs to you, plus answering from your phone",
   "s4.st1.title": "Make a worktree",
   "s4.st1.body": "Give it a branch name and the agent starts working in a worktree that's already set up. Give it an issue number instead and the issue body becomes the first prompt. Write the setup steps once per repo, then feel free to forget them.",
   "s4.st2.title": "Answer a wait",
