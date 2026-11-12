@@ -97,11 +97,15 @@ window.PEKOE_COPY.en = {
   "s6.svg_aria": "pekoed, its six clients, and one pty per worktree",
 
   // [7] install
-  "s7.lead": "Runs on: macOS (developed and tested in Ghostty; Linux builds are published too, but parts of them are untested). Requires: tmux 3.3 or later, git, and Go 1.27.4 or later to build from source. Optional: gh (issues, landing, PR view and review), Neovim 0.10 or later (review screen), Chrome (the extension for element picking, and the in-TUI preview), Tailscale (Web UI).",
+  "s7.lead": "Runs on: macOS (developed and tested in Ghostty; Linux builds are published too, but parts of them are untested). Install with Homebrew on macOS and Linux (arm64 / amd64): it is the default build without the Web UI, and tmux and git come along as dependencies. Requires: tmux 3.3 or later, git. To build from source: Go 1.27.4 or later. For the Web UI, build with <code>make install WEB=1</code> or install the <code>_web</code> archive from a release. Optional: gh (issues, landing, PR view and review), Neovim 0.10 or later (review screen), Chrome (the extension for element picking, and the in-TUI preview), Tailscale (Web UI).",
   "s7.c1": "# adds hooks to ~/.claude/settings.json",
   "s7.c2": "# optional: start pekoed at login",
   "s7.c3": "# detect the repo and draft its config",
   "s7.c4": "\"add CSV export\"",
   "s7.c5": "# optional: link the skills tapi and sessions use into ~/.claude/skills",
-  "s7.c6": "# TUI: t to ask tapi"
+  "s7.c6": "# TUI: t to ask tapi",
+  "s7.c7": "# default build (no Web UI)",
+  "s7.c8": "# optional: launchd steps to start pekoed at login",
+  "s7.c9": "# pekoe update refuses a Homebrew install",
+  "s7.c10": "# also build in the Web UI"
 };

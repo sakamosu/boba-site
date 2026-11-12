@@ -442,18 +442,27 @@ feat/login wants to run
     </fieldset>
 
     <!-- [7] install -->
-    <fieldset class="pane" id="s7" data-sec="7" data-mode="INSTALL" data-face="done" data-say="make install, then just ask">
+    <fieldset class="pane" id="s7" data-sec="7" data-mode="INSTALL" data-face="done" data-say="brew install, then just ask">
       <legend class="ttl">[7] &gt; install</legend>
-      <div class="kicker chips" id="i-install"><span class="chip cream">v0.3.0</span><span class="chip green">tmux engine</span></div>
-      <h2>make install</h2>
+      <div class="kicker chips" id="i-install"><span class="chip cream">v0.4.0</span><span class="chip green">tmux engine</span></div>
+      <h2>brew install</h2>
       <p class="lead" data-i18n="s7.lead"></p>
       <p class="ghlink"><a class="keyact" href="https://github.com/sakamosu/pekoe"><b>⎇</b> github.com/sakamosu/pekoe</a></p>
       <div class="code"><pre><span class="c"># install</span>
+<span class="p">$</span> brew install sakamosu/tap/pekoe   <span class="c" data-i18n="s7.c7"></span>
+<span class="p">$</span> pekoe hooks install      <span class="c" data-i18n="s7.c1"></span>
+<span class="p">$</span> pekoe skills install     <span class="c" data-i18n="s7.c5"></span>
+<span class="p">$</span> brew info pekoe          <span class="c" data-i18n="s7.c8"></span>
+
+<span class="c"># update</span>
+<span class="p">$</span> brew upgrade pekoe       <span class="c" data-i18n="s7.c9"></span>
+<span class="p">$</span> pekoe daemon restart
+
+<span class="c"># from source</span>
 <span class="p">$</span> git clone https://github.com/sakamosu/pekoe
 <span class="p">$</span> cd pekoe
 <span class="p">$</span> make install            <span class="c"># ~/.local/bin/pekoe (+ pekoed)</span>
-<span class="p">$</span> pekoe hooks install      <span class="c" data-i18n="s7.c1"></span>
-<span class="p">$</span> pekoe skills install     <span class="c" data-i18n="s7.c5"></span>
+<span class="p">$</span> make install WEB=1      <span class="c" data-i18n="s7.c10"></span>
 <span class="p">$</span> make install-launchd    <span class="c" data-i18n="s7.c2"></span>
 
 <span class="c"># use</span>
