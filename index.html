@@ -83,6 +83,16 @@
       <h2 data-i18n="s2.h2"></h2>
       <p class="lead" data-i18n="s2.lead"></p>
 
+      <!-- demo -->
+      <div class="demo" id="s2-demo">
+        <video id="demo" poster="assets/pekoe-demo-poster.jpg" autoplay muted loop playsinline preload="metadata" data-i18n-attr="aria-label=s2.demo_label">
+          <source src="assets/pekoe-demo.webm" type="video/webm">
+          <source src="assets/pekoe-demo.mp4" type="video/mp4">
+        </video>
+        <button class="kbtn demo-sound" id="soundbtn" type="button" aria-pressed="false"><b>m</b> <span>sound off</span></button>
+      </div>
+      <!-- /demo -->
+
       <div class="step" id="d-ask">
         <div><div class="num">01 <b>you → tapi</b><span class="st c-sec">t</span></div><h3 data-i18n="s2.st1.title"></h3><p data-i18n="s2.st1.body"></p></div>
         <div class="shot wrap"><span class="shot-ttl" data-tapi-line="idle"><span class="ttl-t"><b class="t-pri">[4] tapi the orchestrator</b><span class="t-dim"> · claude</span><span class="t-sec"> · typing</span></span></span>
@@ -276,16 +286,6 @@ $ pekoe report "CSV export, PR #131" --status done \
         </div>
       </div>
       <div class="legend"><span><b class="c-ok"><i class="nf nf-run"></i></b>run</span><span><b class="c-warn"><i class="nf nf-wait"></i></b>wait</span><span><b class="c-dim"><i class="nf nf-idle"></i></b>idle</span><span><b class="c-sec"><i class="nf nf-done"></i></b>done</span><span><b class="c-pri">▶</b>review</span><span><b class="c-err"><i class="nf nf-fail"></i></b>fail</span></div>
-
-      <!-- demo -->
-      <div class="demo" id="s4-demo">
-        <video id="demo" poster="assets/pekoe-demo-poster.jpg" autoplay muted loop playsinline preload="metadata" data-i18n-attr="aria-label=s4.demo_label">
-          <source src="assets/pekoe-demo.webm" type="video/webm">
-          <source src="assets/pekoe-demo.mp4" type="video/mp4">
-        </video>
-        <button class="kbtn demo-sound" id="soundbtn" type="button" aria-pressed="false"><b>m</b> <span>sound off</span></button>
-      </div>
-      <!-- /demo -->
 
       <div class="step" id="st-new">
         <div><div class="num">01 <b>pekoe new</b><span class="st c-dim">◌ creating</span></div><h3 data-i18n="s4.st1.title"></h3><p data-i18n="s4.st1.body"></p></div>
