@@ -74,9 +74,13 @@ window.PEKOE_COPY.ja = {
   "s4.shot_prompt": "← 指示 #3: CSV エクスポートを追加",
 
   // [5] anywhere
-  "s5.h2": "スマホからも、もうすぐ。",
-  "s5.now": "<strong>いま</strong>: Web UI(任意のビルド。Tailscale の tailnet の中だけ)で、iPhone からセッションの一覧と画面を見て、許可に答え、一言送れます。",
-  "s5.next": "<strong>作っているところ</strong>: 受信箱に答える・tapi に頼む、をスマホから。TUI には、家の様子をひと目で見るダッシュボードも。",
+  "s5.h2": "スマホからも、答えて、頼める。",
+  "s5.lead": "Web UI(任意のビルド。Tailscale の tailnet の中だけ)を iPhone のホーム画面に置けば、外出先からこれだけできます。",
+  "s5.c1": "<strong>見る</strong>: セッションの一覧と状態、エージェントの画面。Overview タブで概要と工程表(<code>impl → review → PR → CI → merge</code>)も。",
+  "s5.c2": "<strong>答える</strong>: 許可に allow / deny(押す前に確認)、質問の選択肢にはキーパッドで。短い指示も送れます。",
+  "s5.c3": "<strong>決める</strong>: Inbox タブで判断の受信箱に回答。事実とリンクが先、エージェントの文は後に出ます。",
+  "s5.c4": "<strong>頼む</strong>: tapi chat で tapi に一言。送る前に宛先と全文を確かめるシートが出ます(既定)。送れるのは端末を <code>allow_devices</code> で絞ったときだけ。",
+  "s5.desk": "Mac の前では、TUI で tapi の行を選ぶとダッシュボード。受信箱・工程表・自分の依頼が 1 画面に並びます。",
   "s5.phone_alt": "スマホの画面の中の tapi",
 
   // [6] house rules

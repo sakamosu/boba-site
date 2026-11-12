@@ -242,9 +242,9 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 
 /* anywhere */
 .anywhere{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;margin-top:8px}
-.anywhere .code.soon{gap:10px}
-.anywhere .code.soon p{font-size:14.5px}
-.anywhere .code.soon strong{color:var(--t-warn);font-weight:700}
+.anywhere .code.can{gap:10px}
+.anywhere .code.can p,.anywhere .code.can li{font-size:14.5px}
+.anywhere .code.can strong{color:var(--t-warn);font-weight:700}
 .phone-slot{justify-self:center;width:200px}
 .phone-slot img{aspect-ratio:9/16;object-fit:contain;border-radius:22px}
 .phone-slot.has-img img{object-fit:cover;box-shadow:0 18px 40px rgba(20,8,70,.4)}
@@ -295,10 +295,13 @@ kbd.k{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:70
 /* install */
 .code{background:var(--t-bg);border-radius:10px;padding:18px 20px;font-family:var(--mono);font-size:12.8px;line-height:1.8;color:var(--t-text);overflow:auto;box-shadow:0 14px 36px rgba(20,8,70,.35)}
 .code pre{margin:0}
-/* 準備中のカード([5] anywhere) */
-.code.soon{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:22px 22px 24px;font-family:var(--sans)}
-.code.soon p{margin:0;color:var(--t-text);font-size:15px;line-height:1.7;max-width:36em}
-.code.soon .chip.plan{color:var(--t-text);border-color:var(--t-border)}
+/* 今できることのカード([5] anywhere) */
+.code.can{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:22px 22px 24px;font-family:var(--sans)}
+.code.can p{margin:0;color:var(--t-text);font-size:15px;line-height:1.7;max-width:36em}
+.code.can ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;max-width:36em}
+.code.can li{position:relative;padding-left:1.3em;color:var(--t-text);line-height:1.7}
+.code.can li::before{content:'›';position:absolute;left:0;color:var(--t-dim);font-family:var(--mono)}
+.code.can .desk{color:var(--t-dim)}
 .ghlink{margin:0 0 16px}
 /* ヒーローの「これは何か」の一文 */
 .code .p{color:var(--t-secondary)}.code .c{color:var(--t-dim)}.code .s{color:var(--t-warn)}
