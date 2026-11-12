@@ -394,11 +394,12 @@ feat/login wants to run
         <svg class="arch-svg" viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="" data-i18n-attr="aria-label=s6.svg_aria">
           <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#fffbf0"/></marker></defs>
           <g fill="none" stroke="#fffbf0" stroke-width="1.6" stroke-linecap="round" stroke-opacity=".75">
-            <path id="w1" d="M240 85 C330 85 340 240 425 240"/>
-            <path id="w2" d="M240 170 C330 170 340 240 425 240"/>
-            <path id="w3" d="M240 255 C330 255 340 240 425 240"/>
-            <path id="w4" d="M240 340 C330 340 340 240 425 240" stroke-dasharray="5 6"/>
-            <path id="w5" d="M240 425 C330 425 340 240 425 240"/>
+            <path id="w1" d="M240 75 C330 75 340 240 425 240"/>
+            <path id="w2" d="M240 147 C330 147 340 240 425 240"/>
+            <path id="w3" d="M240 219 C330 219 340 240 425 240"/>
+            <path id="w4" d="M240 291 C330 291 340 240 425 240" stroke-dasharray="5 6"/>
+            <path id="w5" d="M240 363 C330 363 340 240 425 240"/>
+            <path id="w10" d="M240 435 C330 435 340 240 425 240"/>
             <path id="w6" d="M575 240 C660 240 660 132 740 132"/>
             <path id="w7" d="M575 240 C660 240 660 242 740 242"/>
             <path id="w8" d="M575 240 C660 240 660 352 740 352"/>
@@ -410,22 +411,25 @@ feat/login wants to run
             <circle r="3.2"><animateMotion dur="2.8s" begin="-2.0s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle>
             <circle r="3.2"><animateMotion dur="2.8s" begin="-0.7s" repeatCount="indefinite"><mpath href="#w4"/></animateMotion></circle>
             <circle r="3.2"><animateMotion dur="2.8s" begin="-1.6s" repeatCount="indefinite"><mpath href="#w5"/></animateMotion></circle>
+            <circle r="3.2"><animateMotion dur="2.8s" begin="-2.4s" repeatCount="indefinite"><mpath href="#w10"/></animateMotion></circle>
             <circle r="3.2"><animateMotion dur="2.4s" begin="-0.3s" repeatCount="indefinite"><mpath href="#w6"/></animateMotion></circle>
             <circle r="3.2"><animateMotion dur="2.4s" begin="-1.2s" repeatCount="indefinite"><mpath href="#w7"/></animateMotion></circle>
             <circle r="3.2"><animateMotion dur="2.4s" begin="-1.9s" repeatCount="indefinite"><mpath href="#w8"/></animateMotion></circle>
             <circle r="3.2"><animateMotion dur="3.2s" begin="-0.5s" repeatCount="indefinite"><mpath href="#w9"/></animateMotion></circle>
           </g>
           <g>
-            <rect x="262" y="214" width="146" height="22" rx="11" fill="#fffbf0"/><text x="335" y="229" text-anchor="middle" class="lbl">socket · JSON Lines</text>
-            <rect x="288" y="300" width="94" height="22" rx="11" fill="#fffbf0"/><text x="335" y="315" text-anchor="middle" class="lbl">HTTP + token</text>
+            <rect x="262" y="200" width="146" height="22" rx="11" fill="#fffbf0"/><text x="335" y="215" text-anchor="middle" class="lbl">socket · JSON Lines</text>
+            <rect x="288" y="272" width="94" height="22" rx="11" fill="#fffbf0"/><text x="335" y="287" text-anchor="middle" class="lbl">HTTP + token</text>
             <rect x="634" y="186" width="52" height="22" rx="11" fill="#fffbf0"/><text x="660" y="201" text-anchor="middle" class="lbl">pty</text>
+            <rect x="262" y="444" width="122" height="22" rx="11" fill="#fffbf0"/><text x="323" y="459" text-anchor="middle" class="lbl">HTTPS · tailnet</text>
             <rect x="642" y="454" width="166" height="22" rx="11" fill="#fffbf0"/><text x="725" y="469" text-anchor="middle" class="lbl">hooks → pekoe event</text>
           </g>
-          <g class="client"><rect x="40" y="62" width="200" height="46" rx="23"/><text x="64" y="91" class="ci">◆</text><text x="88" y="91" class="cn">TUI</text><text x="134" y="90" class="cs">pekoe</text></g>
-          <g class="client"><rect x="40" y="147" width="200" height="46" rx="23"/><text x="64" y="176" class="ci">&gt;</text><text x="88" y="176" class="cn">CLI</text><text x="132" y="175" class="cs">pekoe ls · send · land</text></g>
-          <g class="client"><rect x="40" y="232" width="200" height="46" rx="23"/><text x="64" y="261" class="ci">V</text><text x="88" y="261" class="cn">Neovim</text><text x="170" y="260" class="cs">review</text></g>
-          <g class="client"><rect x="40" y="317" width="200" height="46" rx="23"/><text x="64" y="346" class="ci">◎</text><text x="88" y="346" class="cn">Chrome</text><text x="170" y="345" class="cs">⌘⇧E</text></g>
-          <g class="client"><rect x="40" y="402" width="200" height="46" rx="23"/><text x="64" y="431" class="ci">⌖</text><text x="88" y="431" class="cn">MCP</text><text x="142" y="430" class="cs">for agents</text></g>
+          <g class="client"><rect x="40" y="52" width="200" height="46" rx="23"/><text x="64" y="81" class="ci">◆</text><text x="88" y="81" class="cn">TUI</text><text x="134" y="80" class="cs">pekoe</text></g>
+          <g class="client"><rect x="40" y="124" width="200" height="46" rx="23"/><text x="64" y="153" class="ci">&gt;</text><text x="88" y="153" class="cn">CLI</text><text x="132" y="152" class="cs">pekoe ls · send · land</text></g>
+          <g class="client"><rect x="40" y="196" width="200" height="46" rx="23"/><text x="64" y="225" class="ci">V</text><text x="88" y="225" class="cn">Neovim</text><text x="170" y="224" class="cs">review</text></g>
+          <g class="client"><rect x="40" y="268" width="200" height="46" rx="23"/><text x="64" y="297" class="ci">◎</text><text x="88" y="297" class="cn">Chrome</text><text x="170" y="296" class="cs">⌘⇧E</text></g>
+          <g class="client"><rect x="40" y="340" width="200" height="46" rx="23"/><text x="64" y="369" class="ci">⌖</text><text x="88" y="369" class="cn">MCP</text><text x="142" y="368" class="cs">for agents</text></g>
+          <g class="client"><rect x="40" y="412" width="200" height="46" rx="23"/><text x="64" y="441" class="ci">▯</text><text x="88" y="441" class="cn">Web UI</text><text x="170" y="440" class="cs">iPhone</text></g>
           <g data-tapi3="work" data-x="440" data-y="166" data-w="120"></g>
           <rect x="446" y="318" width="108" height="34" rx="17" fill="#fffbf0"/><text x="500" y="341" text-anchor="middle" class="bn">pekoed</text>
           <rect x="410" y="368" width="80" height="22" rx="11" fill="none" stroke="#fffbf0" stroke-opacity=".3"/><text x="450" y="383" text-anchor="middle" class="chipt">state.db</text>

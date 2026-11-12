@@ -94,9 +94,9 @@ window.PEKOE_COPY.ja = {
   "s6.pr2": "設定・状態・スナップショットは、リポジトリの外か <code>refs/pekoe/</code> に置きます(push されず、<code>git log</code> にも出ません)。後に残るのは worktree、つまり git の標準機能で作ったものだけです。",
   "s6.pr3": "パッケージマネージャやフレームワークについて、pekoe は何も知りません。設定に書くのはそのリポジトリでいつも打っているコマンドで、pekoe は変数を埋めて上から順に実行します。",
   "s6.pr4": "ターミナル層は tmux で動いています。判断はデーモンが受け持ち、クライアントは表示と入力しか持たないので、層を差し替えても機能は減りません。",
-  "s6.daemon": "TUI、CLI、Neovim、Chrome 拡張、MCP は、どれも同じ API を叩く表示層です。機能を足すときは、デーモンを触れば済みます。",
+  "s6.daemon": "TUI、CLI、Neovim、Chrome 拡張、MCP、Web UI は、どれも同じ API を叩く表示層です。機能を足すときは、デーモンを触れば済みます。",
   "s6.svg_pty": "tmux -L pekoe · worktree ごとの pty",
-  "s6.svg_aria": "pekoed と 5 つのクライアント、worktree ごとの pty の関係図",
+  "s6.svg_aria": "pekoed と 6 つのクライアント、worktree ごとの pty の関係図",
 
   // [7] install
   "s7.lead": "動作環境: macOS(Ghostty で開発・確認。Linux 向けのビルドも出ていますが、一部は未確認です)。必要なもの: tmux 3.3 以上、git、ソースからビルドするなら Go 1.27.4 以上。任意: gh(issue の取り込み、land、PR の表示とレビュー)、Neovim 0.10 以上(レビュー画面)、Chrome(拡張機能での要素の選択、TUI 内のプレビュー)、Tailscale(Web UI)。",
