@@ -94,6 +94,7 @@ window.PEKOE_COPY.ja = {
   "s6.pr2": "設定・状態・スナップショットは、リポジトリの外か <code>refs/pekoe/</code> に置きます(push されず、<code>git log</code> にも出ません)。後に残るのは worktree、つまり git の標準機能で作ったものだけです。",
   "s6.pr3": "パッケージマネージャやフレームワークについて、pekoe は何も知りません。設定に書くのはそのリポジトリでいつも打っているコマンドで、pekoe は変数を埋めて上から順に実行します。",
   "s6.pr4": "ターミナル層は tmux で動いています。判断はデーモンが受け持ち、クライアントは表示と入力しか持たないので、層を差し替えても機能は減りません。",
+  "s6.daemon_h": "すべては pekoed を通る",
   "s6.daemon": "TUI、CLI、Neovim、Chrome 拡張、MCP、Web UI は、どれも同じ API を叩く表示層です。機能を足すときは、デーモンを触れば済みます。",
   "s6.svg_aria": "pekoed と 6 つのクライアント、worktree ごとの pty の関係図",
 
